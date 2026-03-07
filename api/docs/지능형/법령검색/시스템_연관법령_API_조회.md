@@ -1,0 +1,85 @@
+# 지능형 법령검색 시스템 연관법령 API 조회
+
+## 1. API 명칭 및 기본 설명
+- **API 명칭**: 지능형 법령검색 시스템 연관법령 API 조회
+- **기본 설명**: 지능형 법령검색 시스템 연관법령 API
+
+## 2. 가이드 페이지 URL
+- https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=aiRltLsGuide
+
+## 3. 요청 URL (Endpoint)
+- https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs
+
+## 4. 요청 변수 (Request Parameters) 명세표
+| 변수명 | 타입/필수 여부 | 설명 |
+| --- | --- | --- |
+| OC | string, 필수 | 사용자 이메일 ID |
+| target | string : aiRltLs(필수) | 서비스 대상 |
+| type | char, 필수 | 출력 형태 : XML/JSON |
+| query | string | 검색 질의 또는 대상 식별값 |
+| display | int | 검색된 결과 개수(default=20, max=100) |
+| page | int | 검색 결과 페이지(default=1) |
+
+## 5. 출력 결과 (Response Elements) 명세표
+| 필드명 | 타입 | 설명 |
+| --- | --- | --- |
+| target | string | 검색서비스 대상 |
+| 키워드 | string | 검색 질의 |
+| 검색결과개수 | int | 검색 건수 |
+| page | int | 현재 페이지번호 |
+| id | string/int | 결과 식별자 |
+| 명칭 | string | 용어/조문/법령명 |
+| 설명 | string | 설명 또는 관계 정보 |
+| 상세링크 | string | 관계/상세 정보 링크 |
+
+## 6. 에러 코드
+- 가이드 페이지에 별도 에러 코드 표는 명시되지 않은 경우가 많습니다. 일반적으로 HTTP 오류, 빈 결과, 또는 XML/JSON 응답의 상태값(제공 시)으로 실패를 판별합니다.
+
+## 7. 비고
+- 법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다.
+
+## 샘플 요청 및 응답 예시
+- 아래 예시는 호출 형태를 빠르게 확인하기 위한 템플릿입니다.
+
+#### 요청 예시
+- 예시 1 (XML)
+```text
+https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=XML&query=자동차&display=20&page=1
+```
+- 예시 2 (JSON)
+```text
+https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=JSON&query=자동차&display=20&page=1
+```
+#### 응답 예시
+- XML 구조 예시
+```xml
+<response>
+  <item>
+    <field name="target">예시값</field>
+    <field name="키워드">자동차</field>
+    <field name="검색결과개수">20</field>
+    <field name="page">1</field>
+    <field name="명칭">자동차관리법</field>
+    <field name="상세링크">https://www.law.go.kr/...</field>
+  </item>
+</response>
+```
+- JSON 구조 예시
+```json
+{
+  "data": [
+    {
+      "target": "예시값",
+      "키워드": "자동차",
+      "검색결과개수": 20,
+      "page": 1,
+      "명칭": "자동차관리법",
+      "상세링크": "https://www.law.go.kr/..."
+    }
+  ]
+}
+```
+
+## 8. 메타
+- 정리 기준: 국가법령정보 공동활용 OPEN API 활용가이드 구조화 요약
+- 근거 수준: pattern
