@@ -15,12 +15,12 @@ dependencies = [
 authors = [
   { name = "ggh5454", email = "ggh5454@naver.com" },
 ]
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["mcp", "cli", "law", "openapi", "moleg"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -40,7 +40,6 @@ law-openapi-mcp = "law_api_mcp_korea.mcp_server:main"
 [tool.setuptools]
 package-dir = {"" = "src"}
 include-package-data = true
-license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
