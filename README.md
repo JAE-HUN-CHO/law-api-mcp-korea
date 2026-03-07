@@ -3,15 +3,25 @@
 법제처 국가법령정보 공동활용 OPEN API 문서를 정본으로 유지하면서, 그 문서를 기반으로 동작하는
 reference-compatible **CLI + MCP 서버**를 제공하는 Python 패키지입니다.
 
+공식 공개 배포 채널은 **GitHub Releases only** 입니다. PyPI는 지원하지 않습니다.
+
 ## 설치
 
-PyPI에서 설치:
+공개 배포용 설치:
 
 ```bash
-pip install law-api-mcp-korea
+pip install <downloaded-wheel-file>
 ```
 
-로컬 개발 버전 설치:
+wheel 파일은 [GitHub Releases](https://github.com/JAE-HUN-CHO/law-api-mcp-korea/releases)에서 내려받습니다.
+
+예:
+
+```bash
+pip install law_api_mcp_korea-0.1.0-py3-none-any.whl
+```
+
+로컬 개발용 설치:
 
 ```bash
 pip install -e .
@@ -48,6 +58,12 @@ echo LAW_API_OC=your_oc_value > .env
 - `LAW_API_FORCE_HTTPS`: `true`/`1`이면 `http://` 엔드포인트를 `https://`로 강제 변환
 
 테스트에 MCP stdio E2E를 포함하려면 `mcp` 패키지가 설치되어 있어야 합니다. 위 명령으로 함께 설치됩니다.
+
+## 공개 배포 기준
+
+- 공개 사용자는 GitHub Release asset의 `.whl` 또는 `.tar.gz`를 설치합니다.
+- PyPI 업로드는 하지 않습니다.
+- 외부 MCP 사용자는 wheel 설치 후 `law-openapi-mcp --transport stdio`로 서버를 실행합니다.
 
 ## 문서 동기화
 
@@ -93,6 +109,30 @@ python -m unittest discover -s tests -p "test_*.py"
 
 `.env` 파일이 있으면 같은 테스트 명령으로 live smoke가 자동 활성화됩니다.
 
+## 릴리스 절차
+
+수동 GitHub Release 기준 체크리스트:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+python -m build --sdist --wheel
+```
+
+그 다음:
+
+- clean venv에서 wheel 설치 smoke 실행
+- GitHub Release 생성
+- `dist/*.whl`, `dist/*.tar.gz` 첨부
+
+clean venv smoke 예:
+
+```bash
+pip install law_api_mcp_korea-0.1.0-py3-none-any.whl
+law-openapi-cli catalog --search 법령해석
+law-openapi-cli get-law --id 001571 --type JSON --with-sub-articles
+law-openapi-mcp --transport stdio
+```
+
 ## MCP 서버 실행
 
 ```bash
@@ -108,6 +148,8 @@ law-openapi-mcp --transport streamable-http
 - `law-openapi-mcp`
 
 ## Claude Desktop 예시 설정
+
+사전 단계: GitHub Release에서 wheel을 설치한 뒤 아래처럼 MCP 서버를 등록합니다.
 
 ```json
 {
