@@ -1,0 +1,243 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : admrul, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML 또는 HTML/XML/JSON"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y, 필수",
+      "required": true,
+      "description": "모바일 여부"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "행정규칙 일련번호"
+    },
+    {
+      "name": "LID",
+      "type_info": "char",
+      "required": false,
+      "description": "행정규칙 ID"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "행정규칙명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "행정규칙일련번호",
+      "type_info": "int",
+      "description": "행정규칙일련번호"
+    },
+    {
+      "name": "행정규칙명",
+      "type_info": "string",
+      "description": "행정규칙명"
+    },
+    {
+      "name": "행정규칙종류",
+      "type_info": "string",
+      "description": "행정규칙종류"
+    },
+    {
+      "name": "행정규칙종류코드",
+      "type_info": "string",
+      "description": "행정규칙종류코드"
+    },
+    {
+      "name": "발령일자",
+      "type_info": "int",
+      "description": "발령일자"
+    },
+    {
+      "name": "발령번호",
+      "type_info": "string",
+      "description": "발령번호"
+    },
+    {
+      "name": "제개정구분명",
+      "type_info": "string",
+      "description": "제개정구분명"
+    },
+    {
+      "name": "제개정구분코드",
+      "type_info": "string",
+      "description": "제개정구분코드"
+    },
+    {
+      "name": "조문형식여부",
+      "type_info": "string",
+      "description": "조문형식여부"
+    },
+    {
+      "name": "행정규칙ID",
+      "type_info": "int",
+      "description": "행정규칙 ID"
+    },
+    {
+      "name": "소관부처명",
+      "type_info": "string",
+      "description": "소관부처명"
+    },
+    {
+      "name": "소관부처코드",
+      "type_info": "string",
+      "description": "소관부처코드"
+    },
+    {
+      "name": "상위부처명",
+      "type_info": "string",
+      "description": "상위부처명"
+    },
+    {
+      "name": "담당부서기관코드",
+      "type_info": "string",
+      "description": "담당부서기관코드"
+    },
+    {
+      "name": "담당부서기관명",
+      "type_info": "string",
+      "description": "담당부서기관명"
+    },
+    {
+      "name": "담당자명",
+      "type_info": "string",
+      "description": "담당자명"
+    },
+    {
+      "name": "전화번호",
+      "type_info": "string",
+      "description": "전화번호"
+    },
+    {
+      "name": "현행여부",
+      "type_info": "string",
+      "description": "현행여부"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "string",
+      "description": "시행일자"
+    },
+    {
+      "name": "생성일자",
+      "type_info": "string",
+      "description": "생성일자"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "조문내용"
+    },
+    {
+      "name": "부칙",
+      "type_info": "string",
+      "description": "부칙"
+    },
+    {
+      "name": "부칙공포일자",
+      "type_info": "int",
+      "description": "부칙공포일자"
+    },
+    {
+      "name": "부칙공포번호",
+      "type_info": "int",
+      "description": "부칙공포번호"
+    },
+    {
+      "name": "부칙내용",
+      "type_info": "string",
+      "description": "부칙내용"
+    },
+    {
+      "name": "별표",
+      "type_info": "string",
+      "description": "별표"
+    },
+    {
+      "name": "별표번호",
+      "type_info": "int",
+      "description": "별표번호"
+    },
+    {
+      "name": "별표가지번호",
+      "type_info": "int",
+      "description": "별표가지번호"
+    },
+    {
+      "name": "별표구분",
+      "type_info": "string",
+      "description": "별표구분"
+    },
+    {
+      "name": "별표제목",
+      "type_info": "string",
+      "description": "별표제목"
+    },
+    {
+      "name": "별표서식파일링크",
+      "type_info": "string",
+      "description": "별표서식파일링크"
+    },
+    {
+      "name": "별표서식PDF파일링크",
+      "type_info": "string",
+      "description": "별표서식PDF파일링크"
+    },
+    {
+      "name": "별표내용",
+      "type_info": "string",
+      "description": "별표내용"
+    },
+    {
+      "name": "첨부파일",
+      "type_info": "string",
+      "description": "첨부파일"
+    },
+    {
+      "name": "첨부파일명",
+      "type_info": "string",
+      "description": "첨부파일명"
+    },
+    {
+      "name": "첨부파일링크",
+      "type_info": "string",
+      "description": "첨부파일링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=admrul&mobileYn=Y&OC=test&type=XML&ID={행정규칙ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=admrul&mobileYn=Y&OC=test&type=JSON&ID={행정규칙ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"행정규칙일련번호\">12345</field>\n    <field name=\"행정규칙명\">학교보건법 시행규칙</field>\n    <field name=\"행정규칙종류\">예시값</field>\n    <field name=\"행정규칙종류코드\">CODE001</field>\n    <field name=\"별표제목\">학교보건법 시행규칙</field>\n    <field name=\"조문내용\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"행정규칙일련번호\": 12345,\n      \"행정규칙명\": \"학교보건법 시행규칙\",\n      \"행정규칙종류\": \"예시값\",\n      \"행정규칙종류코드\": \"CODE001\",\n      \"별표제목\": \"학교보건법 시행규칙\",\n      \"조문내용\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ]
+}

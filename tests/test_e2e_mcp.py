@@ -78,6 +78,7 @@ class McpOfflineE2ETests(unittest.IsolatedAsyncioTestCase):
             )
             self.assertFalse(result.isError)
             self.assertGreaterEqual(result.structuredContent["count"], 1)
+            self.assertNotIn("request_params", result.structuredContent["items"][0])
 
     async def test_call_get_api_doc(self):
         async with _session() as session:
@@ -93,6 +94,19 @@ class McpOfflineE2ETests(unittest.IsolatedAsyncioTestCase):
                 result.structuredContent["api"]["guide_html_name"],
                 "cgmExpcMolegListGuide",
             )
+            self.assertNotIn("request_params", result.structuredContent["api"])
+
+    async def test_call_get_api_doc_markdown_opt_in(self):
+        async with _session() as session:
+            result = await asyncio.wait_for(
+                session.call_tool(
+                    "get_api_doc",
+                    {"api_name": "cgmExpcMolegListGuide", "view": "markdown"},
+                ),
+                timeout=20,
+            )
+            self.assertFalse(result.isError)
+            self.assertIn("markdown", result.structuredContent)
 
     async def test_read_catalog_resource(self):
         async with _session() as session:
@@ -102,6 +116,7 @@ class McpOfflineE2ETests(unittest.IsolatedAsyncioTestCase):
             )
             first = resource.contents[0]
             self.assertIn('"count": 191', first.text)
+            self.assertNotIn("request_params", first.text)
 
 
 @unittest.skipUnless(

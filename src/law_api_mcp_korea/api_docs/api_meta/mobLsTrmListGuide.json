@@ -1,0 +1,117 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lstrm, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON 또는 HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y, 필수",
+      "required": true,
+      "description": "모바일 여부"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "법령용어명 검색어"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 개수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "결과 페이지"
+    },
+    {
+      "name": "homonymYn",
+      "type_info": "char",
+      "required": false,
+      "description": "동음이의어 존재여부"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색 단어"
+    },
+    {
+      "name": "검색결과개수",
+      "type_info": "int",
+      "description": "검색 건수"
+    },
+    {
+      "name": "section",
+      "type_info": "string",
+      "description": "검색범위"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "description": "현재 페이지번호"
+    },
+    {
+      "name": "법령용어 id",
+      "type_info": "string",
+      "description": "법령용어 순번"
+    },
+    {
+      "name": "법령용어명",
+      "type_info": "string",
+      "description": "법령용어명"
+    },
+    {
+      "name": "동음이의어존재여부",
+      "type_info": "string",
+      "description": "동음이의어 존재 여부"
+    },
+    {
+      "name": "비고",
+      "type_info": "string",
+      "description": "동음이의어 내용"
+    },
+    {
+      "name": "용어간관계링크",
+      "type_info": "string",
+      "description": "법령용어-일상용어 연계 상세링크"
+    },
+    {
+      "name": "조문간관계링크",
+      "type_info": "string",
+      "description": "법령용어-조문 연계 상세링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lstrm&mobileYn=Y&OC=test&type=XML&query=개인정보&display=20&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lstrm&mobileYn=Y&OC=test&type=JSON&query=개인정보&display=20&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">개인정보</field>\n    <field name=\"검색결과개수\">20</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"비고\">예시 본문</field>\n    <field name=\"용어간관계링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"개인정보\",\n      \"검색결과개수\": 20,\n      \"section\": \"예시값\",\n      \"비고\": \"예시 본문\",\n      \"용어간관계링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

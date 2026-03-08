@@ -1,0 +1,162 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : thdCmp, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "knd",
+      "type_info": "int, 필수",
+      "required": true,
+      "description": "3단 비교 종류(1=인용조문, 2=위임조문)"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID (ID 또는 MST 중 하나 필수)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령명"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "공포번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "기본정보",
+      "type_info": "string",
+      "description": "인용/위임 삼단비교 기본정보"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
+    },
+    {
+      "name": "시행령ID",
+      "type_info": "int",
+      "description": "시행령ID(인용조문 모드)"
+    },
+    {
+      "name": "시행규칙ID",
+      "type_info": "int",
+      "description": "시행규칙ID(인용조문 모드)"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "시행령명",
+      "type_info": "string",
+      "description": "시행령명"
+    },
+    {
+      "name": "시행규칙명",
+      "type_info": "string",
+      "description": "시행규칙명"
+    },
+    {
+      "name": "삼단비교존재여부",
+      "type_info": "int",
+      "description": "삼단비교 존재 여부"
+    },
+    {
+      "name": "관련삼단비교목록",
+      "type_info": "string",
+      "description": "관련 삼단비교 목록"
+    },
+    {
+      "name": "법률조문",
+      "type_info": "string",
+      "description": "법률 조문"
+    },
+    {
+      "name": "조번호",
+      "type_info": "int",
+      "description": "조번호"
+    },
+    {
+      "name": "조가지번호",
+      "type_info": "int",
+      "description": "조가지번호"
+    },
+    {
+      "name": "조제목",
+      "type_info": "string",
+      "description": "조제목"
+    },
+    {
+      "name": "조내용",
+      "type_info": "string",
+      "description": "조내용"
+    },
+    {
+      "name": "시행령조문목록",
+      "type_info": "string",
+      "description": "하위 시행령 조문"
+    },
+    {
+      "name": "시행규칙조문목록",
+      "type_info": "string",
+      "description": "하위 시행규칙 조문"
+    },
+    {
+      "name": "위임행정규칙목록",
+      "type_info": "string",
+      "description": "위임행정규칙 목록"
+    }
+  ],
+  "notes": [
+    "knd=1은 인용조문 3단 비교, knd=2는 위임조문 3단 비교를 의미합니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=thdCmp&OC=test&type=XML&knd={구분코드}&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=thdCmp&OC=test&type=JSON&knd={구분코드}&ID={법령ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"시행령ID\">12345</field>\n    <field name=\"시행규칙ID\">12345</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"조제목\">자동차관리법</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"법령ID\": 12345,\n      \"시행령ID\": 12345,\n      \"시행규칙ID\": 12345,\n      \"법령명\": \"자동차관리법\",\n      \"조제목\": \"자동차관리법\"\n    }\n  ]\n}"
+    }
+  ]
+}

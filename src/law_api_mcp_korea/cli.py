@@ -8,6 +8,7 @@ from typing import Any
 
 from .catalog import (
     CatalogResolutionError,
+    get_api_doc_payload,
     get_doc_markdown,
     metadata,
     resolve_api,
@@ -16,6 +17,7 @@ from .catalog import (
 )
 from .client import LawOpenApiClient, LawOpenApiError
 from .env import save_dotenv_value
+from .generated_tools import GeneratedToolError
 
 
 def _json_dump(payload: Any) -> str:
@@ -43,6 +45,17 @@ def _print_catalog(items: list[dict[str, Any]]) -> None:
         )
 
 
+def _print_generated_catalog(items: list[dict[str, Any]]) -> None:
+    for item in items:
+        print(f"- {item['name']}")
+        print(f"  title: {item['title']}")
+        print(f"  kind: {item['kind']}")
+        if item.get("requires_mode"):
+            print(f"  modes: {', '.join(item.get('supported_modes', []))}")
+        if item.get("requires_agency"):
+            print(f"  agencies: {', '.join(item.get('supported_agencies', []))}")
+
+
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="law-openapi-cli", description="법제처 OPEN API CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -52,11 +65,31 @@ def _build_parser() -> argparse.ArgumentParser:
     p_catalog.add_argument("--family", default="", help="family 필터")
     p_catalog.add_argument("--limit", type=int, default=50, help="최대 개수")
     p_catalog.add_argument("--json", action="store_true", help="JSON 출력")
+    p_catalog.add_argument("--view", choices=["summary", "detail"], default="detail", help="JSON 출력 view")
+
+    p_tool_catalog = sub.add_parser("tool-catalog", help="생성된 tool 카탈로그 조회")
+    p_tool_catalog.add_argument("--search", default="", help="검색어")
+    p_tool_catalog.add_argument("--limit", type=int, default=100, help="최대 개수")
+    p_tool_catalog.add_argument("--json", action="store_true", help="JSON 출력")
+
+    p_tool_doc = sub.add_parser("tool-doc", help="생성된 tool 문서 조회")
+    p_tool_doc.add_argument("tool", help="generated tool 이름")
+    p_tool_doc.add_argument("--view", choices=["summary", "detail"], default="detail", help="출력 view")
+
+    p_tool = sub.add_parser("tool", help="생성된 tool 실행")
+    p_tool.add_argument("tool", help="generated tool 이름")
+    p_tool.add_argument("--mode", default=None, help="list/info")
+    p_tool.add_argument("--agency", default=None, help="기관 코드 또는 기관명")
+    p_tool.add_argument("--type", default="JSON", help="HTML/XML/JSON")
+    p_tool.add_argument("--oc", default=None, help="OC 값")
+    p_tool.add_argument("--param", action="append", default=[], help="key=value")
+    p_tool.add_argument("--save", default=None, help="응답 저장 파일 경로")
 
     p_doc = sub.add_parser("doc", help="API 문서 조회")
     p_doc.add_argument("api", help="slug / guide_html_name / 제목 / 파일명")
     p_doc.add_argument("--json", action="store_true", help="요약 JSON 출력")
     p_doc.add_argument("--summary", action="store_true", help="문서 본문 대신 요약 출력")
+    p_doc.add_argument("--view", choices=["summary", "detail", "markdown"], default=None, help="출력 view")
 
     p_auth = sub.add_parser("auth", help="LAW_API_OC 인증값 저장")
     p_auth.add_argument("--oc", required=True, help="OC 값")
@@ -74,6 +107,8 @@ def _build_parser() -> argparse.ArgumentParser:
     p_call.add_argument("--oc", default=None, help="OC 값")
     p_call.add_argument("--param", action="append", default=[], help="key=value")
     p_call.add_argument("--save", default=None, help="응답 저장 파일 경로")
+
+    sub.add_parser("live-sweep", help="191개 API live sweep 검증")
 
     p_search_law = sub.add_parser("search-law", help="현행법령(공포일) 목록 조회")
     p_search_law.add_argument("query")
@@ -122,11 +157,25 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "catalog":
         items = search_apis(keyword=args.search, family=args.family, limit=args.limit)
-        payload = {"meta": metadata(), "count": len(items), "items": [summarize_api(i) for i in items]}
+        payload = {"meta": metadata(), "count": len(items), "items": [summarize_api(i, view=args.view) for i in items]}
         if args.json:
             print(_json_dump(payload))
         else:
             _print_catalog(items)
+        return 0
+
+    if args.command == "tool-catalog":
+        client = LawOpenApiClient()
+        payload = client.list_generated_tools(keyword=args.search, limit=args.limit)
+        if args.json:
+            print(_json_dump(payload))
+        else:
+            _print_generated_catalog(payload["items"])
+        return 0
+
+    if args.command == "tool-doc":
+        client = LawOpenApiClient()
+        print(_json_dump(client.get_generated_tool_doc(args.tool, view=args.view)))
         return 0
 
     if args.command == "doc":
@@ -140,10 +189,11 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"- {candidate}", file=sys.stderr)
             return 2
 
-        if args.json or args.summary:
-            print(_json_dump(summarize_api(api)))
-        else:
+        view = args.view or ("detail" if (args.json or args.summary) else "markdown")
+        if view == "markdown" and not args.json:
             print(get_doc_markdown(args.api))
+        else:
+            print(_json_dump(get_api_doc_payload(args.api, view=view)))
         return 0
 
     if args.command == "auth":
@@ -175,6 +225,26 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "call":
             params = _parse_param_pairs(args.param)
             payload = client.call_api(args.api, params=params, response_type=args.type, oc=args.oc)
+            output = _json_dump(payload)
+            if args.save:
+                Path(args.save).write_text(output, encoding="utf-8")
+            print(output)
+            return 0
+
+        if args.command == "live-sweep":
+            print(_json_dump(client.run_live_sweep()))
+            return 0
+
+        if args.command == "tool":
+            params = _parse_param_pairs(args.param)
+            payload = client.call_generated_tool(
+                args.tool,
+                mode=args.mode,
+                agency=args.agency,
+                params=params,
+                response_type=args.type,
+                oc=args.oc,
+            )
             output = _json_dump(payload)
             if args.save:
                 Path(args.save).write_text(output, encoding="utf-8")
@@ -234,7 +304,7 @@ def main(argv: list[str] | None = None) -> int:
             print(_json_dump(payload))
             return 0
 
-    except (CatalogResolutionError, LawOpenApiError) as exc:
+    except (CatalogResolutionError, GeneratedToolError, LawOpenApiError) as exc:
         print(str(exc), file=sys.stderr)
         return 2
 

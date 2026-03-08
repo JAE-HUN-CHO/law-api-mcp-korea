@@ -1,0 +1,109 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lsJoHstInf, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "regDt",
+      "type_info": "int",
+      "required": false,
+      "description": "기준일자"
+    },
+    {
+      "name": "fromRegDt",
+      "type_info": "int",
+      "required": false,
+      "description": "시작일자"
+    },
+    {
+      "name": "toRegDt",
+      "type_info": "int",
+      "required": false,
+      "description": "종료일자"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID"
+    },
+    {
+      "name": "JO",
+      "type_info": "char",
+      "required": false,
+      "description": "조문번호"
+    },
+    {
+      "name": "org",
+      "type_info": "string",
+      "required": false,
+      "description": "소관부처 코드"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 결과 페이지"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "regDt/fromRegDt/toRegDt",
+      "type_info": "int",
+      "description": "조회 기준일"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "조문번호"
+    },
+    {
+      "name": "개정일자",
+      "type_info": "int",
+      "description": "개정일자"
+    },
+    {
+      "name": "개정유형",
+      "type_info": "string",
+      "description": "개정유형"
+    },
+    {
+      "name": "상세링크",
+      "type_info": "string",
+      "description": "상세 링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lsJoHstInf&OC=test&type=XML&regDt=20250501&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lsJoHstInf&OC=test&type=JSON&regDt=20250501&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"regDt/fromRegDt/toRegDt\">1</field>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"조문번호\">12345</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n    <field name=\"개정일자\">20250501</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"regDt/fromRegDt/toRegDt\": 1,\n      \"법령ID\": 12345,\n      \"조문번호\": \"12345\",\n      \"상세링크\": \"https://www.law.go.kr/...\",\n      \"개정일자\": 20250501\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

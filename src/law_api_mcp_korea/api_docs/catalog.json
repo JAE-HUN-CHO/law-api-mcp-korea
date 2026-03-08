@@ -924,10 +924,10 @@
       "filename": "법령_연혁_본문_조회.md",
       "stem": "법령_연혁_본문_조회",
       "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide",
-      "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsHst",
+      "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsHistory",
       "base_url": "http://www.law.go.kr/DRF/lawService.do",
       "default_params": {
-        "target": "lsHst"
+        "target": "lsHistory"
       },
       "description": "법령 연혁 본문을 조회하는 API",
       "request_params": [
@@ -939,7 +939,7 @@
         },
         {
           "name": "target",
-          "type_info": "string : lsHst(필수)",
+          "type_info": "string : lsHistory(필수)",
           "required": true,
           "description": "서비스 대상"
         },
@@ -977,7 +977,7 @@
           "name": "type",
           "type_info": "char, 필수",
           "required": true,
-          "description": "출력 형태 : HTML/XML/JSON"
+          "description": "출력 형태 : HTML"
         }
       ],
       "response_fields": [
@@ -1049,15 +1049,12 @@
       ],
       "notes": [],
       "sample_requests": [
-        "http://www.law.go.kr/DRF/lawService.do?target=lsHst&OC=test&ID={법령ID}&type=XML",
-        "http://www.law.go.kr/DRF/lawService.do?target=lsHst&OC=test&ID={법령ID}&type=JSON",
-        "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"법령일련번호\">12345</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"조문내용\">예시 본문</field>\n    <field name=\"상세링크/첨부\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
-        "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"법령ID\": 12345,\n      \"법령일련번호\": 12345,\n      \"법령명\": \"자동차관리법\",\n      \"조문내용\": \"예시 본문\",\n      \"상세링크/첨부\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+        "http://www.law.go.kr/DRF/lawService.do?target=lsHistory&OC=test&MST={법령일련번호}&type=HTML",
+        "<!DOCTYPE html>\n<html>\n  <head><title>법령 연혁</title></head>\n  <body>\n    <div class=\"history_wrap\">...</div>\n  </body>\n</html>"
       ],
       "sample_responses": [],
       "supported_types": [
-        "XML",
-        "JSON"
+        "HTML"
       ],
       "evidence": "direct"
     },

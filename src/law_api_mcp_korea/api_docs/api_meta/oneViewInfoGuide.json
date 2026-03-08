@@ -1,0 +1,70 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : oneview, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "한눈보기 일련번호 또는 법령 ID"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "oneview일련번호",
+      "type_info": "int",
+      "description": "한눈보기 일련번호"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "요약정보",
+      "type_info": "string",
+      "description": "한눈보기 요약"
+    },
+    {
+      "name": "표/도식",
+      "type_info": "string",
+      "description": "시각화 정보"
+    },
+    {
+      "name": "본문",
+      "type_info": "string",
+      "description": "한눈보기 본문"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=oneview&OC=test&type=XML&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=oneview&OC=test&type=JSON&ID={법령ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"oneview일련번호\">12345</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"요약정보\">예시값</field>\n    <field name=\"표/도식\">예시값</field>\n    <field name=\"본문\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"oneview일련번호\": 12345,\n      \"법령명\": \"자동차관리법\",\n      \"요약정보\": \"예시값\",\n      \"표/도식\": \"예시값\",\n      \"본문\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : acrSpecialDecc(필수)",
+      "required": true,
+      "description": "서비스 대상(기관별 special target)"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위(기본: 1 재결례명, 2 본문검색)"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "검색어"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색된 결과 개수(default=20, max=100)"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 결과 페이지(default=1)"
+    },
+    {
+      "name": "cls",
+      "type_info": "string",
+      "required": false,
+      "description": "재결례 유형"
+    },
+    {
+      "name": "gana",
+      "type_info": "string",
+      "required": false,
+      "description": "사전식 검색(ga,na,da…)"
+    },
+    {
+      "name": "date",
+      "type_info": "int",
+      "required": false,
+      "description": "의결일자"
+    },
+    {
+      "name": "dpaYd",
+      "type_info": "string",
+      "required": false,
+      "description": "처분일자 기간검색"
+    },
+    {
+      "name": "rslYd",
+      "type_info": "string",
+      "required": false,
+      "description": "의결일자 기간검색"
+    },
+    {
+      "name": "sort",
+      "type_info": "string",
+      "required": false,
+      "description": "정렬옵션(lasc/ldes/dasc/ddes/nasc/ndes)"
+    },
+    {
+      "name": "popYn",
+      "type_info": "string",
+      "required": false,
+      "description": "상세화면 팝업 여부"
+    },
+    {
+      "name": "fields",
+      "type_info": "string",
+      "required": false,
+      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "키워드"
+    },
+    {
+      "name": "section",
+      "type_info": "string",
+      "description": "검색범위(EvtNm:재결례명 / bdyText:본문)"
+    },
+    {
+      "name": "totalCnt",
+      "type_info": "int",
+      "description": "검색결과갯수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "description": "출력페이지"
+    },
+    {
+      "name": "id",
+      "type_info": "int",
+      "description": "검색결과번호"
+    },
+    {
+      "name": "특별행정심판재결례일련번호",
+      "type_info": "int",
+      "description": "특별행정심판재결례일련번호"
+    },
+    {
+      "name": "사건명",
+      "type_info": "string",
+      "description": "사건명"
+    },
+    {
+      "name": "청구번호",
+      "type_info": "string",
+      "description": "청구번호"
+    },
+    {
+      "name": "처분일자",
+      "type_info": "string",
+      "description": "처분일자"
+    },
+    {
+      "name": "의결일자",
+      "type_info": "string",
+      "description": "의결일자"
+    },
+    {
+      "name": "처분청",
+      "type_info": "string",
+      "description": "처분청"
+    },
+    {
+      "name": "재결청",
+      "type_info": "int",
+      "description": "재결청"
+    },
+    {
+      "name": "재결구분명",
+      "type_info": "string",
+      "description": "재결구분명"
+    },
+    {
+      "name": "재결구분코드",
+      "type_info": "string",
+      "description": "재결구분코드"
+    },
+    {
+      "name": "데이터기준일시",
+      "type_info": "string",
+      "description": "데이터기준일시"
+    },
+    {
+      "name": "행정심판재결례상세링크",
+      "type_info": "string",
+      "description": "상세링크"
+    }
+  ],
+  "notes": [
+    "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=acrSpecialDecc&OC=test&type=XML&search=1&query=자동차&display=20&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=acrSpecialDecc&OC=test&type=JSON&search=1&query=자동차&display=20&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">자동차</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"사건명\">예시 사건</field>\n    <field name=\"행정심판재결례상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"자동차\",\n      \"section\": \"예시값\",\n      \"totalCnt\": 20,\n      \"사건명\": \"예시 사건\",\n      \"행정심판재결례상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

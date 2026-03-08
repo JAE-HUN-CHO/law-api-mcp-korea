@@ -1,0 +1,45 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : drlaw, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "연계현황HTML",
+      "type_info": "string",
+      "description": "법령-자치법규 연계현황 화면"
+    },
+    {
+      "name": "연계건수",
+      "type_info": "int",
+      "description": "연계 건수"
+    },
+    {
+      "name": "관련링크",
+      "type_info": "string",
+      "description": "관련 링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=drlaw&OC=test&type=HTML",
+    "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>법령-자치법규 연계현황 조회</h1>\n    <div data-field=\"연계현황HTML\">예시값</div>\n    <div data-field=\"연계건수\">20</div>\n    <div data-field=\"관련링크\">https://www.law.go.kr/...</div>\n  </body>\n</html>"
+  ],
+  "sample_responses": []
+}

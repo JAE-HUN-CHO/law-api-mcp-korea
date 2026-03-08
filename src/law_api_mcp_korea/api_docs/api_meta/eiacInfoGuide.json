@@ -1,0 +1,112 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수) (고용보험심사위원회 : eiac)",
+      "required": true,
+      "description": "서비스 대상(위원회별 target 코드)"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "결정문 일련번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "결정문일련번호",
+      "type_info": "int",
+      "description": "결정문 일련번호"
+    },
+    {
+      "name": "기관명",
+      "type_info": "string",
+      "description": "기관명"
+    },
+    {
+      "name": "사건번호",
+      "type_info": "string",
+      "description": "사건번호"
+    },
+    {
+      "name": "자료구분",
+      "type_info": "string",
+      "description": "자료구분"
+    },
+    {
+      "name": "담당부서",
+      "type_info": "string",
+      "description": "담당부서"
+    },
+    {
+      "name": "등록일",
+      "type_info": "string",
+      "description": "등록일"
+    },
+    {
+      "name": "제목",
+      "type_info": "string",
+      "description": "제목"
+    },
+    {
+      "name": "내용",
+      "type_info": "string",
+      "description": "내용"
+    },
+    {
+      "name": "판정사항",
+      "type_info": "string",
+      "description": "판정사항"
+    },
+    {
+      "name": "판정요지",
+      "type_info": "string",
+      "description": "판정요지"
+    },
+    {
+      "name": "판정결과",
+      "type_info": "string",
+      "description": "판정결과"
+    },
+    {
+      "name": "각주번호",
+      "type_info": "int",
+      "description": "각주번호"
+    },
+    {
+      "name": "각주내용",
+      "type_info": "string",
+      "description": "각주내용"
+    }
+  ],
+  "notes": [
+    "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawService.do?target=eiac&OC=test&type=XML&ID={결정문일련번호}",
+    "https://www.law.go.kr/DRF/lawService.do?target=eiac&OC=test&type=JSON&ID={결정문일련번호}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"결정문일련번호\">12345</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"자료구분\">예시값</field>\n    <field name=\"제목\">예시 사건</field>\n    <field name=\"내용\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"결정문일련번호\": 12345,\n      \"기관명\": \"예시 기관\",\n      \"사건번호\": \"12345\",\n      \"자료구분\": \"예시값\",\n      \"제목\": \"예시 사건\",\n      \"내용\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ]
+}

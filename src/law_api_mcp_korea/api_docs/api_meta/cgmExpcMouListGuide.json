@@ -1,0 +1,186 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID(g4c@korea.kr이면 OC=g4c)"
+    },
+    {
+      "name": "target",
+      "type_info": "string : mouCgmExpc(필수)",
+      "required": true,
+      "description": "서비스 대상(부처별 target 코드)"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위(기본: 1 안건명, 2 본문검색)"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "검색어"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색된 결과 개수(default=20, max=100)"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 결과 페이지(default=1)"
+    },
+    {
+      "name": "inq",
+      "type_info": "int",
+      "required": false,
+      "description": "질의기관코드"
+    },
+    {
+      "name": "rpl",
+      "type_info": "int",
+      "required": false,
+      "description": "해석기관코드"
+    },
+    {
+      "name": "gana",
+      "type_info": "string",
+      "required": false,
+      "description": "사전식 검색(ga,na,da…)"
+    },
+    {
+      "name": "itmno",
+      "type_info": "int",
+      "required": false,
+      "description": "안건번호. 지정 시 query는 무시"
+    },
+    {
+      "name": "explYd",
+      "type_info": "string",
+      "required": false,
+      "description": "해석일자 검색(예: 20090101~20090130)"
+    },
+    {
+      "name": "sort",
+      "type_info": "string",
+      "required": false,
+      "description": "정렬옵션(lasc/ldes/dasc/ddes/nasc/ndes)"
+    },
+    {
+      "name": "popYn",
+      "type_info": "string",
+      "required": false,
+      "description": "상세화면 팝업 여부"
+    },
+    {
+      "name": "fields",
+      "type_info": "string",
+      "required": false,
+      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "키워드"
+    },
+    {
+      "name": "section",
+      "type_info": "string",
+      "description": "검색범위(lawNm:안건명, bdyText:본문)"
+    },
+    {
+      "name": "totalCnt",
+      "type_info": "int",
+      "description": "검색결과갯수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "description": "출력페이지"
+    },
+    {
+      "name": "id",
+      "type_info": "int",
+      "description": "검색결과번호"
+    },
+    {
+      "name": "법령해석일련번호",
+      "type_info": "int",
+      "description": "법령해석일련번호"
+    },
+    {
+      "name": "안건명",
+      "type_info": "string",
+      "description": "안건명"
+    },
+    {
+      "name": "안건번호",
+      "type_info": "string",
+      "description": "안건번호"
+    },
+    {
+      "name": "질의기관코드",
+      "type_info": "int",
+      "description": "질의기관코드"
+    },
+    {
+      "name": "질의기관명",
+      "type_info": "string",
+      "description": "질의기관명"
+    },
+    {
+      "name": "해석기관코드",
+      "type_info": "string",
+      "description": "해석기관코드"
+    },
+    {
+      "name": "해석기관명",
+      "type_info": "string",
+      "description": "해석기관명"
+    },
+    {
+      "name": "해석일자",
+      "type_info": "string",
+      "description": "해석일자"
+    },
+    {
+      "name": "데이터기준일시",
+      "type_info": "string",
+      "description": "데이터기준일시"
+    },
+    {
+      "name": "법령해석상세링크",
+      "type_info": "string",
+      "description": "법령해석 상세링크"
+    }
+  ],
+  "notes": [
+    "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=mouCgmExpc&OC=test&type=XML&search=1&query=퇴직&display=20&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=mouCgmExpc&OC=test&type=JSON&search=1&query=퇴직&display=20&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">퇴직</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"법령해석상세링크\">https://www.law.go.kr/...</field>\n    <field name=\"page\">1</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"퇴직\",\n      \"section\": \"예시값\",\n      \"totalCnt\": 20,\n      \"법령해석상세링크\": \"https://www.law.go.kr/...\",\n      \"page\": 1\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

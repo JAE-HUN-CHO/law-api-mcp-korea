@@ -1,0 +1,106 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : school(필수)",
+      "required": true,
+      "description": "school/public/pi 중 하나"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "문서 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "규정명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "일련번호",
+      "type_info": "int",
+      "description": "문서 일련번호"
+    },
+    {
+      "name": "규정명",
+      "type_info": "string",
+      "description": "규정명"
+    },
+    {
+      "name": "기관명",
+      "type_info": "string",
+      "description": "기관명"
+    },
+    {
+      "name": "공포/시행일자",
+      "type_info": "string",
+      "description": "주요 일자"
+    },
+    {
+      "name": "본문",
+      "type_info": "string",
+      "description": "본문"
+    },
+    {
+      "name": "부칙",
+      "type_info": "string",
+      "description": "부칙"
+    },
+    {
+      "name": "첨부파일",
+      "type_info": "string",
+      "description": "첨부파일"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=school&OC=test&type=XML&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=school&OC=test&type=JSON&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=public&OC=test&type=XML&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=public&OC=test&type=JSON&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=pi&OC=test&type=XML&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=pi&OC=test&type=JSON&ID={법령ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"일련번호\">12345</field>\n    <field name=\"규정명\">예시값</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"공포/시행일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"부칙\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"일련번호\": 12345,\n      \"규정명\": \"예시값\",\n      \"기관명\": \"예시 기관\",\n      \"공포/시행일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"부칙\": \"예시값\"\n    }\n  ]\n}"
+    },
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"일련번호\">12345</field>\n    <field name=\"규정명\">예시값</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"공포/시행일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"부칙\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"일련번호\": 12345,\n      \"규정명\": \"예시값\",\n      \"기관명\": \"예시 기관\",\n      \"공포/시행일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"부칙\": \"예시값\"\n    }\n  ]\n}"
+    },
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"일련번호\">12345</field>\n    <field name=\"규정명\">예시값</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"공포/시행일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"부칙\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"일련번호\": 12345,\n      \"규정명\": \"예시값\",\n      \"기관명\": \"예시 기관\",\n      \"공포/시행일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"부칙\": \"예시값\"\n    }\n  ]\n}"
+    }
+  ]
+}

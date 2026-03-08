@@ -4,7 +4,7 @@
 현행법령(공포일) 목록 조회,law,현행법령_공포일_목록_조회.md,/mnt/data/law_open_guides_md/현행법령_공포일_목록_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwListGuide,http://www.law.go.kr/DRF/lawSearch.do?target=law,direct,
 현행법령(공포일) 본문 조회,law,현행법령_공포일_본문_조회.md,/mnt/data/law_open_guides_md/현행법령_공포일_본문_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwInfoGuide,http://www.law.go.kr/DRF/lawService.do?target=law,direct,
 법령 연혁 목록 조회,law,법령_연혁_목록_조회.md,/mnt/data/law_open_guides_md/법령_연혁_목록_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstListGuide,http://www.law.go.kr/DRF/lawSearch.do?target=lsHst,direct,
-법령 연혁 본문 조회,law,법령_연혁_본문_조회.md,/mnt/data/law_open_guides_md/법령_연혁_본문_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide,http://www.law.go.kr/DRF/lawService.do?target=lsHst,direct,
+법령 연혁 본문 조회,law,법령_연혁_본문_조회.md,/mnt/data/law_open_guides_md/법령_연혁_본문_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide,http://www.law.go.kr/DRF/lawService.do?target=lsHistory,direct,
 현행법령(시행일) 본문 조항호목 조회,law,현행법령_시행일_본문_조항호목_조회.md,/mnt/data/law_open_guides_md/현행법령_시행일_본문_조항호목_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdJoListGuide,http://www.law.go.kr/DRF/lawService.do?target=eflawjosub,direct,
 현행법령(공포일) 본문 조항호목 조회,law,현행법령_공포일_본문_조항호목_조회.md,/mnt/data/law_open_guides_md/현행법령_공포일_본문_조항호목_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwJoListGuide,http://www.law.go.kr/DRF/lawService.do?target=lawjosub,direct,
 영문 법령 목록 조회,law,영문_법령_목록_조회.md,/mnt/data/law_open_guides_md/영문_법령_목록_조회.md,https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEngListGuide,http://www.law.go.kr/DRF/lawSearch.do?target=elaw,direct,

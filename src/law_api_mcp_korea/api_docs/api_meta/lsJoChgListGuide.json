@@ -1,0 +1,74 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lsJoHstInf, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "법령 ID"
+    },
+    {
+      "name": "JO",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "조문번호(6자리)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "조문번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "조문제목"
+    },
+    {
+      "name": "변경이력목록",
+      "type_info": "string",
+      "description": "조문별 변경 이력"
+    },
+    {
+      "name": "개정일자",
+      "type_info": "int",
+      "description": "개정일자"
+    },
+    {
+      "name": "조문상세링크",
+      "type_info": "string",
+      "description": "조문상세링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=lsJoHstInf&OC=test&type=XML&ID={법령ID}&JO=000300",
+    "http://www.law.go.kr/DRF/lawService.do?target=lsJoHstInf&OC=test&type=JSON&ID={법령ID}&JO=000300",
+    "<response>\n  <item>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"조문번호\">12345</field>\n    <field name=\"조문제목\">자동차관리법</field>\n    <field name=\"변경이력목록\">예시값</field>\n    <field name=\"조문상세링크\">https://www.law.go.kr/...</field>\n    <field name=\"개정일자\">20250501</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"법령ID\": 12345,\n      \"조문번호\": \"12345\",\n      \"조문제목\": \"자동차관리법\",\n      \"변경이력목록\": \"예시값\",\n      \"조문상세링크\": \"https://www.law.go.kr/...\",\n      \"개정일자\": 20250501\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}
