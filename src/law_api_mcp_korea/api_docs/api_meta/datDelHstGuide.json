@@ -1,0 +1,89 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : datDel / 요청 URL 표기상 delHst",
+      "required": false,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 개수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "결과 페이지"
+    },
+    {
+      "name": "knd",
+      "type_info": "string",
+      "required": false,
+      "description": "삭제 데이터 구분"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색 대상"
+    },
+    {
+      "name": "삭제구분",
+      "type_info": "string",
+      "description": "삭제 데이터 구분"
+    },
+    {
+      "name": "일련번호/ID",
+      "type_info": "string",
+      "description": "삭제 대상 식별자"
+    },
+    {
+      "name": "제목/명칭",
+      "type_info": "string",
+      "description": "삭제 대상 제목"
+    },
+    {
+      "name": "삭제일자",
+      "type_info": "int",
+      "description": "삭제일자"
+    },
+    {
+      "name": "데이터기준일시",
+      "type_info": "string",
+      "description": "데이터기준일시"
+    }
+  ],
+  "notes": [
+    "가이드 본문에서 요청 URL 표기와 target 설명(delHst / datDel)이 혼재되어 있습니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=delHst&OC=test&type=XML&display=20&page=1&knd={구분코드}",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=delHst&OC=test&type=JSON&display=20&page=1&knd={구분코드}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"삭제구분\">예시값</field>\n    <field name=\"일련번호/ID\">12345</field>\n    <field name=\"제목/명칭\">자동차관리법</field>\n    <field name=\"삭제일자\">20250501</field>\n    <field name=\"데이터기준일시\">2025-05-01 09:00:00</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"삭제구분\": \"예시값\",\n      \"일련번호/ID\": \"12345\",\n      \"제목/명칭\": \"자동차관리법\",\n      \"삭제일자\": 20250501,\n      \"데이터기준일시\": \"2025-05-01 09:00:00\"\n    }\n  ]\n}"
+    }
+  ]
+}

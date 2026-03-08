@@ -1,0 +1,134 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : msitCgmExpc(필수)",
+      "required": true,
+      "description": "서비스 대상(부처별 target 코드)"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "int, 필수",
+      "required": true,
+      "description": "법령해석일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령해석명"
+    },
+    {
+      "name": "fields",
+      "type_info": "string",
+      "required": false,
+      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "법령해석일련번호",
+      "type_info": "int",
+      "description": "법령해석일련번호"
+    },
+    {
+      "name": "안건명",
+      "type_info": "string",
+      "description": "안건명"
+    },
+    {
+      "name": "안건번호",
+      "type_info": "string",
+      "description": "안건번호"
+    },
+    {
+      "name": "해석일자",
+      "type_info": "int",
+      "description": "해석일자"
+    },
+    {
+      "name": "해석기관코드",
+      "type_info": "int",
+      "description": "해석기관코드"
+    },
+    {
+      "name": "해석기관명",
+      "type_info": "string",
+      "description": "해석기관명"
+    },
+    {
+      "name": "질의기관코드",
+      "type_info": "int",
+      "description": "질의기관코드"
+    },
+    {
+      "name": "질의기관명",
+      "type_info": "string",
+      "description": "질의기관명"
+    },
+    {
+      "name": "관리기관코드",
+      "type_info": "int",
+      "description": "관리기관코드"
+    },
+    {
+      "name": "등록일시",
+      "type_info": "int",
+      "description": "등록일시"
+    },
+    {
+      "name": "질의요지",
+      "type_info": "string",
+      "description": "질의요지"
+    },
+    {
+      "name": "회답",
+      "type_info": "string",
+      "description": "회답"
+    },
+    {
+      "name": "이유",
+      "type_info": "string",
+      "description": "이유"
+    },
+    {
+      "name": "관련법령",
+      "type_info": "string",
+      "description": "관련법령"
+    },
+    {
+      "name": "데이터기준일시",
+      "type_info": "string",
+      "description": "데이터기준일시"
+    }
+  ],
+  "notes": [
+    "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=msitCgmExpc&OC=test&type=XML&ID={법령해석일련번호}",
+    "http://www.law.go.kr/DRF/lawService.do?target=msitCgmExpc&OC=test&type=JSON&ID={법령해석일련번호}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"법령해석일련번호\">12345</field>\n    <field name=\"안건명\">예시 사건</field>\n    <field name=\"안건번호\">12345</field>\n    <field name=\"해석일자\">20250501</field>\n    <field name=\"이유\">예시 본문</field>\n    <field name=\"해석기관코드\">1001</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"법령해석일련번호\": 12345,\n      \"안건명\": \"예시 사건\",\n      \"안건번호\": \"12345\",\n      \"해석일자\": 20250501,\n      \"이유\": \"예시 본문\",\n      \"해석기관코드\": 1001\n    }\n  ]\n}"
+    }
+  ]
+}

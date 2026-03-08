@@ -1,0 +1,82 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : admrulOldAndNew, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "행정규칙 일련번호"
+    },
+    {
+      "name": "LID",
+      "type_info": "char",
+      "required": false,
+      "description": "행정규칙 ID"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "정확한 행정규칙명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "행정규칙일련번호",
+      "type_info": "int",
+      "description": "행정규칙일련번호"
+    },
+    {
+      "name": "행정규칙명",
+      "type_info": "string",
+      "description": "행정규칙명"
+    },
+    {
+      "name": "현행내용",
+      "type_info": "string",
+      "description": "현행 내용"
+    },
+    {
+      "name": "종전내용",
+      "type_info": "string",
+      "description": "종전 내용"
+    },
+    {
+      "name": "비교영역",
+      "type_info": "string",
+      "description": "신구 비교 영역"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=admrulOldAndNew&OC=test&type=XML&ID={행정규칙ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=admrulOldAndNew&OC=test&type=JSON&ID={행정규칙ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"행정규칙일련번호\">12345</field>\n    <field name=\"행정규칙명\">학교보건법 시행규칙</field>\n    <field name=\"현행내용\">예시 본문</field>\n    <field name=\"종전내용\">예시 본문</field>\n    <field name=\"비교영역\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"행정규칙일련번호\": 12345,\n      \"행정규칙명\": \"학교보건법 시행규칙\",\n      \"현행내용\": \"예시 본문\",\n      \"종전내용\": \"예시 본문\",\n      \"비교영역\": \"예시값\"\n    }\n  ]\n}"
+    }
+  ]
+}

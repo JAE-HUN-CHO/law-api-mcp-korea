@@ -1,0 +1,86 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : trty, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "조약일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "조약명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "조약일련번호",
+      "type_info": "int",
+      "description": "조약일련번호"
+    },
+    {
+      "name": "조약명",
+      "type_info": "string",
+      "description": "조약명"
+    },
+    {
+      "name": "체결일자",
+      "type_info": "string",
+      "description": "체결일자"
+    },
+    {
+      "name": "발효일자",
+      "type_info": "string",
+      "description": "발효일자"
+    },
+    {
+      "name": "당사국",
+      "type_info": "string",
+      "description": "당사국"
+    },
+    {
+      "name": "조약본문",
+      "type_info": "string",
+      "description": "국문/영문 본문"
+    },
+    {
+      "name": "관련문서",
+      "type_info": "string",
+      "description": "관련문서 및 링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=trty&OC=test&type=XML&ID={조약ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=trty&OC=test&type=JSON&ID={조약ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"조약일련번호\">12345</field>\n    <field name=\"조약명\">예시 협정</field>\n    <field name=\"체결일자\">20250501</field>\n    <field name=\"발효일자\">20250501</field>\n    <field name=\"조약본문\">예시 본문</field>\n    <field name=\"관련문서\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"조약일련번호\": 12345,\n      \"조약명\": \"예시 협정\",\n      \"체결일자\": \"20250501\",\n      \"발효일자\": \"20250501\",\n      \"조약본문\": \"예시 본문\",\n      \"관련문서\": \"예시값\"\n    }\n  ]\n}"
+    }
+  ]
+}

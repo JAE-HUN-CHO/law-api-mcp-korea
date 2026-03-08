@@ -65,6 +65,26 @@ echo LAW_API_OC=your_oc_value > .env
 - PyPI 업로드는 하지 않습니다.
 - 외부 MCP 사용자는 wheel 설치 후 `law-openapi-mcp --transport stdio`로 서버를 실행합니다.
 
+## 응답 크기와 lazy loading
+
+- packaged metadata는 `catalog_index.json` + `api_meta/<guide_html_name>.json` + 개별 markdown으로 분리됩니다.
+- `MCP`는 문서/카탈로그 계열에서 summary를 기본값으로 사용합니다.
+- `CLI`는 기존 기본 UX를 유지합니다.
+  - `doc` 기본: markdown
+  - `catalog --json` 기본: detail
+- 실제 API 호출 결과(`call_api`, `search_current_law`, `get_current_law`, generated tool 실행)는 MCP/CLI 모두 full payload 기본값을 유지합니다.
+
+## API 제약/예외
+
+- `법령 연혁 본문 조회`
+  - 현재 패키지에서는 `target=lsHistory` + `HTML` 전용으로 취급합니다.
+  - `JSON/XML`은 안정적인 구조 응답으로 간주하지 않습니다.
+- `감사원 사전컨설팅 의견서`(`baiPvcs`)
+  - 목록/본문 조회는 현재 패키지 표면에서 `유효한 API key가 아닙니다` 스타일 오류로 표준화됩니다.
+  - live sweep 기준으로도 이 두 건은 `invalid_api_key`로 집계합니다.
+- 현재 live sweep 기대값:
+  - `191 = 108 direct_ok + 81 recovered_ok + 2 invalid_api_key + 0 unresolved`
+
 ## 문서 동기화
 
 원본 문서를 수정했으면 packaged 문서를 다시 생성해야 합니다.
@@ -199,3 +219,11 @@ MCP tools:
 - `get_current_law`
 - `search_moleg_interpretations`
 - `get_moleg_interpretation`
+
+MCP 문서/리소스 기본 view:
+
+- `list_apis`: `summary` 기본
+- `get_api_doc`: `summary` 기본, markdown은 opt-in
+- `lawdoc://catalog`: summary 기본
+- `lawdoc://api/{api_name}`: summary 기본
+- raw/detail가 필요하면 별도 resource/view를 사용합니다.

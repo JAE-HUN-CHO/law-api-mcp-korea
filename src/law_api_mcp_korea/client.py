@@ -9,8 +9,16 @@ from typing import Any
 
 import requests
 
-from .catalog import resolve_api, summarize_api
+from .catalog import CatalogResolutionError, resolve_api, summarize_api
 from .env import load_dotenv
+from .generated_tools import (
+    GeneratedToolError,
+    generated_tool_metadata,
+    get_generated_tool_doc,
+    search_generated_tools,
+    summarize_generated_tool,
+    validate_generated_tool_call,
+)
 
 
 class LawOpenApiError(RuntimeError):
@@ -31,6 +39,10 @@ class RequestPreparationError(LawOpenApiError):
 
 class HttpRequestError(LawOpenApiError):
     """Raised when the API request fails."""
+
+
+class InvalidApiKeyError(LawOpenApiError):
+    """Raised when the upstream API behaves like the OC is not valid."""
 
 
 @dataclass(frozen=True)
@@ -85,6 +97,18 @@ def _xml_to_data(element: ET.Element) -> Any:
 
     payload.update(grouped)
     return payload
+
+
+def _is_invalid_api_key_api(api: dict[str, Any]) -> bool:
+    target = str(dict(api.get("default_params", {})).get("target", "")).strip()
+    return target == "baiPvcs"
+
+
+def _invalid_api_key_message(api: dict[str, Any]) -> str:
+    return (
+        "유효한 API key가 아닙니다. "
+        f"{api['title']} API는 현재 등록된 키로 정상 검증되지 않습니다."
+    )
 
 
 class LawOpenApiClient:
@@ -188,9 +212,13 @@ class LawOpenApiClient:
         try:
             response = self.session.get(prepared.base_url, params=prepared.query_params, timeout=self.timeout)
         except requests.RequestException as exc:
+            if _is_invalid_api_key_api(prepared.api):
+                raise InvalidApiKeyError(_invalid_api_key_message(prepared.api)) from exc
             raise HttpRequestError(f"HTTP 요청 실패: {exc}") from exc
 
         if response.status_code >= 400:
+            if _is_invalid_api_key_api(prepared.api):
+                raise InvalidApiKeyError(_invalid_api_key_message(prepared.api))
             snippet = response.text[:1000]
             raise HttpRequestError(
                 f"HTTP {response.status_code} 오류가 발생했습니다.\n"
@@ -229,6 +257,60 @@ class LawOpenApiClient:
         if parse_error:
             result["parse_error"] = parse_error
         return result
+
+    def list_generated_tools(self, keyword: str = "", limit: int = 100) -> dict[str, Any]:
+        items = [summarize_generated_tool(tool) for tool in search_generated_tools(keyword, limit)]
+        meta = generated_tool_metadata()
+        return {
+            "items": items,
+            "meta": {
+                "raw_count": meta["raw_api_count"],
+                "logical_count": meta["logical_count"],
+                "generated_count": meta["generated_count"],
+            },
+        }
+
+    def get_generated_tool_doc(self, tool_name: str, view: str = "detail") -> dict[str, Any]:
+        return get_generated_tool_doc(tool_name, view=view)
+
+    def run_live_sweep(self) -> dict[str, Any]:
+        from .live_sweep import run_live_sweep
+
+        return run_live_sweep(self)
+
+    def call_generated_tool(
+        self,
+        tool_name: str,
+        mode: str | None = None,
+        agency: str | None = None,
+        params: dict[str, Any] | None = None,
+        response_type: str = "JSON",
+        oc: str | None = None,
+    ) -> dict[str, Any]:
+        try:
+            selection = validate_generated_tool_call(
+                tool_name=tool_name,
+                mode=mode,
+                agency=agency,
+                params=params,
+            )
+            payload = self.call_api(
+                selection["api"]["title"],
+                params=selection["params"],
+                response_type=response_type,
+                oc=oc,
+            )
+        except GeneratedToolError:
+            raise
+        except (CatalogResolutionError, LawOpenApiError) as exc:
+            raise GeneratedToolError(str(exc)) from exc
+
+        payload["tool"] = summarize_generated_tool(selection["tool"])
+        if selection.get("mode") is not None:
+            payload["mode"] = selection["mode"]
+        if selection.get("agency") is not None:
+            payload["agency"] = selection["agency"]
+        return payload
 
     def search_current_law(
         self,

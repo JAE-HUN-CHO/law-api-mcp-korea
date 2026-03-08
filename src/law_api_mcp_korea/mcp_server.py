@@ -6,15 +6,21 @@ import sys
 from typing import Any
 
 from .catalog import (
+    catalog_json,
     get_doc_markdown,
+    get_api_doc_payload,
+    manifest_summary,
     manifest_json,
     metadata,
     resolve_api,
     search_apis,
     summarize_api,
+    verification_json,
     verification_report,
+    verification_summary,
 )
 from .client import LawOpenApiClient
+from .generated_tools import all_generated_tools
 
 
 def create_server(stateless_http: bool = False):
@@ -36,44 +42,76 @@ def create_server(stateless_http: bool = False):
         return json.dumps(
             {
                 "meta": metadata(),
-                "items": [summarize_api(api) for api in search_apis(limit=500)],
+                "items": [summarize_api(api, view="summary") for api in search_apis(limit=500)],
             },
             ensure_ascii=False,
             indent=2,
         )
 
+    @mcp.resource("lawdoc://catalog/raw")
+    def catalog_raw_resource() -> str:
+        return catalog_json()
+
     @mcp.resource("lawdoc://manifest")
     def manifest_resource() -> str:
+        return json.dumps(manifest_summary(), ensure_ascii=False, indent=2)
+
+    @mcp.resource("lawdoc://manifest/raw")
+    def manifest_raw_resource() -> str:
         return manifest_json()
 
     @mcp.resource("lawdoc://verification")
     def verification_resource() -> str:
+        return json.dumps(verification_summary(), ensure_ascii=False, indent=2)
+
+    @mcp.resource("lawdoc://verification/raw")
+    def verification_raw_resource() -> str:
         return verification_report()
 
     @mcp.resource("lawdoc://api/{api_name}")
     def api_doc_resource(api_name: str) -> str:
+        return json.dumps(get_api_doc_payload(api_name, view="summary"), ensure_ascii=False, indent=2)
+
+    @mcp.resource("lawdoc://api/{api_name}/detail")
+    def api_doc_detail_resource(api_name: str) -> str:
+        return json.dumps(get_api_doc_payload(api_name, view="detail"), ensure_ascii=False, indent=2)
+
+    @mcp.resource("lawdoc://api/{api_name}/markdown")
+    def api_doc_markdown_resource(api_name: str) -> str:
         return get_doc_markdown(api_name)
 
     @mcp.tool()
-    def list_apis(keyword: str = "", family: str = "", limit: int = 50) -> dict[str, Any]:
+    def list_apis(
+        keyword: str = "",
+        family: str = "",
+        limit: int = 50,
+        offset: int = 0,
+        view: str = "summary",
+    ) -> dict[str, Any]:
         """법제처 OPEN API 문서 카탈로그를 검색합니다."""
-        items = search_apis(keyword=keyword, family=family, limit=limit)
+        items = search_apis(keyword=keyword, family=family, limit=limit, offset=offset)
         return {
             "meta": metadata(),
             "count": len(items),
-            "items": [summarize_api(item) for item in items],
+            "items": [summarize_api(item, view=view) for item in items],
         }
 
     @mcp.tool()
-    def get_api_doc(api_name: str, include_markdown: bool = True) -> dict[str, Any]:
+    def get_api_doc(api_name: str, view: str = "summary", include_markdown: bool = False) -> dict[str, Any]:
         """특정 API 문서와 파라미터 명세를 반환합니다."""
-        api = resolve_api(api_name)
-        payload: dict[str, Any] = {
-            "api": summarize_api(api),
-        }
-        if include_markdown:
-            payload["markdown"] = get_doc_markdown(api_name)
-        return payload
+        return get_api_doc_payload(api_name, view=view, include_markdown=include_markdown)
+
+    @mcp.tool()
+    def list_generated_tools(keyword: str = "", limit: int = 100) -> dict[str, Any]:
+        """생성된 logical/collapsed tool 목록을 반환합니다."""
+        client = _client_for_request()
+        return client.list_generated_tools(keyword=keyword, limit=limit)
+
+    @mcp.tool()
+    def get_generated_tool_doc(tool_name: str, view: str = "summary") -> dict[str, Any]:
+        """생성된 logical/collapsed tool 문서를 반환합니다."""
+        client = _client_for_request()
+        return client.get_generated_tool_doc(tool_name, view=view)
 
     @mcp.tool()
     def authenticate(oc: str) -> dict[str, Any]:
@@ -194,6 +232,66 @@ def create_server(stateless_http: bool = False):
         """법제처 법령해석 본문을 조회합니다."""
         client = _client_for_request(oc)
         return client.get_moleg_interpretation(id=id, response_type=response_type, oc=oc)
+
+    def _register_generated_tool(spec: dict[str, Any]) -> None:
+        description = spec.get("description") or spec["title"]
+
+        if spec.get("requires_agency"):
+
+            def _generated_tool(
+                agency: str | None = None,
+                mode: str | None = None,
+                params: dict[str, Any] | None = None,
+                response_type: str = "JSON",
+                oc: str | None = None,
+            ) -> dict[str, Any]:
+                client = _client_for_request(oc)
+                return client.call_generated_tool(
+                    spec["name"],
+                    mode=mode,
+                    agency=agency,
+                    params=params,
+                    response_type=response_type,
+                    oc=oc,
+                )
+
+        elif spec.get("requires_mode"):
+
+            def _generated_tool(
+                mode: str | None = None,
+                params: dict[str, Any] | None = None,
+                response_type: str = "JSON",
+                oc: str | None = None,
+            ) -> dict[str, Any]:
+                client = _client_for_request(oc)
+                return client.call_generated_tool(
+                    spec["name"],
+                    mode=mode,
+                    params=params,
+                    response_type=response_type,
+                    oc=oc,
+                )
+
+        else:
+
+            def _generated_tool(
+                params: dict[str, Any] | None = None,
+                response_type: str = "JSON",
+                oc: str | None = None,
+            ) -> dict[str, Any]:
+                client = _client_for_request(oc)
+                return client.call_generated_tool(
+                    spec["name"],
+                    params=params,
+                    response_type=response_type,
+                    oc=oc,
+                )
+
+        _generated_tool.__name__ = spec["name"]
+        mcp.add_tool(_generated_tool, name=spec["name"], description=description)
+
+    for generated_tool in all_generated_tools():
+        _register_generated_tool(generated_tool)
 
     return mcp
 

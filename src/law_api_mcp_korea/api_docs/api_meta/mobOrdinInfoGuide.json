@@ -1,0 +1,118 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : ordin, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML 또는 HTML/XML/JSON"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y, 필수",
+      "required": true,
+      "description": "모바일 여부"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "자치법규 일련번호"
+    },
+    {
+      "name": "LID",
+      "type_info": "char",
+      "required": false,
+      "description": "자치법규 ID"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "자치법규명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "자치법규일련번호",
+      "type_info": "int",
+      "description": "자치법규일련번호"
+    },
+    {
+      "name": "자치법규명",
+      "type_info": "string",
+      "description": "자치법규명"
+    },
+    {
+      "name": "자치단체명",
+      "type_info": "string",
+      "description": "자치단체명"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "int",
+      "description": "공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "string",
+      "description": "공포번호"
+    },
+    {
+      "name": "제개정구분명",
+      "type_info": "string",
+      "description": "제개정구분명"
+    },
+    {
+      "name": "자치법규ID",
+      "type_info": "int",
+      "description": "자치법규 ID"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "조문내용"
+    },
+    {
+      "name": "부칙",
+      "type_info": "string",
+      "description": "부칙"
+    },
+    {
+      "name": "별표",
+      "type_info": "string",
+      "description": "별표"
+    },
+    {
+      "name": "첨부파일",
+      "type_info": "string",
+      "description": "첨부파일"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=ordin&mobileYn=Y&OC=test&type=XML&ID={자치법규ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=ordin&mobileYn=Y&OC=test&type=JSON&ID={자치법규ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"자치법규일련번호\">12345</field>\n    <field name=\"자치법규명\">서울특별시 주차장 조례</field>\n    <field name=\"자치단체명\">예시값</field>\n    <field name=\"공포일자\">20250501</field>\n    <field name=\"조문내용\">예시 본문</field>\n    <field name=\"공포번호\">12345</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"자치법규일련번호\": 12345,\n      \"자치법규명\": \"서울특별시 주차장 조례\",\n      \"자치단체명\": \"예시값\",\n      \"공포일자\": 20250501,\n      \"조문내용\": \"예시 본문\",\n      \"공포번호\": \"12345\"\n    }\n  ]\n}"
+    }
+  ]
+}

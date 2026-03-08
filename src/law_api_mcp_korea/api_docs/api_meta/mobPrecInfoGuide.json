@@ -1,0 +1,106 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : prec, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML 또는 HTML/XML/JSON"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y, 필수",
+      "required": true,
+      "description": "모바일 여부"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "판례 일련번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "판례일련번호",
+      "type_info": "int",
+      "description": "판례일련번호"
+    },
+    {
+      "name": "사건명",
+      "type_info": "string",
+      "description": "사건명"
+    },
+    {
+      "name": "사건번호",
+      "type_info": "string",
+      "description": "사건번호"
+    },
+    {
+      "name": "선고일자",
+      "type_info": "string",
+      "description": "선고일자"
+    },
+    {
+      "name": "법원명",
+      "type_info": "string",
+      "description": "법원명"
+    },
+    {
+      "name": "판시사항",
+      "type_info": "string",
+      "description": "판시사항"
+    },
+    {
+      "name": "판결요지",
+      "type_info": "string",
+      "description": "판결요지"
+    },
+    {
+      "name": "주문",
+      "type_info": "string",
+      "description": "주문"
+    },
+    {
+      "name": "이유",
+      "type_info": "string",
+      "description": "이유"
+    },
+    {
+      "name": "참조조문",
+      "type_info": "string",
+      "description": "참조조문"
+    },
+    {
+      "name": "본문",
+      "type_info": "string",
+      "description": "본문"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=prec&mobileYn=Y&OC=test&type=XML&ID={판례일련번호}",
+    "http://www.law.go.kr/DRF/lawService.do?target=prec&mobileYn=Y&OC=test&type=JSON&ID={판례일련번호}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"판례일련번호\">12345</field>\n    <field name=\"사건명\">예시 사건</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"선고일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"이유\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"판례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"선고일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"이유\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ]
+}

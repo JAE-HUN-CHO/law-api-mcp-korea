@@ -1,0 +1,103 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lsStmd, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위(기본: 법령명)"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "검색어"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 개수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "결과 페이지"
+    },
+    {
+      "name": "org",
+      "type_info": "string",
+      "required": false,
+      "description": "소관부처 코드"
+    },
+    {
+      "name": "gana",
+      "type_info": "string",
+      "required": false,
+      "description": "사전식 검색"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색어"
+    },
+    {
+      "name": "totalCnt",
+      "type_info": "int",
+      "description": "검색건수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "description": "결과페이지"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
+    },
+    {
+      "name": "체계도상세링크",
+      "type_info": "string",
+      "description": "체계도 상세링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lsStmd&OC=test&type=XML&search=1&query=자동차관리법&display=20&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=lsStmd&OC=test&type=JSON&search=1&query=자동차관리법&display=20&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">자동차관리법</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"page\">1</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"체계도상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"자동차관리법\",\n      \"totalCnt\": 20,\n      \"page\": 1,\n      \"법령명\": \"자동차관리법\",\n      \"체계도상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

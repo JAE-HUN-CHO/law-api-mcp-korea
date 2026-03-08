@@ -1,0 +1,141 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : admbyl, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON 또는 HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y, 필수",
+      "required": true,
+      "description": "모바일 여부"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "검색어"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 개수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "결과 페이지"
+    },
+    {
+      "name": "sort",
+      "type_info": "string",
+      "required": false,
+      "description": "정렬옵션"
+    },
+    {
+      "name": "org",
+      "type_info": "string",
+      "required": false,
+      "description": "소관부처 코드"
+    },
+    {
+      "name": "knd",
+      "type_info": "string",
+      "required": false,
+      "description": "별표종류"
+    },
+    {
+      "name": "gana",
+      "type_info": "string",
+      "required": false,
+      "description": "사전식 검색"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색어"
+    },
+    {
+      "name": "section",
+      "type_info": "string",
+      "description": "검색범위"
+    },
+    {
+      "name": "totalCnt",
+      "type_info": "int",
+      "description": "검색건수"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "description": "현재 페이지"
+    },
+    {
+      "name": "id",
+      "type_info": "int",
+      "description": "결과 번호"
+    },
+    {
+      "name": "별표서식일련번호",
+      "type_info": "int",
+      "description": "별표/서식 일련번호"
+    },
+    {
+      "name": "별표서식명",
+      "type_info": "string",
+      "description": "별표/서식명"
+    },
+    {
+      "name": "소속법령명",
+      "type_info": "string",
+      "description": "소속 법령/행정규칙/자치법규명"
+    },
+    {
+      "name": "별표종류",
+      "type_info": "string",
+      "description": "별표종류"
+    },
+    {
+      "name": "상세링크",
+      "type_info": "string",
+      "description": "상세링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?target=admbyl&mobileYn=Y&OC=test&type=XML&search=1&query=학교&display=20&page=1",
+    "http://www.law.go.kr/DRF/lawSearch.do?target=admbyl&mobileYn=Y&OC=test&type=JSON&search=1&query=학교&display=20&page=1",
+    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">학교</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"소속법령명\">자동차관리법</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"학교\",\n      \"section\": \"예시값\",\n      \"totalCnt\": 20,\n      \"소속법령명\": \"자동차관리법\",\n      \"상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

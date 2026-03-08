@@ -1,0 +1,69 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lsStmd, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "기본정보",
+      "type_info": "string",
+      "description": "법령 기본정보"
+    },
+    {
+      "name": "체계도",
+      "type_info": "string",
+      "description": "상위·하위 체계 구조"
+    },
+    {
+      "name": "상위법령목록",
+      "type_info": "string",
+      "description": "상위 법령 목록"
+    },
+    {
+      "name": "하위법령목록",
+      "type_info": "string",
+      "description": "하위 법령 목록"
+    },
+    {
+      "name": "상세링크",
+      "type_info": "string",
+      "description": "체계도 상세링크"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=lsStmd&OC=test&type=XML&ID={법령ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=lsStmd&OC=test&type=JSON&ID={법령ID}",
+    "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"체계도\">예시값</field>\n    <field name=\"상위법령목록\">예시값</field>\n    <field name=\"하위법령목록\">예시값</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"체계도\": \"예시값\",\n      \"상위법령목록\": \"예시값\",\n      \"하위법령목록\": \"예시값\",\n      \"상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

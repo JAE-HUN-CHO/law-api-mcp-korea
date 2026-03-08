@@ -1,0 +1,169 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : eflaw(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID (ID 또는 MST 중 하나 필수인 경우가 많음)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호(lsi_seq)"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령명"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "공포번호"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "JO",
+      "type_info": "int:6",
+      "required": false,
+      "description": "조번호"
+    },
+    {
+      "name": "PD",
+      "type_info": "char",
+      "required": false,
+      "description": "부칙 표시"
+    },
+    {
+      "name": "PN",
+      "type_info": "int",
+      "required": false,
+      "description": "부칙번호"
+    },
+    {
+      "name": "BD",
+      "type_info": "char",
+      "required": false,
+      "description": "별표 표시"
+    },
+    {
+      "name": "BT",
+      "type_info": "int",
+      "required": false,
+      "description": "별표구분"
+    },
+    {
+      "name": "BN",
+      "type_info": "int",
+      "required": false,
+      "description": "별표번호"
+    },
+    {
+      "name": "BG",
+      "type_info": "int",
+      "required": false,
+      "description": "별표가지번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "기본정보",
+      "type_info": "string",
+      "description": "기본 메타데이터 영역"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령 ID"
+    },
+    {
+      "name": "법령일련번호",
+      "type_info": "int",
+      "description": "법령일련번호"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "법종구분",
+      "type_info": "string",
+      "description": "법종구분"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "int",
+      "description": "공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "int",
+      "description": "공포번호"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "int",
+      "description": "시행일자"
+    },
+    {
+      "name": "제개정구분",
+      "type_info": "string",
+      "description": "제개정구분"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "조문/본문"
+    },
+    {
+      "name": "부칙",
+      "type_info": "string",
+      "description": "부칙"
+    },
+    {
+      "name": "별표",
+      "type_info": "string",
+      "description": "별표/서식"
+    },
+    {
+      "name": "상세링크/첨부",
+      "type_info": "string",
+      "description": "관련 링크 및 첨부"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=eflaw&OC=test&ID={법령ID}&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?target=eflaw&OC=test&ID={법령ID}&type=JSON",
+    "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"법령일련번호\">12345</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"조문내용\">예시 본문</field>\n    <field name=\"상세링크/첨부\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
+    "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"법령ID\": 12345,\n      \"법령일련번호\": 12345,\n      \"법령명\": \"자동차관리법\",\n      \"조문내용\": \"예시 본문\",\n      \"상세링크/첨부\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+  ],
+  "sample_responses": []
+}

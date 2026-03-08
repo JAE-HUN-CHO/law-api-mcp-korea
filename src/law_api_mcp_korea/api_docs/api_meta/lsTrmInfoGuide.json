@@ -1,0 +1,81 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string, 필수",
+      "required": true,
+      "description": "사용자 이메일 ID"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lstrm, 필수",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char, 필수",
+      "required": true,
+      "description": "법령용어 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령용어명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "법령용어일련번호",
+      "type_info": "int",
+      "description": "법령용어 일련번호"
+    },
+    {
+      "name": "법령용어명",
+      "type_info": "string",
+      "description": "법령용어명"
+    },
+    {
+      "name": "정의",
+      "type_info": "string",
+      "description": "용어 정의"
+    },
+    {
+      "name": "비고",
+      "type_info": "string",
+      "description": "비고"
+    },
+    {
+      "name": "관련법령",
+      "type_info": "string",
+      "description": "관련법령"
+    },
+    {
+      "name": "관련조문",
+      "type_info": "string",
+      "description": "관련조문"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?target=lstrm&OC=test&type=XML&ID={용어ID}",
+    "http://www.law.go.kr/DRF/lawService.do?target=lstrm&OC=test&type=JSON&ID={용어ID}"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"법령용어일련번호\">12345</field>\n    <field name=\"법령용어명\">예시값</field>\n    <field name=\"정의\">예시값</field>\n    <field name=\"비고\">예시 본문</field>\n    <field name=\"관련법령\">예시값</field>\n    <field name=\"관련조문\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"법령용어일련번호\": 12345,\n      \"법령용어명\": \"예시값\",\n      \"정의\": \"예시값\",\n      \"비고\": \"예시 본문\",\n      \"관련법령\": \"예시값\",\n      \"관련조문\": \"예시값\"\n    }\n  ]\n}"
+    }
+  ]
+}
