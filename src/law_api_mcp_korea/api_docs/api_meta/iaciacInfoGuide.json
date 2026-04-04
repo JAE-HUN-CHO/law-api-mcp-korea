@@ -2,39 +2,54 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string(필수) (산업재해보상보험재심사위원회 : iaciac)",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "서비스 대상(위원회별 target 코드)"
+      "description": "서비스 대상 (산업재해보상보험재심사위원회 : iaciac)"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "결정문 일련번호"
     }
   ],
   "response_fields": [
     {
-      "name": "결정문일련번호",
+      "name": "결정문 일련번호",
       "type_info": "int",
       "description": "결정문 일련번호"
     },
     {
-      "name": "기관명",
+      "name": "사건대분류",
       "type_info": "string",
-      "description": "기관명"
+      "description": "사건 대분류"
+    },
+    {
+      "name": "사건중분류",
+      "type_info": "string",
+      "description": "사건 중분류"
+    },
+    {
+      "name": "사건소분류",
+      "type_info": "string",
+      "description": "사건 소분류"
+    },
+    {
+      "name": "쟁점",
+      "type_info": "string",
+      "description": "쟁점"
     },
     {
       "name": "사건번호",
@@ -42,44 +57,74 @@
       "description": "사건번호"
     },
     {
-      "name": "자료구분",
+      "name": "의결일자",
       "type_info": "string",
-      "description": "자료구분"
+      "description": "의결일자"
     },
     {
-      "name": "담당부서",
+      "name": "사건",
       "type_info": "string",
-      "description": "담당부서"
+      "description": "사건"
     },
     {
-      "name": "등록일",
+      "name": "청구인",
       "type_info": "string",
-      "description": "등록일"
+      "description": "청구인"
     },
     {
-      "name": "제목",
+      "name": "재해근로자",
       "type_info": "string",
-      "description": "제목"
+      "description": "재해근로자"
     },
     {
-      "name": "내용",
+      "name": "재해자",
       "type_info": "string",
-      "description": "내용"
+      "description": "재해자"
     },
     {
-      "name": "판정사항",
+      "name": "피재근로자",
       "type_info": "string",
-      "description": "판정사항"
+      "description": "피재근로자/피재자성명/피재자/피재자(망인)"
     },
     {
-      "name": "판정요지",
+      "name": "진폐근로자",
       "type_info": "string",
-      "description": "판정요지"
+      "description": "진폐근로자"
     },
     {
-      "name": "판정결과",
+      "name": "수진자",
       "type_info": "string",
-      "description": "판정결과"
+      "description": "수진자"
+    },
+    {
+      "name": "원처분기관",
+      "type_info": "string",
+      "description": "원처분기관"
+    },
+    {
+      "name": "주문",
+      "type_info": "string",
+      "description": "주문"
+    },
+    {
+      "name": "청구취지",
+      "type_info": "string",
+      "description": "청구취지"
+    },
+    {
+      "name": "이유",
+      "type_info": "string",
+      "description": "이유"
+    },
+    {
+      "name": "별지",
+      "type_info": "string",
+      "description": "별지"
+    },
+    {
+      "name": "문서제공구분",
+      "type_info": "string",
+      "description": "문서제공구분(데이터 개방|이유하단 이미지개방)"
     },
     {
       "name": "각주번호",
@@ -96,8 +141,9 @@
     "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
   ],
   "sample_requests": [
-    "https://www.law.go.kr/DRF/lawService.do?target=iaciac&OC=test&type=XML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=iaciac&OC=test&type=JSON&ID={결정문일련번호}"
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=7515&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=7513&type=XML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=12713&type=JSON"
   ],
   "sample_responses": [
     {
@@ -108,5 +154,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"결정문일련번호\": 12345,\n      \"기관명\": \"예시 기관\",\n      \"사건번호\": \"12345\",\n      \"자료구분\": \"예시값\",\n      \"제목\": \"예시 사건\",\n      \"내용\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "iaciacInfoGuide",
+      "official_title": "산업재해보상보험재심사위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=iaciacInfoGuide",
+      "target": "iaciac",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=7515&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=7513&type=XML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=iaciac&ID=12713&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "iaciac"
   ]
 }

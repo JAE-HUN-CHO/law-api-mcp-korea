@@ -2,60 +2,49 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
-    },
-    {
-      "name": "target",
-      "type_info": "string : ordin, 필수",
-      "required": true,
-      "description": "서비스 대상"
+      "description": "신청한 API인증값"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
-      "description": "출력 형태 : HTML/XML/JSON"
+      "description": "출력 형태 HTML/XML/JSON"
+    },
+    {
+      "name": "target",
+      "type_info": "string : ordin(필수)",
+      "required": true,
+      "description": "서비스 대상"
     },
     {
       "name": "ID",
       "type_info": "char",
       "required": false,
-      "description": "자치법규 일련번호"
+      "description": "자치법규ID"
     },
     {
-      "name": "LID",
-      "type_info": "char",
-      "required": false,
-      "description": "자치법규 ID"
-    },
-    {
-      "name": "LM",
+      "name": "MST",
       "type_info": "string",
       "required": false,
-      "description": "정확한 자치법규명"
+      "description": "자치법규 일련번호"
     }
   ],
   "response_fields": [
     {
-      "name": "자치법규일련번호",
+      "name": "자치법규ID",
       "type_info": "int",
+      "description": "자치법규ID"
+    },
+    {
+      "name": "자치법규일련번호",
+      "type_info": "string",
       "description": "자치법규일련번호"
     },
     {
-      "name": "자치법규명",
-      "type_info": "string",
-      "description": "자치법규명"
-    },
-    {
-      "name": "자치단체명",
-      "type_info": "string",
-      "description": "자치단체명"
-    },
-    {
       "name": "공포일자",
-      "type_info": "int",
+      "type_info": "string",
       "description": "공포일자"
     },
     {
@@ -64,40 +53,136 @@
       "description": "공포번호"
     },
     {
-      "name": "제개정구분명",
+      "name": "자치법규명",
       "type_info": "string",
-      "description": "제개정구분명"
+      "description": "자치법규명"
     },
     {
-      "name": "자치법규ID",
+      "name": "시행일자",
+      "type_info": "string",
+      "description": "시행일자"
+    },
+    {
+      "name": "자치법규종류",
+      "type_info": "string",
+      "description": "자치법규종류 (C0001-조례 /C0002-규칙 /C0003-훈령 /C0004-예규/C0006-기타/C0010-고시 /C0011-의회규칙)"
+    },
+    {
+      "name": "지자체기관명",
+      "type_info": "string",
+      "description": "지자체기관명"
+    },
+    {
+      "name": "자치법규발의종류",
+      "type_info": "string",
+      "description": "자치법규발의종류"
+    },
+    {
+      "name": "담당부서명",
+      "type_info": "string",
+      "description": "담당부서명"
+    },
+    {
+      "name": "전화번호",
+      "type_info": "string",
+      "description": "전화번호"
+    },
+    {
+      "name": "제개정정보",
+      "type_info": "string",
+      "description": "제개정정보"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "조문번호"
+    },
+    {
+      "name": "조문여부",
+      "type_info": "string",
+      "description": "해당 조문이 조일때 Y, 그 외 편,장,절,관 일때는 N"
+    },
+    {
+      "name": "조제목",
+      "type_info": "string",
+      "description": "조제목"
+    },
+    {
+      "name": "조내용",
+      "type_info": "string",
+      "description": "조내용"
+    },
+    {
+      "name": "부칙공포일자",
       "type_info": "int",
-      "description": "자치법규 ID"
+      "description": "부칙공포일자"
     },
     {
-      "name": "조문내용",
-      "type_info": "string",
-      "description": "조문내용"
+      "name": "부칙공포번호",
+      "type_info": "int",
+      "description": "부칙공포번호"
     },
     {
-      "name": "부칙",
+      "name": "부칙내용",
       "type_info": "string",
-      "description": "부칙"
+      "description": "부칙내용"
+    },
+    {
+      "name": "부칙내용",
+      "type_info": "string",
+      "description": "부칙내용"
     },
     {
       "name": "별표",
       "type_info": "string",
-      "description": "별표"
+      "description": "별표 (자치법규 별표는 서울시교육청과 본청만 제공합니다.)"
     },
     {
-      "name": "첨부파일",
+      "name": "별표번호",
+      "type_info": "int",
+      "description": "별표번호"
+    },
+    {
+      "name": "별표가지번호",
+      "type_info": "int",
+      "description": "별표가지번호"
+    },
+    {
+      "name": "별표구분",
       "type_info": "string",
-      "description": "첨부파일"
+      "description": "별표구분"
+    },
+    {
+      "name": "별표제목",
+      "type_info": "string",
+      "description": "별표제목"
+    },
+    {
+      "name": "별표첨부파일명",
+      "type_info": "string",
+      "description": "별표첨부파일명"
+    },
+    {
+      "name": "별표내용",
+      "type_info": "string",
+      "description": "별표내용"
+    },
+    {
+      "name": "개정문내용",
+      "type_info": "string",
+      "description": "개정문내용"
+    },
+    {
+      "name": "제개정이유내용",
+      "type_info": "string",
+      "description": "제개정이유내용"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=ordin&OC=test&type=XML&ID={자치법규ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=ordin&OC=test&type=JSON&ID={자치법규ID}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&MST=1316146&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2026666&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2251458&type=JSON"
   ],
   "sample_responses": [
     {
@@ -108,5 +193,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"자치법규일련번호\": 12345,\n      \"자치법규명\": \"서울특별시 주차장 조례\",\n      \"자치단체명\": \"예시값\",\n      \"공포일자\": 20250501,\n      \"조문내용\": \"예시 본문\",\n      \"공포번호\": \"12345\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "ordinInfoGuide",
+      "official_title": "자치법규 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ordinInfoGuide",
+      "target": "ordin",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&MST=1316146&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2026666&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2251458&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "ordin"
   ]
 }

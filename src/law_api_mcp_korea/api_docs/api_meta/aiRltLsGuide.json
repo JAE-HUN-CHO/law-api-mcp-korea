@@ -2,39 +2,33 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : aiRltLs(필수)",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "서비스 대상"
+      "description": "서비스 대상 (지능형 법령검색 시스템 연관법령 API : aiRltLs)"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위 법령분류(0:법령조문, 1:행정규칙조문)"
     },
     {
       "name": "query",
       "type_info": "string",
       "required": false,
-      "description": "검색 질의 또는 대상 식별값"
-    },
-    {
-      "name": "display",
-      "type_info": "int",
-      "required": false,
-      "description": "검색된 결과 개수(default=20, max=100)"
-    },
-    {
-      "name": "page",
-      "type_info": "int",
-      "required": false,
-      "description": "검색 결과 페이지(default=1)"
+      "description": "법령명에서 검색을 원하는 질의 (정확한 검색을 위한 문자열 검색 query=\"뺑소니\")"
     }
   ],
   "response_fields": [
@@ -46,7 +40,7 @@
     {
       "name": "키워드",
       "type_info": "string",
-      "description": "검색 질의"
+      "description": "검색 단어"
     },
     {
       "name": "검색결과개수",
@@ -54,39 +48,117 @@
       "description": "검색 건수"
     },
     {
-      "name": "page",
+      "name": "법령조문ID",
       "type_info": "int",
-      "description": "현재 페이지번호"
+      "description": "법령조문 ID"
     },
     {
-      "name": "id",
-      "type_info": "string/int",
-      "description": "결과 식별자"
-    },
-    {
-      "name": "명칭",
+      "name": "법령ID",
       "type_info": "string",
-      "description": "용어/조문/법령명"
+      "description": "법령ID"
     },
     {
-      "name": "설명",
+      "name": "법령명",
       "type_info": "string",
-      "description": "설명 또는 관계 정보"
+      "description": "법령명"
     },
     {
-      "name": "상세링크",
+      "name": "시행일자",
       "type_info": "string",
-      "description": "관계/상세 정보 링크"
+      "description": "법령 시행일자"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "string",
+      "description": "법령 공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "string",
+      "description": "법령 공포번호"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "법령 조문번호"
+    },
+    {
+      "name": "조문가지번호",
+      "type_info": "string",
+      "description": "법령 조문가지번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "법령 조문제목"
+    },
+    {
+      "name": "행정규칙조문 ID",
+      "type_info": "int",
+      "description": "행정규칙조문 ID"
+    },
+    {
+      "name": "행정규칙ID",
+      "type_info": "string",
+      "description": "행정규칙ID"
+    },
+    {
+      "name": "행정규칙명",
+      "type_info": "string",
+      "description": "행정규칙명"
+    },
+    {
+      "name": "발령일자",
+      "type_info": "string",
+      "description": "발령일자"
+    },
+    {
+      "name": "발령번호",
+      "type_info": "string",
+      "description": "발령번호"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "행정규칙 조문번호"
+    },
+    {
+      "name": "조문가지번호",
+      "type_info": "string",
+      "description": "행정규칙 조문가지번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "행정규칙 조문제목"
     }
   ],
   "notes": [
     "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
   ],
   "sample_requests": [
-    "https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=XML&query=자동차&display=20&page=1",
-    "https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=JSON&query=자동차&display=20&page=1",
-    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">자동차</field>\n    <field name=\"검색결과개수\">20</field>\n    <field name=\"page\">1</field>\n    <field name=\"명칭\">자동차관리법</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
-    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"자동차\",\n      \"검색결과개수\": 20,\n      \"page\": 1,\n      \"명칭\": \"자동차관리법\",\n      \"상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=XML&search=0&query=뺑소니",
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=JSON&search=0&query=뺑소니"
   ],
-  "sample_responses": []
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "aiRltLsGuide",
+      "official_title": "법령정보지식베이스 지능형 법령검색 시스템 연관법령",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=aiRltLsGuide",
+      "target": "aiRltLs",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=XML&search=0&query=뺑소니",
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=JSON&search=0&query=뺑소니"
+      ]
+    }
+  ],
+  "target_variants": [
+    "aiRltLs"
+  ]
 }

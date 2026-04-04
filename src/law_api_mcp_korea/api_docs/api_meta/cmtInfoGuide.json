@@ -2,54 +2,104 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : ftc(필수)",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "서비스 대상(ftc/acr/ppc)"
+      "description": "서비스 대상 (공정거래위원회 : ftc)"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "결정문 일련번호"
     }
   ],
   "response_fields": [
     {
-      "name": "결정문일련번호",
+      "name": "결정문 일련번호",
       "type_info": "int",
       "description": "결정문 일련번호"
     },
     {
-      "name": "기관명",
+      "name": "문서유형",
       "type_info": "string",
-      "description": "기관명"
-    },
-    {
-      "name": "제목",
-      "type_info": "string",
-      "description": "제목"
+      "description": "출력 형태 : 의결서 / 시정권고서"
     },
     {
       "name": "사건번호",
       "type_info": "string",
-      "description": "사건번호 또는 의안번호"
+      "description": "사건번호"
     },
     {
-      "name": "의결/등록일자",
+      "name": "사건명",
       "type_info": "string",
-      "description": "의결일 또는 등록일"
+      "description": "사건명"
+    },
+    {
+      "name": "피심정보명",
+      "type_info": "string",
+      "description": "피심정보명"
+    },
+    {
+      "name": "피심정보내용",
+      "type_info": "string",
+      "description": "피심정보내용"
+    },
+    {
+      "name": "회의종류",
+      "type_info": "string",
+      "description": "회의종류"
+    },
+    {
+      "name": "결정번호",
+      "type_info": "string",
+      "description": "결정번호"
+    },
+    {
+      "name": "결정일자",
+      "type_info": "string",
+      "description": "결정일자"
+    },
+    {
+      "name": "원심결",
+      "type_info": "string",
+      "description": "원심결"
+    },
+    {
+      "name": "재산정심결",
+      "type_info": "string",
+      "description": "재산정심결"
+    },
+    {
+      "name": "후속심결",
+      "type_info": "string",
+      "description": "후속심결"
+    },
+    {
+      "name": "심의정보명",
+      "type_info": "string",
+      "description": "심의정보명"
+    },
+    {
+      "name": "심의정보내용",
+      "type_info": "string",
+      "description": "심의정보내용"
+    },
+    {
+      "name": "의결문",
+      "type_info": "string",
+      "description": "의결문"
     },
     {
       "name": "주문",
@@ -57,36 +107,59 @@
       "description": "주문"
     },
     {
+      "name": "신청취지",
+      "type_info": "string",
+      "description": "신청취지"
+    },
+    {
       "name": "이유",
       "type_info": "string",
       "description": "이유"
     },
     {
-      "name": "본문",
+      "name": "의결일자",
       "type_info": "string",
-      "description": "본문"
+      "description": "의결일자"
     },
     {
-      "name": "첨부/상세링크",
+      "name": "위원정보",
       "type_info": "string",
-      "description": "첨부 또는 상세링크"
+      "description": "위원정보"
     },
     {
-      "name": "시정권고서",
+      "name": "각주번호",
+      "type_info": "int",
+      "description": "각주번호"
+    },
+    {
+      "name": "각주내용",
       "type_info": "string",
-      "description": "시정권고서 본문(해당 시)"
+      "description": "각주내용"
+    },
+    {
+      "name": "별지",
+      "type_info": "string",
+      "description": "별지"
+    },
+    {
+      "name": "결정요지",
+      "type_info": "string",
+      "description": "결정요지"
     }
   ],
   "notes": [
     "공정거래위원회에는 시정권고서 영역이 함께 안내됩니다."
   ],
   "sample_requests": [
-    "https://www.law.go.kr/DRF/lawService.do?target=ftc&OC=test&type=XML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=ftc&OC=test&type=HTML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=acr&OC=test&type=XML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=acr&OC=test&type=HTML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=ppc&OC=test&type=XML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=ppc&OC=test&type=HTML&ID={결정문일련번호}"
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=331&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=335&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=8111&type=JSON",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=53&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=89&type=XML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=1281&type=JSON",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=5&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=3&type=XML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=9907&type=JSON"
   ],
   "sample_responses": [
     {
@@ -101,5 +174,63 @@
       "lang": "xml",
       "content": "<response>\n  <item>\n    <field name=\"결정문일련번호\">12345</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"제목\">예시 사건</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"이유\">예시 본문</field>\n  </item>\n</response>"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "ftcInfoGuide",
+      "official_title": "공정거래위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ftcInfoGuide",
+      "target": "ftc",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=331&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=335&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ftc&ID=8111&type=JSON"
+      ]
+    },
+    {
+      "official_html_name": "acrInfoGuide",
+      "official_title": "국민권익위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=acrInfoGuide",
+      "target": "acr",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=53&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=89&type=XML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=acr&ID=1281&type=JSON"
+      ]
+    },
+    {
+      "official_html_name": "ppcInfoGuide",
+      "official_title": "개인정보보호위원회 위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ppcInfoGuide",
+      "target": "ppc",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=5&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=3&type=XML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=ppc&ID=9907&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "ftc",
+    "acr",
+    "ppc"
   ]
 }

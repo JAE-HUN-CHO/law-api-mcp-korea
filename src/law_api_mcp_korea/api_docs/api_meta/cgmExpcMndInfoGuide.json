@@ -2,25 +2,25 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
       "type_info": "string : mndCgmExpc(필수)",
       "required": true,
-      "description": "서비스 대상(부처별 target 코드)"
+      "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "int, 필수",
+      "type_info": "int(필수)",
       "required": true,
       "description": "법령해석일련번호"
     },
@@ -34,7 +34,7 @@
       "name": "fields",
       "type_info": "string",
       "required": false,
-      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+      "description": "응답항목 옵션(안건명, 안건번호, ...) * 빈 값일 경우 전체 항목 표출 * 출력 형태 HTML일 경우 적용 불가능"
     }
   ],
   "response_fields": [
@@ -118,8 +118,9 @@
     "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
   ],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=mndCgmExpc&OC=test&type=XML&ID={법령해석일련번호}",
-    "http://www.law.go.kr/DRF/lawService.do?target=mndCgmExpc&OC=test&type=JSON&ID={법령해석일련번호}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=JSON"
   ],
   "sample_responses": [
     {
@@ -130,5 +131,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"법령해석일련번호\": 12345,\n      \"안건명\": \"예시 사건\",\n      \"안건번호\": \"12345\",\n      \"해석일자\": 20250501,\n      \"이유\": \"예시 본문\",\n      \"해석기관코드\": 1001\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "cgmExpcMndInfoGuide",
+      "official_title": "국방부 법령해석 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMndInfoGuide",
+      "target": "mndCgmExpc",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=mndCgmExpc&ID=394566&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "mndCgmExpc"
   ]
 }

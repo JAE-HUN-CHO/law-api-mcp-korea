@@ -2,80 +2,201 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : school(필수)",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "school/public/pi 중 하나"
+      "description": "서비스 대상 (대학 : school / 지방공사공단 : public / 공공기관 : pi)"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
-      "required": true,
-      "description": "문서 일련번호"
+      "type_info": "char",
+      "required": false,
+      "description": "학칙공단 일련번호"
+    },
+    {
+      "name": "LID",
+      "type_info": "char",
+      "required": false,
+      "description": "학칙공단 ID"
     },
     {
       "name": "LM",
       "type_info": "string",
       "required": false,
-      "description": "규정명"
+      "description": "학칙공단명 조회하고자 하는 정확한 학칙공단명을 입력"
     }
   ],
   "response_fields": [
     {
-      "name": "일련번호",
+      "name": "행정규칙 일련번호",
       "type_info": "int",
-      "description": "문서 일련번호"
+      "description": "학칙공단 일련번호"
     },
     {
-      "name": "규정명",
+      "name": "행정규칙명",
       "type_info": "string",
-      "description": "규정명"
+      "description": "학칙공단명"
     },
     {
-      "name": "기관명",
+      "name": "행정규칙종류",
       "type_info": "string",
-      "description": "기관명"
+      "description": "학칙공단 종류"
     },
     {
-      "name": "공포/시행일자",
+      "name": "행정규칙종류코드",
       "type_info": "string",
-      "description": "주요 일자"
+      "description": "학칙공단 종류코드"
     },
     {
-      "name": "본문",
-      "type_info": "string",
-      "description": "본문"
+      "name": "발령일자",
+      "type_info": "int",
+      "description": "발령일자"
     },
     {
-      "name": "부칙",
+      "name": "발령번호",
       "type_info": "string",
-      "description": "부칙"
+      "description": "발령번호"
     },
     {
-      "name": "첨부파일",
+      "name": "제개정구분명",
       "type_info": "string",
-      "description": "첨부파일"
+      "description": "제개정구분명"
+    },
+    {
+      "name": "제개정 구분코드",
+      "type_info": "string",
+      "description": "제개정구분코드"
+    },
+    {
+      "name": "조문형식여부",
+      "type_info": "string",
+      "description": "조문형식여부"
+    },
+    {
+      "name": "행정규칙ID",
+      "type_info": "int",
+      "description": "학칙공단ID"
+    },
+    {
+      "name": "소관부처명",
+      "type_info": "string",
+      "description": "소관부처명"
+    },
+    {
+      "name": "소관부처코드",
+      "type_info": "string",
+      "description": "소관부처코드"
+    },
+    {
+      "name": "담당부서기관코드",
+      "type_info": "string",
+      "description": "담당부서기관코드"
+    },
+    {
+      "name": "담당부서기관명",
+      "type_info": "string",
+      "description": "담당부서기관명"
+    },
+    {
+      "name": "담당자명",
+      "type_info": "string",
+      "description": "담당자명"
+    },
+    {
+      "name": "전화번호",
+      "type_info": "string",
+      "description": "전화번호"
+    },
+    {
+      "name": "현행여부",
+      "type_info": "string",
+      "description": "현행여부"
+    },
+    {
+      "name": "생성일자",
+      "type_info": "string",
+      "description": "생성일자"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "조문내용"
+    },
+    {
+      "name": "부칙공포일자",
+      "type_info": "string",
+      "description": "부칙 공포일자"
+    },
+    {
+      "name": "부칙공포번호",
+      "type_info": "string",
+      "description": "부칙 공포번호"
+    },
+    {
+      "name": "부칙내용",
+      "type_info": "string",
+      "description": "부칙내용"
+    },
+    {
+      "name": "별표단위 별표키",
+      "type_info": "string",
+      "description": "별표단위 별표키"
+    },
+    {
+      "name": "별표번호",
+      "type_info": "string",
+      "description": "별표번호"
+    },
+    {
+      "name": "별표가지번호",
+      "type_info": "string",
+      "description": "별표가지번호"
+    },
+    {
+      "name": "별표구분",
+      "type_info": "string",
+      "description": "별표구분"
+    },
+    {
+      "name": "별표제목",
+      "type_info": "string",
+      "description": "별표제목"
+    },
+    {
+      "name": "별표서식 파일링크",
+      "type_info": "string",
+      "description": "별표서식 파일링크"
+    },
+    {
+      "name": "개정문내용",
+      "type_info": "string",
+      "description": "개정문내용"
+    },
+    {
+      "name": "제개정이유내용",
+      "type_info": "string",
+      "description": "제개정이유내용"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=school&OC=test&type=XML&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=school&OC=test&type=JSON&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=public&OC=test&type=XML&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=public&OC=test&type=JSON&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=pi&OC=test&type=XML&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=pi&OC=test&type=JSON&ID={법령ID}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=JSON",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=JSON"
   ],
   "sample_responses": [
     {
@@ -102,5 +223,30 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"일련번호\": 12345,\n      \"규정명\": \"예시값\",\n      \"기관명\": \"예시 기관\",\n      \"공포/시행일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"부칙\": \"예시값\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "schlPubRulInfoGuide",
+      "official_title": "학칙공단공공기관 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=schlPubRulInfoGuide",
+      "target": "school",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&LID=2055825&type=JSON",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=school&ID=2200000075994&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "school"
   ]
 }

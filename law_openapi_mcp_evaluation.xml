@@ -1,0 +1,42 @@
+<evaluation>
+  <qa_pair>
+    <question>Using only read-only catalog metadata, count the total number of APIs exposed by this MCP package. Respond with an integer only.</question>
+    <answer>191</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Find the family with the highest API count in catalog metadata. Respond with the family key only.</question>
+    <answer>ministry_list</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Compute the difference between the counts of ministry_list and ministry_info families. Respond with an integer only.</question>
+    <answer>2</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Locate the API entry with the highest numeric index in the catalog. Return its guide_html_name only.</question>
+    <answer>baiPvcsInfoGuide</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Among APIs where supported_types is exactly HTML (and not XML/JSON), find the one with the highest index. Return its guide_html_name only.</question>
+    <answer>mobLsInfoGuide</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Identify the family whose catalog count is exactly 20. Return the family key only.</question>
+    <answer>mobile</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>From generated_tool_metadata, return the generated_count value as an integer.</question>
+    <answer>65</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>How many generated tools require an agency parameter? Respond with an integer only.</question>
+    <answer>3</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For the collapsed generated tool api_committee_decision, count supported_agencies. Respond with an integer only.</question>
+    <answer>9</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For api_ministry_interpretation, return the first supported agency code in its listed order.</question>
+    <answer>moel</answer>
+  </qa_pair>
+</evaluation>

@@ -2,19 +2,19 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : admrul, 필수",
+      "type_info": "string : admrul(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
@@ -34,12 +34,12 @@
       "name": "LM",
       "type_info": "string",
       "required": false,
-      "description": "조회하고자 하는 정확한 행정규칙명"
+      "description": "행정규칙명 조회하고자 하는 정확한 행정규칙명을 입력"
     }
   ],
   "response_fields": [
     {
-      "name": "행정규칙일련번호",
+      "name": "행정규칙 일련번호",
       "type_info": "int",
       "description": "행정규칙일련번호"
     },
@@ -74,7 +74,7 @@
       "description": "제개정구분명"
     },
     {
-      "name": "제개정구분코드",
+      "name": "제개정 구분코드",
       "type_info": "string",
       "description": "제개정구분코드"
     },
@@ -86,7 +86,7 @@
     {
       "name": "행정규칙ID",
       "type_info": "int",
-      "description": "행정규칙 ID"
+      "description": "행정규칙"
     },
     {
       "name": "소관부처명",
@@ -217,12 +217,28 @@
       "name": "첨부파일링크",
       "type_info": "string",
       "description": "첨부파일링크"
+    },
+    {
+      "name": "별표키",
+      "type_info": "string",
+      "description": "별표키"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "int",
+      "description": "조문번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "조문제목"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=admrul&OC=test&type=XML&ID={행정규칙ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=admrul&OC=test&type=JSON&ID={행정규칙ID}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=62505&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=10000005747&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=2000000091702&type=JSON"
   ],
   "sample_responses": [
     {
@@ -233,5 +249,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"행정규칙일련번호\": 12345,\n      \"행정규칙명\": \"학교보건법 시행규칙\",\n      \"행정규칙종류\": \"예시값\",\n      \"행정규칙종류코드\": \"CODE001\",\n      \"별표제목\": \"학교보건법 시행규칙\",\n      \"조문내용\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "admrulInfoGuide",
+      "official_title": "행정규칙 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulInfoGuide",
+      "target": "admrul",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=62505&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=10000005747&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=admrul&ID=2000000091702&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "admrul"
   ]
 }

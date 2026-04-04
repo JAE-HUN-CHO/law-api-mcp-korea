@@ -2,19 +2,19 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : lsStmd, 필수",
+      "type_info": "string : lsStmd(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
@@ -22,48 +22,149 @@
       "name": "ID",
       "type_info": "char",
       "required": false,
-      "description": "법령 ID"
+      "description": "법령 ID (ID 또는 MST 중 하나는 반드시 입력)"
     },
     {
       "name": "MST",
       "type_info": "char",
       "required": false,
-      "description": "법령 마스터 번호"
+      "description": "법령 마스터 번호 - 법령테이블의 lsi_seq 값을 의미함"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령의 법령명(법령명 입력시 해당 법령 링크)"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포번호"
     }
   ],
   "response_fields": [
     {
       "name": "기본정보",
       "type_info": "string",
-      "description": "법령 기본정보"
+      "description": "기본정보"
     },
     {
-      "name": "체계도",
-      "type_info": "string",
-      "description": "상위·하위 체계 구조"
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
     },
     {
-      "name": "상위법령목록",
-      "type_info": "string",
-      "description": "상위 법령 목록"
+      "name": "법령일련번호",
+      "type_info": "int",
+      "description": "법령일련번호"
     },
     {
-      "name": "하위법령목록",
-      "type_info": "string",
-      "description": "하위 법령 목록"
+      "name": "공포일자",
+      "type_info": "int",
+      "description": "공포일자"
     },
     {
-      "name": "상세링크",
+      "name": "공포번호",
+      "type_info": "int",
+      "description": "공포번호"
+    },
+    {
+      "name": "법종구분",
       "type_info": "string",
-      "description": "체계도 상세링크"
+      "description": "법종구분"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "int",
+      "description": "시행일자"
+    },
+    {
+      "name": "제개정구분",
+      "type_info": "string",
+      "description": "제개정구분"
+    },
+    {
+      "name": "상하위법",
+      "type_info": "string",
+      "description": "상하위법"
+    },
+    {
+      "name": "법률",
+      "type_info": "string",
+      "description": "법률"
+    },
+    {
+      "name": "시행령",
+      "type_info": "string",
+      "description": "시행령"
+    },
+    {
+      "name": "시행규칙",
+      "type_info": "string",
+      "description": "시행규칙"
+    },
+    {
+      "name": "본문 상세링크",
+      "type_info": "string",
+      "description": "본문 상세링크"
+    },
+    {
+      "name": "관련법령",
+      "type_info": "string",
+      "description": "관련법령"
+    },
+    {
+      "name": "법종구분코드",
+      "type_info": "string",
+      "description": "법종구분코드"
+    },
+    {
+      "name": "제개정구분코드",
+      "type_info": "string",
+      "description": "제개정구분코드"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=lsStmd&OC=test&type=XML&ID={법령ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=lsStmd&OC=test&type=JSON&ID={법령ID}",
-    "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"체계도\">예시값</field>\n    <field name=\"상위법령목록\">예시값</field>\n    <field name=\"하위법령목록\">예시값</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
-    "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"체계도\": \"예시값\",\n      \"상위법령목록\": \"예시값\",\n      \"하위법령목록\": \"예시값\",\n      \"상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142591&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=JSON"
   ],
-  "sample_responses": []
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lsStmdInfoGuide",
+      "official_title": "법령 체계도 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsStmdInfoGuide",
+      "target": "lsStmd",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142591&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsStmd&MST=142362&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lsStmd"
+  ]
 }

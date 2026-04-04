@@ -2,25 +2,25 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
       "type_info": "string : acrSpecialDecc(필수)",
       "required": true,
-      "description": "서비스 대상(기관별 special target)"
+      "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "특별행정심판재결례일련번호"
     },
@@ -34,7 +34,7 @@
       "name": "fields",
       "type_info": "string",
       "required": false,
-      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+      "description": "응답항목 옵션(사건명, 사건번호, ...) * 빈 값일 경우 전체 항목 표출 * 출력 형태 HTML일 경우 적용 불가능"
     }
   ],
   "response_fields": [
@@ -52,11 +52,6 @@
       "name": "사건번호",
       "type_info": "string",
       "description": "사건번호"
-    },
-    {
-      "name": "청구번호",
-      "type_info": "string",
-      "description": "청구번호"
     },
     {
       "name": "처분일자",
@@ -89,26 +84,6 @@
       "description": "재결례유형코드"
     },
     {
-      "name": "세목",
-      "type_info": "string",
-      "description": "세목"
-    },
-    {
-      "name": "재결요지",
-      "type_info": "string",
-      "description": "재결요지"
-    },
-    {
-      "name": "따른결정",
-      "type_info": "string",
-      "description": "따른결정"
-    },
-    {
-      "name": "참조결정",
-      "type_info": "string",
-      "description": "참조결정"
-    },
-    {
       "name": "주문",
       "type_info": "string",
       "description": "주문"
@@ -124,22 +99,48 @@
       "description": "이유"
     },
     {
-      "name": "관련법령",
+      "name": "재결요지",
       "type_info": "string",
-      "description": "관련법령"
+      "description": "재결요지"
+    },
+    {
+      "name": "상위처분청코드",
+      "type_info": "string",
+      "description": "상위처분청코드"
+    },
+    {
+      "name": "상위처분청",
+      "type_info": "string",
+      "description": "상위처분청"
+    },
+    {
+      "name": "관계법령",
+      "type_info": "string",
+      "description": "관계법령"
+    },
+    {
+      "name": "원본다운로드URL",
+      "type_info": "string",
+      "description": "원본다운로드URL"
     },
     {
       "name": "데이터기준일시",
       "type_info": "string",
       "description": "데이터기준일시"
+    },
+    {
+      "name": "청구번호",
+      "type_info": "string",
+      "description": "청구번호"
     }
   ],
   "notes": [
     "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
   ],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=acrSpecialDecc&OC=test&type=XML&ID={재결례일련번호}",
-    "http://www.law.go.kr/DRF/lawService.do?target=acrSpecialDecc&OC=test&type=JSON&ID={재결례일련번호}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=JSON"
   ],
   "sample_responses": [
     {
@@ -150,5 +151,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"특별행정심판재결례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"청구번호\": \"12345\",\n      \"이유\": \"예시 본문\",\n      \"주문\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "specialDeccAcrInfoGuide",
+      "official_title": "국민권익위원회 특별행정심판재결례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAcrInfoGuide",
+      "target": "acrSpecialDecc",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=acrSpecialDecc&ID=2071461&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "acrSpecialDecc"
   ]
 }

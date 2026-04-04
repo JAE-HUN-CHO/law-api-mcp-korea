@@ -2,9 +2,9 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
@@ -13,113 +13,72 @@
       "description": "서비스 대상"
     },
     {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML"
+    },
+    {
       "name": "ID",
       "type_info": "char",
       "required": false,
-      "description": "법령 ID (ID 또는 MST 중 하나 필수인 경우가 많음)"
+      "description": "법령 ID (ID 또는 MST 중 하나는 반드시 입력)"
     },
     {
       "name": "MST",
       "type_info": "char",
       "required": false,
-      "description": "법령 마스터 번호(lsi_seq)"
+      "description": "법령 마스터 번호 - 법령테이블의 lsi_seq 값을 의미함"
     },
     {
       "name": "LM",
       "type_info": "string",
       "required": false,
-      "description": "법령명"
+      "description": "법령의 법령명(법령명 입력시 해당 법령 링크)"
     },
     {
       "name": "LD",
       "type_info": "int",
       "required": false,
-      "description": "공포일자"
+      "description": "법령의 공포일자"
     },
     {
       "name": "LN",
       "type_info": "int",
       "required": false,
-      "description": "공포번호"
+      "description": "법령의 공포번호"
     },
     {
-      "name": "type",
-      "type_info": "char, 필수",
-      "required": true,
-      "description": "출력 형태 : HTML"
+      "name": "chrClsCd",
+      "type_info": "char",
+      "required": false,
+      "description": "원문/한글 여부 생략(기본값) : 한글 (010202 : 한글, 010201 : 원문)"
     }
   ],
-  "response_fields": [
-    {
-      "name": "기본정보",
-      "type_info": "string",
-      "description": "기본 메타데이터 영역"
-    },
-    {
-      "name": "법령ID",
-      "type_info": "int",
-      "description": "법령 ID"
-    },
-    {
-      "name": "법령일련번호",
-      "type_info": "int",
-      "description": "법령일련번호"
-    },
-    {
-      "name": "법령명",
-      "type_info": "string",
-      "description": "법령명"
-    },
-    {
-      "name": "법종구분",
-      "type_info": "string",
-      "description": "법종구분"
-    },
-    {
-      "name": "공포일자",
-      "type_info": "int",
-      "description": "공포일자"
-    },
-    {
-      "name": "공포번호",
-      "type_info": "int",
-      "description": "공포번호"
-    },
-    {
-      "name": "시행일자",
-      "type_info": "int",
-      "description": "시행일자"
-    },
-    {
-      "name": "제개정구분",
-      "type_info": "string",
-      "description": "제개정구분"
-    },
-    {
-      "name": "조문내용",
-      "type_info": "string",
-      "description": "조문/본문"
-    },
-    {
-      "name": "부칙",
-      "type_info": "string",
-      "description": "부칙"
-    },
-    {
-      "name": "별표",
-      "type_info": "string",
-      "description": "별표/서식"
-    },
-    {
-      "name": "상세링크/첨부",
-      "type_info": "string",
-      "description": "관련 링크 및 첨부"
-    }
-  ],
+  "response_fields": [],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=lsHistory&OC=test&MST={법령일련번호}&type=HTML",
-    "<!DOCTYPE html>\n<html>\n  <head><title>법령 연혁</title></head>\n  <body>\n    <div class=\"history_wrap\">...</div>\n  </body>\n</html>"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsHistory&MST=9094&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsHistory&MST=166500&type=HTML"
   ],
-  "sample_responses": []
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lsHstInfoGuide",
+      "official_title": "법령 연혁 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide",
+      "target": "lsHistory",
+      "mobileYn": null,
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsHistory&MST=9094&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsHistory&MST=166500&type=HTML"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lsHistory"
+  ]
 }

@@ -2,113 +2,131 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : admrul, 필수",
+      "type_info": "string : admrul(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
-      "description": "출력 형태 : HTML/XML/JSON 또는 HTML"
+      "description": "출력 형태 HTML/XML/JSON"
     },
     {
-      "name": "mobileYn",
-      "type_info": "char : Y, 필수",
-      "required": true,
-      "description": "모바일 여부"
+      "name": "nw",
+      "type_info": "int",
+      "required": false,
+      "description": "(1: 현행, 2: 연혁, 기본값: 현행)"
     },
     {
       "name": "search",
       "type_info": "int",
       "required": false,
-      "description": "검색범위"
+      "description": "검색범위 (기본 : 1 행정규칙명) 2 : 본문검색"
     },
     {
       "name": "query",
       "type_info": "string",
       "required": false,
-      "description": "검색어"
+      "description": "검색범위에서 검색을 원하는 질의(검색 결과 리스트)"
     },
     {
       "name": "display",
       "type_info": "int",
       "required": false,
-      "description": "검색 개수"
+      "description": "검색된 결과 개수 (default=20 max=100)"
     },
     {
       "name": "page",
       "type_info": "int",
       "required": false,
-      "description": "결과 페이지"
+      "description": "검색 결과 페이지 (default=1)"
     },
     {
       "name": "org",
       "type_info": "string",
       "required": false,
-      "description": "소관부처 코드"
+      "description": "소관부처별 검색 (코드 별도 제공)"
     },
     {
       "name": "knd",
       "type_info": "string",
       "required": false,
-      "description": "행정규칙 종류"
+      "description": "행정규칙 종류별 검색 (1=훈령/2=예규/3=고시/4=공고/5=지침/6=기타)"
     },
     {
       "name": "gana",
       "type_info": "string",
       "required": false,
-      "description": "사전식 검색"
+      "description": "사전식 검색(ga,na,da…,etc)"
     },
     {
       "name": "sort",
       "type_info": "string",
       "required": false,
-      "description": "정렬옵션"
+      "description": "정렬옵션 (기본 : lasc 행정규칙명 오른차순) ldes 행정규칙명 내림차순 dasc : 발령일자 오름차순 ddes : 발령일자 내림차순 nasc : 발령번호 오름차순 ndes : 발령번호 내림차순 efasc : 시행일자 오름차순 efdes : 시행일자 내림차순"
     },
     {
       "name": "date",
       "type_info": "int",
       "required": false,
-      "description": "발령일자"
+      "description": "행정규칙 발령일자"
+    },
+    {
+      "name": "prmlYd",
+      "type_info": "string",
+      "required": false,
+      "description": "발령일자 기간검색(20090101~20090130)"
+    },
+    {
+      "name": "nb",
+      "type_info": "int",
+      "required": false,
+      "description": "행정규칙 발령번호"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char:Y(필수)",
+      "required": true,
+      "description": "모바일여부"
     }
   ],
   "response_fields": [
     {
       "name": "target",
       "type_info": "string",
-      "description": "검색서비스 대상"
+      "description": "검색 대상"
     },
     {
       "name": "키워드",
       "type_info": "string",
-      "description": "검색어"
+      "description": "검색키워드"
     },
     {
       "name": "section",
       "type_info": "string",
-      "description": "검색범위"
+      "description": "검색범위(AdmRulNm:행정규칙명/bdyText:본문)"
     },
     {
       "name": "totalCnt",
       "type_info": "int",
-      "description": "검색건수"
+      "description": "검색결과갯수"
     },
     {
       "name": "page",
       "type_info": "int",
-      "description": "결과페이지번호"
+      "description": "출력페이지"
     },
     {
       "name": "admrul id",
       "type_info": "int",
-      "description": "결과 번호"
+      "description": "검색결과번호"
     },
     {
       "name": "행정규칙일련번호",
@@ -127,12 +145,12 @@
     },
     {
       "name": "발령일자",
-      "type_info": "int",
+      "type_info": "string",
       "description": "발령일자"
     },
     {
       "name": "발령번호",
-      "type_info": "int",
+      "type_info": "string",
       "description": "발령번호"
     },
     {
@@ -143,10 +161,10 @@
     {
       "name": "현행연혁구분",
       "type_info": "string",
-      "description": "현행/연혁 구분"
+      "description": "현행연혁구분"
     },
     {
-      "name": "제개정구분코드",
+      "name": "제개정 구분코드",
       "type_info": "string",
       "description": "제개정구분코드"
     },
@@ -157,31 +175,58 @@
     },
     {
       "name": "행정규칙ID",
-      "type_info": "int",
-      "description": "행정규칙 ID"
+      "type_info": "string",
+      "description": "행정규칙ID"
     },
     {
-      "name": "행정규칙상세링크",
+      "name": "행정규칙 상세링크",
       "type_info": "string",
       "description": "행정규칙상세링크"
     },
     {
       "name": "시행일자",
-      "type_info": "int",
+      "type_info": "string",
       "description": "시행일자"
     },
     {
       "name": "생성일자",
-      "type_info": "int",
+      "type_info": "string",
       "description": "생성일자"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawSearch.do?target=admrul&mobileYn=Y&OC=test&type=XML&search=1&query=학교&display=20&page=1",
-    "http://www.law.go.kr/DRF/lawSearch.do?target=admrul&mobileYn=Y&OC=test&type=JSON&search=1&query=학교&display=20&page=1",
-    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">학교</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"행정규칙상세링크\">https://www.law.go.kr/...</field>\n    <field name=\"page\">1</field>\n  </item>\n</response>",
-    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"학교\",\n      \"section\": \"예시값\",\n      \"totalCnt\": 20,\n      \"행정규칙상세링크\": \"https://www.law.go.kr/...\",\n      \"page\": 1\n    }\n  ]\n}"
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=JSON&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&mobileYn=Y&query=소방",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&date=20150301&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&nb=331&mobileYn=Y"
   ],
-  "sample_responses": []
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "mobAdmrulListguide",
+      "official_title": "모바일 행정규칙 목록 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobAdmrulListguide",
+      "target": "admrul",
+      "mobileYn": "Y",
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=HTML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=JSON&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&mobileYn=Y&query=소방",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&date=20150301&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&nb=331&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "admrul"
+  ]
 }

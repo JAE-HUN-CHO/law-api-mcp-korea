@@ -2,82 +2,39 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : trty, 필수",
+      "type_info": "string : trty(필수)",
       "required": true,
       "description": "서비스 대상"
-    },
-    {
-      "name": "type",
-      "type_info": "char, 필수",
-      "required": true,
-      "description": "출력 형태 : HTML 또는 HTML/XML/JSON"
-    },
-    {
-      "name": "mobileYn",
-      "type_info": "char : Y, 필수",
-      "required": true,
-      "description": "모바일 여부"
     },
     {
       "name": "ID",
       "type_info": "char",
       "required": false,
-      "description": "조약 일련번호"
+      "description": "조약 ID"
     },
     {
-      "name": "LM",
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
+    },
+    {
+      "name": "type",
       "type_info": "string",
       "required": false,
-      "description": "조약명"
+      "description": "출력 형태 : HTML"
     }
   ],
-  "response_fields": [
-    {
-      "name": "조약일련번호",
-      "type_info": "int",
-      "description": "조약일련번호"
-    },
-    {
-      "name": "조약명",
-      "type_info": "string",
-      "description": "조약명"
-    },
-    {
-      "name": "체결일자",
-      "type_info": "string",
-      "description": "체결일자"
-    },
-    {
-      "name": "발효일자",
-      "type_info": "string",
-      "description": "발효일자"
-    },
-    {
-      "name": "당사국",
-      "type_info": "string",
-      "description": "당사국"
-    },
-    {
-      "name": "조약본문",
-      "type_info": "string",
-      "description": "국문/영문 본문"
-    },
-    {
-      "name": "관련문서",
-      "type_info": "string",
-      "description": "관련문서 및 링크"
-    }
-  ],
+  "response_fields": [],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=trty&mobileYn=Y&OC=test&type=XML&ID={조약ID}",
-    "http://www.law.go.kr/DRF/lawService.do?target=trty&mobileYn=Y&OC=test&type=JSON&ID={조약ID}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=trty&ID=983&type=HTML&mobileYn=Y"
   ],
   "sample_responses": [
     {
@@ -88,5 +45,23 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"조약일련번호\": 12345,\n      \"조약명\": \"예시 협정\",\n      \"체결일자\": \"20250501\",\n      \"발효일자\": \"20250501\",\n      \"조약본문\": \"예시 본문\",\n      \"관련문서\": \"예시값\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobTrtyInfoGuide",
+      "official_title": "모바일 조약 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobTrtyInfoGuide",
+      "target": "trty",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=trty&ID=983&type=HTML&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "trty"
   ]
 }

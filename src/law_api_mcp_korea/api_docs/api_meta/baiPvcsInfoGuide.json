@@ -2,25 +2,25 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : baiPvcs, 필수",
+      "type_info": "string : baiPvcs(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "감사원사전컨설팅의견서일련번호"
     },
@@ -34,14 +34,14 @@
       "name": "fields",
       "type_info": "string",
       "required": false,
-      "description": "응답항목 옵션"
+      "description": "응답항목 옵션(의견서명, 접수번호, ...) * 빈 값일 경우 전체 항목 표출 * 출력 형태 HTML일 경우 적용 불가능"
     }
   ],
   "response_fields": [
     {
       "name": "감사원사전컨설팅의견서일련번호",
       "type_info": "int",
-      "description": "의견서 일련번호"
+      "description": "감사원사전컨설팅의견서일련번호"
     },
     {
       "name": "의견서명",
@@ -96,8 +96,9 @@
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=baiPvcs&OC=test&type=XML&ID={의견서일련번호}",
-    "http://www.law.go.kr/DRF/lawService.do?target=baiPvcs&OC=test&type=JSON&ID={의견서일련번호}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=JSON"
   ],
   "sample_responses": [
     {
@@ -108,5 +109,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"감사원사전컨설팅의견서일련번호\": 12345,\n      \"의견서명\": \"예시값\",\n      \"회신일자\": \"20250501\",\n      \"요청기관명\": \"예시 기관\",\n      \"접수번호\": \"12345\",\n      \"개요\": \"예시값\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "baiPvcsInfoGuide",
+      "official_title": "감사원 사전컨설팅 의견서 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=baiPvcsInfoGuide",
+      "target": "baiPvcs",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=baiPvcs&ID=30&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "baiPvcs"
   ]
 }

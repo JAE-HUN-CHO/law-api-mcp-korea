@@ -35,6 +35,20 @@ pip install -e .
 - `law-openapi-cli`: 문서 검색, URL 생성, API 호출용 CLI
 - `law-openapi-mcp`: stdio / streamable-http MCP 서버
 
+CLI는 기존 서브커맨드 외에도 사람이 기억하기 쉬운 alias를 제공합니다.
+예:
+
+- `search-api` → `catalog`
+- `inspect-api` → `doc`
+- `url` → `build-url`
+- `request` → `call`
+- `law-search` → `search-law`
+- `law` → `get-law`
+- `interpret-search` → `search-moleg`
+- `run-tool` → `tool`
+- `doctor` → 환경 설정 점검
+- `examples` → 자주 쓰는 예시 출력
+
 ## 전제
 
 법제처 OPEN API는 요청 파라미터 `OC`(사용자 이메일 ID)를 요구합니다.
@@ -82,8 +96,11 @@ echo LAW_API_OC=your_oc_value > .env
 - `감사원 사전컨설팅 의견서`(`baiPvcs`)
   - 목록/본문 조회는 현재 패키지 표면에서 `유효한 API key가 아닙니다` 스타일 오류로 표준화됩니다.
   - live sweep 기준으로도 이 두 건은 `invalid_api_key`로 집계합니다.
-- 현재 live sweep 기대값:
-  - `191 = 108 direct_ok + 81 recovered_ok + 2 invalid_api_key + 0 unresolved`
+- 현재 live sweep 검증 기준:
+  - 내부 API 총수는 `191`입니다.
+  - `invalid_api_key`는 현재 `2`건으로 고정 관찰됩니다.
+  - `direct_ok` / `recovered_ok` 분포는 공식 샘플 URL과 upstream 상태에 따라 달라질 수 있습니다.
+  - `unresolved`는 소수 범위에서 변동 가능하므로 작은 허용오차로 검증합니다.
 
 ## 문서 동기화
 
@@ -99,17 +116,44 @@ python tools/sync_api_docs.py
 - `src/law_api_mcp_korea/api_docs/*.md`로 복사
 - `catalog.json`의 191개 `filename` 집합과 정확히 일치하는지 검증
 
+## 공식 가이드 카운트 검증
+
+- 2026-04-04 기준 [guideList.do](https://open.law.go.kr/LSO/openApi/guideList.do) 화면 표시는 `총 191건`입니다.
+- 같은 페이지 HTML의 실제 `openApiGuide('...')` 링크 수는 `195`건입니다.
+- 내부 `catalog.json`은 grouped API를 유지하므로 `191 internal APIs`를 사용합니다.
+- 이 저장소에서는 다음 해석을 canonical로 사용합니다.
+  - `guide_list_displayed_count=191`: 공식 사이트 UI 표시값
+  - `official_list_item_count=195`: 공식 페이지 실제 상세 가이드 링크 수
+  - `catalog.count=191`: 내부 런타임 카탈로그 수
+- 최종 GAP 판정은 문자열 완전 일치가 아니라 정규화 후 의미 동일 여부를 기준으로 합니다.
+
+재검증 명령:
+
+```bash
+python tools/sync_official_guides.py
+python tools/audit_official_guides.py
+```
+
 ## 빠른 사용
 
 ```bash
 law-openapi-cli catalog --search 법령해석
+law-openapi-cli search-api --search 법령해석
 law-openapi-cli doc cgmExpcMolegListGuide
+law-openapi-cli inspect-api cgmExpcMolegListGuide --view summary --json
 law-openapi-cli build-url cgmExpcMolegListGuide --param query=퇴직 --param display=5
+law-openapi-cli url cgmExpcMolegListGuide --param query=퇴직 --param display=5
 law-openapi-cli call cgmExpcMolegListGuide --param query=퇴직 --param display=5
+law-openapi-cli request cgmExpcMolegListGuide --param query=퇴직 --param display=5
 law-openapi-cli search-law 자동차관리법
+law-openapi-cli law-search 자동차관리법
 law-openapi-cli get-law --id 000744
+law-openapi-cli law --id 000744 --type JSON
 law-openapi-cli search-moleg 퇴직
+law-openapi-cli interpret-search 퇴직
 law-openapi-cli get-moleg --id 12345
+law-openapi-cli doctor
+law-openapi-cli examples
 ```
 
 ## 테스트
@@ -193,13 +237,27 @@ law-openapi-mcp --transport streamable-http
 CLI 서브커맨드:
 
 - `catalog`
+- `search-api`, `find-api`
 - `doc`
+- `inspect-api`, `api-doc`
 - `build-url`
+- `url`
 - `call`
+- `request`, `invoke`
 - `search-law`
+- `law-search`
 - `get-law`
+- `law`
 - `search-moleg`
+- `interpret-search`
 - `get-moleg`
+- `interpret`
+- `tool-catalog`, `tools`
+- `tool-doc`, `tool-help`
+- `tool`, `run-tool`
+- `auth`, `login`
+- `doctor`
+- `examples`
 - `mcp`
 
 MCP resources:

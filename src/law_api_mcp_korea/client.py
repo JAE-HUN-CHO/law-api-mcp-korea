@@ -139,7 +139,12 @@ class LawOpenApiClient:
         api = resolve_api(api_name)
         response_type = (response_type or "JSON").upper().strip()
 
-        supported = [t.upper() for t in api.get("supported_types", [])]
+        supported = [str(t).upper() for t in api.get("supported_types", [])]
+        for variant in api.get("sample_variants", []) or []:
+            for response_type_option in variant.get("response_types", []) or []:
+                candidate = str(response_type_option).upper()
+                if candidate and candidate not in supported:
+                    supported.append(candidate)
         if supported and response_type not in supported:
             raise UnsupportedResponseTypeError(
                 f"{api['title']} API는 {', '.join(supported)} 형식만 지원합니다. 요청 형식: {response_type}"
@@ -158,6 +163,7 @@ class LawOpenApiClient:
 
         fixed_params = {k: str(v) for k, v in dict(api.get("default_params", {})).items()}
         query_params: dict[str, str] = dict(fixed_params)
+        allowed_target_variants = {str(value) for value in api.get("target_variants", []) or []}
 
         for reserved in ("OC", "type"):
             if reserved in user_params and str(user_params[reserved]).strip():
@@ -170,6 +176,9 @@ class LawOpenApiClient:
                 continue
             value_str = _stringify(value)
             if key in fixed_params and fixed_params[key] != value_str:
+                if key == "target" and value_str in allowed_target_variants:
+                    query_params[key] = value_str
+                    continue
                 raise RequestPreparationError(
                     f"{key}={value_str} 는 선택한 API 문서의 고정값 {fixed_params[key]} 와 다릅니다."
                 )

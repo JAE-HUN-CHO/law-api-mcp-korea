@@ -10,20 +10,34 @@ DOCS_PACKAGE = "law_api_mcp_korea.api_docs"
 SUMMARY_FIELDS = (
     "index",
     "slug",
+    "doc_key",
     "guide_html_name",
+    "official_html_name",
+    "official_html_names",
+    "official_guide_url",
+    "official_source",
+    "official_list_titles",
     "title",
     "family",
     "filename",
     "guide_url",
     "endpoint",
     "supported_types",
+    "sample_variants",
+    "target_variants",
     "description",
     "evidence",
 )
 DETAIL_FIELDS = (
     "index",
     "slug",
+    "doc_key",
     "guide_html_name",
+    "official_html_name",
+    "official_html_names",
+    "official_guide_url",
+    "official_source",
+    "official_list_titles",
     "title",
     "family",
     "filename",
@@ -36,6 +50,8 @@ DETAIL_FIELDS = (
     "notes",
     "sample_requests",
     "sample_responses",
+    "sample_variants",
+    "target_variants",
     "evidence",
 )
 
@@ -68,6 +84,9 @@ def metadata() -> dict[str, Any]:
         "generated_at": data.get("generated_at"),
         "count": data.get("count"),
         "families": data.get("families", {}),
+        "guide_list_displayed_count": data.get("guide_list_displayed_count"),
+        "official_list_item_count": data.get("official_list_item_count"),
+        "official_guide_count": data.get("official_guide_count"),
     }
 
 
@@ -90,10 +109,12 @@ def search_apis(keyword: str = "", family: str = "", limit: int = 50, offset: in
                 [
                     str(api.get("slug", "")),
                     str(api.get("guide_html_name", "")),
+                    str(api.get("official_html_name", "")),
                     str(api.get("title", "")),
                     str(api.get("filename", "")),
                     str(api.get("stem", "")),
                     str(api.get("description", "")),
+                    " ".join(str(v) for v in api.get("official_list_titles", [])),
                     " ".join(p.get("name", "") for p in api.get("request_params", [])),
                 ]
             )
@@ -109,11 +130,19 @@ def search_apis(keyword: str = "", family: str = "", limit: int = 50, offset: in
 def _candidate_strings(api: dict[str, Any]) -> list[str]:
     return [
         str(api.get("slug") or ""),
+        str(api.get("doc_key") or ""),
         str(api.get("guide_html_name") or ""),
+        str(api.get("official_html_name") or ""),
         str(api.get("title") or ""),
         str(api.get("filename") or ""),
         str(api.get("stem") or ""),
+        *(str(value) for value in api.get("official_html_names", []) or []),
+        *(str(value) for value in api.get("official_list_titles", []) or []),
     ]
+
+
+def _doc_key(api: dict[str, Any]) -> str:
+    return str(api.get("doc_key") or api.get("slug") or api.get("guide_html_name"))
 
 
 def resolve_api(api_name: str) -> dict[str, Any]:
@@ -195,7 +224,7 @@ def _merge_notes(*note_groups: list[str]) -> list[str]:
 
 def get_api_detail(api_name: str | dict[str, Any]) -> dict[str, Any]:
     api = resolve_api(api_name) if isinstance(api_name, str) else dict(api_name)
-    detail = dict(_load_api_meta(str(api["guide_html_name"])))
+    detail = dict(_load_api_meta(_doc_key(api)))
     merged = dict(api)
     merged.update(detail)
     merged["notes"] = _merge_notes(

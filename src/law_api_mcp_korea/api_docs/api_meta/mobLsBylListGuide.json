@@ -2,87 +2,87 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : licbyl, 필수",
+      "type_info": "string : licbyl(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
-      "required": true,
-      "description": "출력 형태 : HTML/XML/JSON 또는 HTML"
-    },
-    {
-      "name": "mobileYn",
-      "type_info": "char : Y, 필수",
-      "required": true,
-      "description": "모바일 여부"
+      "type_info": "char",
+      "required": false,
+      "description": "출력 형태 HTML/XML/JSON"
     },
     {
       "name": "search",
       "type_info": "int",
       "required": false,
-      "description": "검색범위"
+      "description": "\"검색범위 (기본 : 1 별표서식명) 2 : 해당법령검색 3 : 별표본문검색\""
     },
     {
       "name": "query",
       "type_info": "string",
       "required": false,
-      "description": "검색어"
+      "description": "법령명에서 검색을 원하는 질의(default=*)"
     },
     {
       "name": "display",
       "type_info": "int",
       "required": false,
-      "description": "검색 개수"
+      "description": "검색된 결과 개수 (default=20 max=100)"
     },
     {
       "name": "page",
       "type_info": "int",
       "required": false,
-      "description": "결과 페이지"
+      "description": "검색 결과 페이지 (default=1)"
     },
     {
       "name": "sort",
       "type_info": "string",
       "required": false,
-      "description": "정렬옵션"
+      "description": "\"정렬옵션 (기본 : lasc 별표서식명 오름차순) ldes 별표서식명 내림차순\""
     },
     {
       "name": "org",
       "type_info": "string",
       "required": false,
-      "description": "소관부처 코드"
+      "description": "소관부처별 검색(소관부처코드 제공)"
     },
     {
       "name": "knd",
       "type_info": "string",
       "required": false,
-      "description": "별표종류"
+      "description": "별표종류 1 : 별표 2 : 서식 3 : 별지 4 : 별도 5 : 부록"
     },
     {
       "name": "gana",
       "type_info": "string",
       "required": false,
-      "description": "사전식 검색"
+      "description": "사전식 검색(ga,na,da…,etc)"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
     }
   ],
   "response_fields": [
     {
-      "name": "target",
-      "type_info": "string",
-      "description": "검색 대상"
+      "name": "id",
+      "type_info": "int",
+      "description": "검색결과번호"
     },
     {
-      "name": "키워드",
-      "type_info": "string",
-      "description": "검색어"
+      "name": "page",
+      "type_info": "int",
+      "description": "결과페이지번호"
     },
     {
       "name": "section",
@@ -90,34 +90,74 @@
       "description": "검색범위"
     },
     {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
       "name": "totalCnt",
       "type_info": "int",
       "description": "검색건수"
     },
     {
-      "name": "page",
+      "name": "공포번호",
       "type_info": "int",
-      "description": "현재 페이지"
+      "description": "공포번호"
     },
     {
-      "name": "id",
+      "name": "공포일자",
       "type_info": "int",
-      "description": "결과 번호"
+      "description": "공포일자"
     },
     {
-      "name": "별표서식일련번호",
+      "name": "관련법령ID",
       "type_info": "int",
-      "description": "별표/서식 일련번호"
+      "description": "관련법령ID"
     },
     {
-      "name": "별표서식명",
+      "name": "관련법령명",
       "type_info": "string",
-      "description": "별표/서식명"
+      "description": "관련법령명"
     },
     {
-      "name": "소속법령명",
+      "name": "관련법령일련번호",
+      "type_info": "int",
+      "description": "관련법령일련번호"
+    },
+    {
+      "name": "법령종류",
       "type_info": "string",
-      "description": "소속 법령/행정규칙/자치법규명"
+      "description": "법령종류"
+    },
+    {
+      "name": "별표명",
+      "type_info": "string",
+      "description": "별표명ID"
+    },
+    {
+      "name": "별표번호",
+      "type_info": "int",
+      "description": "별표번호"
+    },
+    {
+      "name": "별표법령상세링크",
+      "type_info": "string",
+      "description": "별표법령상세링크"
+    },
+    {
+      "name": "별표서식PDF파일링크",
+      "type_info": "string",
+      "description": "별표서식PDF파일링크"
+    },
+    {
+      "name": "별표서식파일링크",
+      "type_info": "string",
+      "description": "별표서식파일링크"
+    },
+    {
+      "name": "별표일련번호",
+      "type_info": "int",
+      "description": "별표일련번호"
     },
     {
       "name": "별표종류",
@@ -125,17 +165,50 @@
       "description": "별표종류"
     },
     {
-      "name": "상세링크",
+      "name": "소관부처명",
       "type_info": "string",
-      "description": "상세링크"
+      "description": "소관부처명"
+    },
+    {
+      "name": "제개정구분명",
+      "type_info": "string",
+      "description": "제개정구분명"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색어"
     }
   ],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawSearch.do?target=licbyl&mobileYn=Y&OC=test&type=XML&search=1&query=자동차관리법&display=20&page=1",
-    "http://www.law.go.kr/DRF/lawSearch.do?target=licbyl&mobileYn=Y&OC=test&type=JSON&search=1&query=자동차관리법&display=20&page=1",
-    "<response>\n  <item>\n    <field name=\"target\">예시값</field>\n    <field name=\"키워드\">자동차관리법</field>\n    <field name=\"section\">예시값</field>\n    <field name=\"totalCnt\">20</field>\n    <field name=\"소속법령명\">자동차관리법</field>\n    <field name=\"상세링크\">https://www.law.go.kr/...</field>\n  </item>\n</response>",
-    "{\n  \"data\": [\n    {\n      \"target\": \"예시값\",\n      \"키워드\": \"자동차관리법\",\n      \"section\": \"예시값\",\n      \"totalCnt\": 20,\n      \"소속법령명\": \"자동차관리법\",\n      \"상세링크\": \"https://www.law.go.kr/...\"\n    }\n  ]\n}"
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=XML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=JSON&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=XML&org=1320000&mobileYn=Y"
   ],
-  "sample_responses": []
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "mobLsBylListGuide",
+      "official_title": "모바일 법령별표 목록 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsBylListGuide",
+      "target": "licbyl",
+      "mobileYn": "Y",
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=XML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=HTML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=JSON&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=licbyl&type=XML&org=1320000&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "licbyl"
+  ]
 }

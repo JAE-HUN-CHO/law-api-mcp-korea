@@ -2,25 +2,25 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
       "type_info": "string : ttSpecialDecc(필수)",
       "required": true,
-      "description": "서비스 대상(기관별 special target)"
+      "description": "서비스 대상"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "특별행정심판재결례일련번호"
     },
@@ -34,7 +34,7 @@
       "name": "fields",
       "type_info": "string",
       "required": false,
-      "description": "응답항목 옵션(HTML 형식에서는 미적용)"
+      "description": "응답항목 옵션(사건명, 사건번호, ...) * 빈 값일 경우 전체 항목 표출 * 출력 형태 HTML일 경우 적용 불가능"
     }
   ],
   "response_fields": [
@@ -138,8 +138,9 @@
     "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
   ],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=ttSpecialDecc&OC=test&type=XML&ID={재결례일련번호}",
-    "http://www.law.go.kr/DRF/lawService.do?target=ttSpecialDecc&OC=test&type=JSON&ID={재결례일련번호}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=JSON"
   ],
   "sample_responses": [
     {
@@ -150,5 +151,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"특별행정심판재결례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"청구번호\": \"12345\",\n      \"이유\": \"예시 본문\",\n      \"주문\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "specialDeccTtInfoGuide",
+      "official_title": "조세심판원 특별행정심판재결례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccTtInfoGuide",
+      "target": "ttSpecialDecc",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ttSpecialDecc&ID=1018160&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "ttSpecialDecc"
   ]
 }

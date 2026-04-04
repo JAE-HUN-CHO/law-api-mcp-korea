@@ -2,32 +2,32 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string(필수) (노동위원회 : nlrc)",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "서비스 대상(위원회별 target 코드)"
+      "description": "서비스 대상 (노동위원회 : nlrc)"
     },
     {
       "name": "type",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "출력 형태 : HTML/XML/JSON"
     },
     {
       "name": "ID",
-      "type_info": "char, 필수",
+      "type_info": "char(필수)",
       "required": true,
       "description": "결정문 일련번호"
     }
   ],
   "response_fields": [
     {
-      "name": "결정문일련번호",
+      "name": "결정문 일련번호",
       "type_info": "int",
       "description": "결정문 일련번호"
     },
@@ -96,8 +96,9 @@
     "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
   ],
   "sample_requests": [
-    "https://www.law.go.kr/DRF/lawService.do?target=nlrc&OC=test&type=XML&ID={결정문일련번호}",
-    "https://www.law.go.kr/DRF/lawService.do?target=nlrc&OC=test&type=JSON&ID={결정문일련번호}"
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=55&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=71&type=XML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=129&type=JSON"
   ],
   "sample_responses": [
     {
@@ -108,5 +109,27 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"결정문일련번호\": 12345,\n      \"기관명\": \"예시 기관\",\n      \"사건번호\": \"12345\",\n      \"자료구분\": \"예시값\",\n      \"제목\": \"예시 사건\",\n      \"내용\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "nlrcInfoGuide",
+      "official_title": "노동위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=nlrcInfoGuide",
+      "target": "nlrc",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=55&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=71&type=XML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=nlrc&ID=129&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "nlrc"
   ]
 }

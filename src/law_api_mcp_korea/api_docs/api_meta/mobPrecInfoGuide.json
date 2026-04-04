@@ -2,96 +2,45 @@
   "request_params": [
     {
       "name": "OC",
-      "type_info": "string, 필수",
+      "type_info": "string(필수)",
       "required": true,
-      "description": "사용자 이메일 ID"
+      "description": "신청한 API인증값"
     },
     {
       "name": "target",
-      "type_info": "string : prec, 필수",
+      "type_info": "string : prec(필수)",
       "required": true,
       "description": "서비스 대상"
     },
     {
-      "name": "type",
-      "type_info": "char, 필수",
+      "name": "ID",
+      "type_info": "char(필수)",
       "required": true,
-      "description": "출력 형태 : HTML 또는 HTML/XML/JSON"
+      "description": "판례 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "판례명"
+    },
+    {
+      "name": "type",
+      "type_info": "string",
+      "required": false,
+      "description": "출력 형태 : HTML"
     },
     {
       "name": "mobileYn",
-      "type_info": "char : Y, 필수",
+      "type_info": "char : Y (필수)",
       "required": true,
-      "description": "모바일 여부"
-    },
-    {
-      "name": "ID",
-      "type_info": "char",
-      "required": false,
-      "description": "판례 일련번호"
+      "description": "모바일여부"
     }
   ],
-  "response_fields": [
-    {
-      "name": "판례일련번호",
-      "type_info": "int",
-      "description": "판례일련번호"
-    },
-    {
-      "name": "사건명",
-      "type_info": "string",
-      "description": "사건명"
-    },
-    {
-      "name": "사건번호",
-      "type_info": "string",
-      "description": "사건번호"
-    },
-    {
-      "name": "선고일자",
-      "type_info": "string",
-      "description": "선고일자"
-    },
-    {
-      "name": "법원명",
-      "type_info": "string",
-      "description": "법원명"
-    },
-    {
-      "name": "판시사항",
-      "type_info": "string",
-      "description": "판시사항"
-    },
-    {
-      "name": "판결요지",
-      "type_info": "string",
-      "description": "판결요지"
-    },
-    {
-      "name": "주문",
-      "type_info": "string",
-      "description": "주문"
-    },
-    {
-      "name": "이유",
-      "type_info": "string",
-      "description": "이유"
-    },
-    {
-      "name": "참조조문",
-      "type_info": "string",
-      "description": "참조조문"
-    },
-    {
-      "name": "본문",
-      "type_info": "string",
-      "description": "본문"
-    }
-  ],
+  "response_fields": [],
   "notes": [],
   "sample_requests": [
-    "http://www.law.go.kr/DRF/lawService.do?target=prec&mobileYn=Y&OC=test&type=XML&ID={판례일련번호}",
-    "http://www.law.go.kr/DRF/lawService.do?target=prec&mobileYn=Y&OC=test&type=JSON&ID={판례일련번호}"
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228547&type=HTML&mobileYn=Y"
   ],
   "sample_responses": [
     {
@@ -102,5 +51,23 @@
       "lang": "json",
       "content": "{\n  \"data\": [\n    {\n      \"판례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"선고일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"이유\": \"예시 본문\"\n    }\n  ]\n}"
     }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobPrecInfoGuide",
+      "official_title": "모바일 판례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobPrecInfoGuide",
+      "target": "prec",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228547&type=HTML&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "prec"
   ]
 }

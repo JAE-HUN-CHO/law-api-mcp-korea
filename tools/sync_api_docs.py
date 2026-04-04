@@ -13,7 +13,13 @@ CATALOG_PATH = PACKAGE_DOCS / "catalog.json"
 INDEX_FIELDS = (
     "index",
     "slug",
+    "doc_key",
     "guide_html_name",
+    "official_html_name",
+    "official_html_names",
+    "official_guide_url",
+    "official_source",
+    "official_list_titles",
     "title",
     "family",
     "filename",
@@ -25,6 +31,8 @@ INDEX_FIELDS = (
     "description",
     "request_params",
     "supported_types",
+    "sample_variants",
+    "target_variants",
     "evidence",
 )
 DETAIL_FIELDS = (
@@ -33,6 +41,8 @@ DETAIL_FIELDS = (
     "notes",
     "sample_requests",
     "sample_responses",
+    "sample_variants",
+    "target_variants",
 )
 
 
@@ -96,6 +106,10 @@ def _detail_api(api: dict) -> dict:
     return {field: api.get(field, [] if field != "notes" else []) for field in DETAIL_FIELDS}
 
 
+def _doc_key(api: dict) -> str:
+    return str(api.get("doc_key") or api.get("slug") or api["guide_html_name"])
+
+
 def write_split_metadata(package_root: Path = PACKAGE_DOCS) -> None:
     raw = load_raw_catalog(package_root / "catalog.json")
     index_payload = {
@@ -103,6 +117,9 @@ def write_split_metadata(package_root: Path = PACKAGE_DOCS) -> None:
         "source_zip": raw.get("source_zip"),
         "count": raw.get("count"),
         "families": raw.get("families", {}),
+        "guide_list_displayed_count": raw.get("guide_list_displayed_count"),
+        "official_list_item_count": raw.get("official_list_item_count"),
+        "official_guide_count": raw.get("official_guide_count"),
         "apis": [_index_api(api) for api in raw.get("apis", [])],
     }
     (package_root / "catalog_index.json").write_text(
@@ -116,7 +133,7 @@ def write_split_metadata(package_root: Path = PACKAGE_DOCS) -> None:
         path.unlink()
 
     for api in raw.get("apis", []):
-        target = api_meta_root / f"{api['guide_html_name']}.json"
+        target = api_meta_root / f"{_doc_key(api)}.json"
         target.write_text(
             json.dumps(_detail_api(api), ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
