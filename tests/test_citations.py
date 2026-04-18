@@ -90,6 +90,28 @@ class TestVerifiedMarker(unittest.TestCase):
         )
         self.assertEqual(result["marker"], "[VERIFIED]")
 
+    def test_skipped_status_gets_skipped_marker(self):
+        from law_api_mcp_korea.citations import build_citation_result
+        result = build_citation_result(
+            raw="민법 제750조",
+            law_name="민법",
+            law_name_resolved="민법",
+            article=750,
+            status="skipped",
+        )
+        self.assertEqual(result["marker"], "[SKIPPED]")
+
+    def test_error_status_gets_error_marker(self):
+        from law_api_mcp_korea.citations import build_citation_result
+        result = build_citation_result(
+            raw="민법 제750조",
+            law_name="민법",
+            law_name_resolved="민법",
+            article=750,
+            status="error",
+        )
+        self.assertEqual(result["marker"], "[ERROR]")
+
 
 if __name__ == "__main__":
     unittest.main()

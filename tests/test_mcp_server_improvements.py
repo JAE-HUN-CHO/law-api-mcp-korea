@@ -152,6 +152,12 @@ class TestStep2Validation(unittest.TestCase):
         self.assertTrue(result.get("error"), msg=f"Expected error dict, got: {result}")
         self.assertEqual(result["error_type"], "InvalidParamError")
 
+    def test_list_apis_minimal_view_is_invalid(self):
+        """'minimal' is not a supported catalog view and must return InvalidParamError."""
+        result = _call_tool("list_apis", view="minimal")
+        self.assertTrue(result.get("error"), msg=f"Expected error dict, got: {result}")
+        self.assertEqual(result["error_type"], "InvalidParamError")
+
 
 # ---------------------------------------------------------------------------
 # Step 4: _build_tool_description module-level helper

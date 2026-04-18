@@ -7,6 +7,15 @@ from typing import Any
 from .aliases import HALLUCINATION_MARKER, resolve_alias
 
 VERIFIED_MARKER = "[VERIFIED]"
+SKIPPED_MARKER = "[SKIPPED]"
+ERROR_MARKER = "[ERROR]"
+
+_MARKER_MAP: dict[str, str] = {
+    "verified": VERIFIED_MARKER,
+    "not_found": HALLUCINATION_MARKER,
+    "skipped": SKIPPED_MARKER,
+    "error": ERROR_MARKER,
+}
 
 # 한국 법령 조문 인용 패턴
 # 예: "민법 제750조", "산업안전보건법 제38조의2", "화관법 제12조제3항"
@@ -54,8 +63,12 @@ def build_citation_result(
     status: str,
     detail: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """단일 인용 검증 결과 dict를 생성한다."""
-    marker = VERIFIED_MARKER if status == "verified" else HALLUCINATION_MARKER
+    """단일 인용 검증 결과 dict를 생성한다.
+
+    status: "verified" → [VERIFIED], "not_found" → [HALLUCINATION_DETECTED],
+            "skipped" → [SKIPPED], "error" → [ERROR]
+    """
+    marker = _MARKER_MAP.get(status, HALLUCINATION_MARKER)
     return {
         "raw": raw,
         "law_name": law_name,

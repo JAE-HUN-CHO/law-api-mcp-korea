@@ -26,7 +26,7 @@ from .decisions import DECISION_DOMAINS, domain_name, get_info_slug, get_list_sl
 from .generated_tools import all_generated_tools
 
 
-_VALID_VIEWS = {"summary", "detail", "minimal"}
+_VALID_VIEWS = {"summary", "detail"}
 
 
 def _build_tool_description(spec: dict[str, Any]) -> str:
@@ -603,10 +603,11 @@ def create_server(stateless_http: bool = False):
                     search=1,
                     oc=oc,
                 )
-                # 법령 존재 여부 확인
+                # 법령 존재 여부 확인 — 응답은 {"data": {"LawSearch": {...}}} 구조
+                _sr_data = search_result.get("data", search_result)
                 laws = (
-                    search_result.get("LawSearch", {}).get("law")
-                    or search_result.get("law")
+                    _sr_data.get("LawSearch", {}).get("law")
+                    or _sr_data.get("law")
                     or []
                 )
                 if isinstance(laws, dict):
