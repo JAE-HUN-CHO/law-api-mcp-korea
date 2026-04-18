@@ -22,11 +22,12 @@ from .catalog import (
 from .aliases import NOT_FOUND_MARKER, not_found_response, resolve_alias
 from .client import LawOpenApiClient, LawOpenApiError, InvalidParamError, MissingParamError
 from .citations import VERIFIED_MARKER, build_citation_result, extract_citations
-from .decisions import DECISION_DOMAINS, domain_name, get_info_slug, get_list_slug, resolve_domain
+from .decisions import DECISION_DOMAINS, domain_name, get_info_slug, get_item_from_response, get_list_slug, resolve_domain
 from .generated_tools import all_generated_tools
 
 
 _VALID_VIEWS = {"summary", "detail"}
+_VALID_DOMAINS = sorted(DECISION_DOMAINS.keys())
 
 
 def _build_tool_description(spec: dict[str, Any]) -> str:
@@ -113,7 +114,7 @@ def create_server(stateless_http: bool = False):
           family: API 패밀리 필터 (선택, 기본값 "")
           limit: 최대 반환 수 (선택, 기본값 50)
           offset: 페이지 오프셋 (선택, 기본값 0)
-          view: 상세 수준 — "summary" | "detail" | "minimal" (선택, 기본값 "summary")
+          view: 상세 수준 — "summary" | "detail" (선택, 기본값 "summary")
         반환: {meta, count, items[]}
         에러: view가 유효하지 않으면 {"error": true, "error_type": "InvalidParamError", ...}
         """
@@ -138,11 +139,15 @@ def create_server(stateless_http: bool = False):
         언제 사용: 특정 API의 상세 스펙(파라미터, 응답 구조, 예제)이 필요할 때.
         파라미터:
           api_name: API 식별자 (필수, list_apis로 조회 가능)
-          view: 상세 수준 — "summary" | "detail" | "minimal" (선택, 기본값 "summary")
+          view: 상세 수준 — "summary" | "detail" (선택, 기본값 "summary")
           include_markdown: 마크다운 문서 포함 여부 (선택, 기본값 false)
         반환: {api, params[], notes[], sample_requests[], sample_responses[]}
+        에러: {"error": true, "error_type": "...", "message": "..."}
         """
-        return get_api_doc_payload(api_name, view=view, include_markdown=include_markdown)
+        try:
+            return get_api_doc_payload(api_name, view=view, include_markdown=include_markdown)
+        except LawOpenApiError as exc:
+            return {"error": True, "error_type": type(exc).__name__, "message": str(exc)}
 
     @mcp.tool()
     def list_generated_tools(keyword: str = "", limit: int = 100) -> dict[str, Any]:
@@ -414,8 +419,6 @@ def create_server(stateless_http: bool = False):
         except LawOpenApiError as exc:
             return {"error": True, "error_type": type(exc).__name__, "message": str(exc)}
 
-    _VALID_DOMAINS = sorted(DECISION_DOMAINS.keys())
-
     @mcp.tool()
     def search_decisions(
         query: str,
@@ -470,17 +473,8 @@ def create_server(stateless_http: bool = False):
                 response_type=response_type,
                 oc=oc,
             )
-            # 빈 결과 감지 (응답 구조는 API마다 다름)
             data = result.get("data", result)
-            items = (
-                data.get("PrecSearch", {}).get("prec")
-                or data.get("DetcSearch", {}).get("detc")
-                or data.get("DeccSearch", {}).get("decc")
-                or data.get("ExpcSearch", {}).get("expc")
-                or []
-            )
-            if isinstance(items, dict):
-                items = [items]
+            items = get_item_from_response(domain_code, data)
             if not items:
                 return not_found_response(query, domain_name(domain_code))
             return {
@@ -581,6 +575,7 @@ def create_server(stateless_http: bool = False):
         skipped_count = 0
 
         oc_value = oc or authenticated_oc
+        client = _client_for_request(oc) if oc_value else None
         for cit in citations_raw:
             if not oc_value:
                 # OC 없으면 네트워크 조회 없이 parsed 상태로만 반환
@@ -596,7 +591,6 @@ def create_server(stateless_http: bool = False):
                 continue
 
             try:
-                client = _client_for_request(oc)
                 search_result = client.search_current_law(
                     query=cit["law_name_resolved"],
                     display=5,

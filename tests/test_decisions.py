@@ -89,5 +89,56 @@ class TestGetDecisionListSlug(unittest.TestCase):
         self.assertIsNone(gs("NOSUCHCODE"))
 
 
+class TestDecisionDomainsSearchKeys(unittest.TestCase):
+    """DECISION_DOMAINS must declare search_key and item_key for all non-moleg domains."""
+
+    def _mod(self):
+        from law_api_mcp_korea import decisions
+        return decisions
+
+    def test_all_non_moleg_domains_have_search_key(self):
+        m = self._mod()
+        for code, spec in m.DECISION_DOMAINS.items():
+            if code == "moleg":
+                continue
+            self.assertIn("search_key", spec, f"Domain {code!r} missing 'search_key'")
+            self.assertIsInstance(spec["search_key"], str)
+
+    def test_all_non_moleg_domains_have_item_key(self):
+        m = self._mod()
+        for code, spec in m.DECISION_DOMAINS.items():
+            if code == "moleg":
+                continue
+            self.assertIn("item_key", spec, f"Domain {code!r} missing 'item_key'")
+            self.assertIsInstance(spec["item_key"], str)
+
+    def test_prec_search_key(self):
+        m = self._mod()
+        self.assertEqual(m.DECISION_DOMAINS["prec"]["search_key"], "PrecSearch")
+        self.assertEqual(m.DECISION_DOMAINS["prec"]["item_key"], "prec")
+
+    def test_get_item_from_response_function_exists(self):
+        from law_api_mcp_korea.decisions import get_item_from_response
+        self.assertTrue(callable(get_item_from_response))
+
+    def test_get_item_from_response_extracts_prec(self):
+        from law_api_mcp_korea.decisions import get_item_from_response
+        response_data = {"PrecSearch": {"prec": [{"id": "1"}]}}
+        items = get_item_from_response("prec", response_data)
+        self.assertEqual(items, [{"id": "1"}])
+
+    def test_get_item_from_response_returns_empty_for_missing_key(self):
+        from law_api_mcp_korea.decisions import get_item_from_response
+        items = get_item_from_response("prec", {})
+        self.assertEqual(items, [])
+
+    def test_get_item_from_response_wraps_dict_in_list(self):
+        from law_api_mcp_korea.decisions import get_item_from_response
+        response_data = {"PrecSearch": {"prec": {"id": "1"}}}
+        items = get_item_from_response("prec", response_data)
+        self.assertIsInstance(items, list)
+        self.assertEqual(len(items), 1)
+
+
 if __name__ == "__main__":
     unittest.main()
