@@ -45,6 +45,14 @@ class InvalidApiKeyError(LawOpenApiError):
     """Raised when the upstream API behaves like the OC is not valid."""
 
 
+class MissingParamError(LawOpenApiError):
+    """Raised when required parameters are missing from a tool call."""
+
+
+class InvalidParamError(LawOpenApiError):
+    """Raised when a parameter value is not within the allowed set."""
+
+
 @dataclass(frozen=True)
 class PreparedLawRequest:
     api: dict[str, Any]
