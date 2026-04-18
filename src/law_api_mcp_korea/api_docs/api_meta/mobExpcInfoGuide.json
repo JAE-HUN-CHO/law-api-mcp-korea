@@ -1,0 +1,85 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : expc(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "int",
+      "required": false,
+      "description": "법령해석례 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령해석례명"
+    },
+    {
+      "name": "type",
+      "type_info": "string",
+      "required": false,
+      "description": "출력 형태 : HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
+    }
+  ],
+  "response_fields": [],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=expc&ID=334617&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=expc&ID=315191&LM=여성가족부"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"법령해석례일련번호\">12345</field>\n    <field name=\"안건명\">예시 사건</field>\n    <field name=\"안건번호\">12345</field>\n    <field name=\"해석일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"이유\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"법령해석례일련번호\": 12345,\n      \"안건명\": \"예시 사건\",\n      \"안건번호\": \"12345\",\n      \"해석일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"이유\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobExpcInfoGuide",
+      "official_title": "모바일 법령해석례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobExpcInfoGuide",
+      "target": "expc",
+      "mobileYn": null,
+      "response_types": [],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=expc&ID=315191&LM=여성가족부"
+      ]
+    },
+    {
+      "official_html_name": "mobExpcInfoGuide",
+      "official_title": "모바일 법령해석례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobExpcInfoGuide",
+      "target": "expc",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=expc&ID=334617&type=HTML&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "expc"
+  ]
+}

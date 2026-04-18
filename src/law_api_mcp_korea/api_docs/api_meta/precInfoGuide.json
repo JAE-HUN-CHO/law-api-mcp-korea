@@ -1,0 +1,149 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : prec(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON *국세청 판례 본문 조회는 HTML만 가능합니다"
+    },
+    {
+      "name": "ID",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "판례 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "판례명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "판례정보일련번호",
+      "type_info": "int",
+      "description": "판례정보일련번호"
+    },
+    {
+      "name": "사건명",
+      "type_info": "string",
+      "description": "사건명"
+    },
+    {
+      "name": "사건번호",
+      "type_info": "string",
+      "description": "사건번호"
+    },
+    {
+      "name": "선고일자",
+      "type_info": "int",
+      "description": "선고일자"
+    },
+    {
+      "name": "선고",
+      "type_info": "string",
+      "description": "선고"
+    },
+    {
+      "name": "법원명",
+      "type_info": "string",
+      "description": "법원명"
+    },
+    {
+      "name": "법원종류코드",
+      "type_info": "int",
+      "description": "법원종류코드(대법원:400201, 하위법원:400202)"
+    },
+    {
+      "name": "사건종류명",
+      "type_info": "string",
+      "description": "사건종류명"
+    },
+    {
+      "name": "사건종류코드",
+      "type_info": "int",
+      "description": "사건종류코드"
+    },
+    {
+      "name": "판결유형",
+      "type_info": "string",
+      "description": "판결유형"
+    },
+    {
+      "name": "판시사항",
+      "type_info": "string",
+      "description": "판시사항"
+    },
+    {
+      "name": "판결요지",
+      "type_info": "string",
+      "description": "판결요지"
+    },
+    {
+      "name": "참조조문",
+      "type_info": "string",
+      "description": "참조조문"
+    },
+    {
+      "name": "참조판례",
+      "type_info": "string",
+      "description": "참조판례"
+    },
+    {
+      "name": "판례내용",
+      "type_info": "string",
+      "description": "판례내용"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=JSON"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"판례일련번호\">12345</field>\n    <field name=\"사건명\">예시 사건</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"선고일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"이유\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"판례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"선고일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"이유\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "precInfoGuide",
+      "official_title": "판례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=precInfoGuide",
+      "target": "prec",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=prec&ID=228541&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "prec"
+  ]
+}

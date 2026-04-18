@@ -59,5 +59,23 @@
     "custom": 6,
     "committee_group_info": 1,
     "committee_group_list": 1
+  },
+  "official_validation": {
+    "validated_at": "2026-04-04",
+    "guide_list_url": "https://open.law.go.kr/LSO/openApi/guideList.do",
+    "guide_list_displayed_count": 191,
+    "official_link_item_count": 195,
+    "official_guide_count": 195,
+    "catalog_count": 191,
+    "source_mismatches": 0,
+    "semantic_mismatches": 0,
+    "string_only_differences": 618,
+    "runtime_build_errors": 0,
+    "conclusion": "공식 상세 가이드 기준 정합성 확보 완료",
+    "interpretation": {
+      "guide_list_displayed_count": "공식 사이트 화면에 표시되는 건수",
+      "official_link_item_count": "guideList HTML의 실제 openApiGuide 링크 수",
+      "catalog_count": "grouped API를 유지하는 내부 런타임 카탈로그 수"
+    }
   }
 }

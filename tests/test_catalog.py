@@ -11,6 +11,7 @@ if str(SRC) not in sys.path:
 
 from law_api_mcp_korea.catalog import (  # noqa: E402
     CatalogResolutionError,
+    get_api_detail,
     get_doc_markdown,
     metadata,
     resolve_api,
@@ -29,6 +30,7 @@ class CatalogTests(unittest.TestCase):
     def test_resolve_by_guide_html_name(self):
         api = resolve_api("lsNwListGuide")
         self.assertEqual(api["title"], "현행법령(공포일) 목록 조회")
+        self.assertNotIn("response_fields", api)
 
     def test_resolve_by_filename(self):
         api = resolve_api("현행법령_공포일_목록_조회.md")
@@ -50,6 +52,16 @@ class CatalogTests(unittest.TestCase):
     def test_doc_markdown(self):
         text = get_doc_markdown("cgmExpcMolegInfoGuide")
         self.assertIn("# 법제처 법령해석 본문 조회", text)
+
+    def test_detail_includes_constraints(self):
+        api = get_api_detail("lsHstInfoGuide")
+        self.assertEqual(api["default_params"]["target"], "lsHistory")
+        self.assertIn("HTML", api["supported_types"])
+        self.assertTrue(any("lsHistory" in note for note in api["notes"]))
+
+    def test_baipvcs_detail_includes_constraint(self):
+        api = get_api_detail("baiPvcsListGuide")
+        self.assertTrue(any("유효한 API key" in note for note in api["notes"]))
 
     def test_search(self):
         items = search_apis(keyword="법령해석", limit=10)

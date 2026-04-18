@@ -1,0 +1,222 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : adapSpecialDecc(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "특별행정심판재결례일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "특별행정심판재결례명"
+    },
+    {
+      "name": "fields",
+      "type_info": "string",
+      "required": false,
+      "description": "응답항목 옵션(사건명, 사건번호, ...) * 빈 값일 경우 전체 항목 표출 * 출력 형태 HTML일 경우 적용 불가능"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "특별행정심판재결례일련번호",
+      "type_info": "int",
+      "description": "특별행정심판재결례일련번호"
+    },
+    {
+      "name": "사건명",
+      "type_info": "string",
+      "description": "사건명"
+    },
+    {
+      "name": "사건번호",
+      "type_info": "string",
+      "description": "사건번호"
+    },
+    {
+      "name": "처분일자",
+      "type_info": "int",
+      "description": "처분일자"
+    },
+    {
+      "name": "의결일자",
+      "type_info": "int",
+      "description": "의결일자"
+    },
+    {
+      "name": "처분청",
+      "type_info": "string",
+      "description": "처분청"
+    },
+    {
+      "name": "재결청",
+      "type_info": "string",
+      "description": "재결청"
+    },
+    {
+      "name": "재결례유형명",
+      "type_info": "string",
+      "description": "재결례유형명"
+    },
+    {
+      "name": "재결례유형코드",
+      "type_info": "int",
+      "description": "재결례유형코드"
+    },
+    {
+      "name": "주문",
+      "type_info": "string",
+      "description": "주문"
+    },
+    {
+      "name": "청구취지",
+      "type_info": "string",
+      "description": "청구취지"
+    },
+    {
+      "name": "이유",
+      "type_info": "string",
+      "description": "이유"
+    },
+    {
+      "name": "재결요지",
+      "type_info": "string",
+      "description": "재결요지"
+    },
+    {
+      "name": "소청사례명",
+      "type_info": "string",
+      "description": "소청사례명"
+    },
+    {
+      "name": "처분요지",
+      "type_info": "string",
+      "description": "처분요지"
+    },
+    {
+      "name": "소청이유",
+      "type_info": "string",
+      "description": "소청이유"
+    },
+    {
+      "name": "소청인",
+      "type_info": "string",
+      "description": "소청인"
+    },
+    {
+      "name": "피소청인",
+      "type_info": "string",
+      "description": "피소청인"
+    },
+    {
+      "name": "주문",
+      "type_info": "string",
+      "description": "주문"
+    },
+    {
+      "name": "이유",
+      "type_info": "string",
+      "description": "이유"
+    },
+    {
+      "name": "원처분",
+      "type_info": "string",
+      "description": "원처분"
+    },
+    {
+      "name": "결정유형",
+      "type_info": "string",
+      "description": "결정유형"
+    },
+    {
+      "name": "대분류",
+      "type_info": "string",
+      "description": "대분류"
+    },
+    {
+      "name": "중분류",
+      "type_info": "string",
+      "description": "중분류"
+    },
+    {
+      "name": "소분류",
+      "type_info": "string",
+      "description": "소분류"
+    },
+    {
+      "name": "데이터기준일자",
+      "type_info": "string",
+      "description": "데이터기준일자"
+    },
+    {
+      "name": "데이터기준일시",
+      "type_info": "string",
+      "description": "데이터기준일시"
+    },
+    {
+      "name": "청구번호",
+      "type_info": "string",
+      "description": "청구번호"
+    }
+  ],
+  "notes": [
+    "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=JSON"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"특별행정심판재결례일련번호\">12345</field>\n    <field name=\"사건명\">예시 사건</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"청구번호\">12345</field>\n    <field name=\"이유\">예시 본문</field>\n    <field name=\"주문\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"특별행정심판재결례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"청구번호\": \"12345\",\n      \"이유\": \"예시 본문\",\n      \"주문\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "specialDeccAdapInfoGuide",
+      "official_title": "인사혁신처 소청심사위원회 특별행정심판재결례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAdapInfoGuide",
+      "target": "adapSpecialDecc",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "HTML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=adapSpecialDecc&ID=2071571&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "adapSpecialDecc"
+  ]
+}

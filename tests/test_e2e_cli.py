@@ -60,17 +60,53 @@ def _load_json(result: subprocess.CompletedProcess[str]) -> dict:
 
 
 class CliOfflineE2ETests(unittest.TestCase):
-    def test_catalog_json(self):
-        result = _run_cli("catalog", "--search", "법령해석", "--limit", "3", "--json")
+    def test_catalog_alias_json_summary(self):
+        result = _run_cli("search-api", "--search", "법령해석", "--limit", "1", "--json", "--view", "summary")
+        payload = _load_json(result)
+        self.assertEqual(payload["count"], 1)
+        self.assertIn("법령해석", payload["items"][0]["title"])
+
+    def test_catalog_json_summary(self):
+        result = _run_cli("catalog", "--search", "법령해석", "--limit", "3", "--json", "--view", "summary")
         payload = _load_json(result)
         self.assertGreaterEqual(payload["count"], 1)
         self.assertEqual(payload["meta"]["count"], 191)
+        self.assertNotIn("request_params", payload["items"][0])
+
+    def test_catalog_json_detail(self):
+        result = _run_cli("catalog", "--search", "법령해석", "--limit", "1", "--json", "--view", "detail")
+        payload = _load_json(result)
+        self.assertIn("request_params", payload["items"][0])
 
     def test_doc_summary_json(self):
-        result = _run_cli("doc", "cgmExpcMolegListGuide", "--summary", "--json")
+        result = _run_cli("doc", "cgmExpcMolegListGuide", "--view", "summary", "--json")
         payload = _load_json(result)
-        self.assertEqual(payload["guide_html_name"], "cgmExpcMolegListGuide")
-        self.assertEqual(payload["title"], "법제처 법령해석 목록 조회")
+        self.assertEqual(payload["api"]["guide_html_name"], "cgmExpcMolegListGuide")
+        self.assertEqual(payload["api"]["title"], "법제처 법령해석 목록 조회")
+        self.assertNotIn("request_params", payload["api"])
+
+    def test_doc_alias_summary_json(self):
+        result = _run_cli("inspect-api", "cgmExpcMolegListGuide", "--view", "summary", "--json")
+        payload = _load_json(result)
+        self.assertEqual(payload["api"]["guide_html_name"], "cgmExpcMolegListGuide")
+
+    def test_tool_doc_detail_contains_bai_note(self):
+        result = _run_cli("tool-doc", "api_bai_pre_consultation", "--view", "detail")
+        payload = _load_json(result)
+        self.assertTrue(any("유효한 API key" in note for note in payload["notes"]))
+
+    def test_examples_contains_workflow_commands(self):
+        result = _run_cli("examples")
+        self.assertEqual(result.returncode, 0, msg=result.stderr)
+        self.assertIn("law-openapi-cli search-api --search 법령해석", result.stdout)
+        self.assertIn("law-openapi-cli doctor", result.stdout)
+
+    def test_doctor_json(self):
+        result = _run_cli("doctor", "--json")
+        payload = _load_json(result)
+        self.assertIn("python_executable", payload)
+        self.assertIn("oc_configured", payload)
+        self.assertIn("dotenv_found", payload)
 
     def test_build_url(self):
         result = _run_cli(

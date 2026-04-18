@@ -55,7 +55,7 @@
     "filename": "법령_연혁_본문_조회.md",
     "filepath": "/mnt/data/law_open_guides_md/법령_연혁_본문_조회.md",
     "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide",
-    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsHst",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsHistory",
     "evidence": "direct",
     "notes": ""
   },

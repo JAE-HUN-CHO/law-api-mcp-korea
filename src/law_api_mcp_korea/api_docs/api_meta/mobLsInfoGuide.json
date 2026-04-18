@@ -1,0 +1,131 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : law(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID (ID 또는 MST 중 하나는 반드시 입력)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호 법령테이블의 lsi_seq 값을 의미함"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령의 법령명(법령명 입력시 해당 법령 링크)"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포번호"
+    },
+    {
+      "name": "JO",
+      "type_info": "int:6",
+      "required": false,
+      "description": "조번호 생략(기본값) : 모든 조를 표시함 6자리숫자 : 조번호(4자리)+조가지번호(2자리) (000200 : 2조, 001002 : 10조의 2)"
+    },
+    {
+      "name": "PD",
+      "type_info": "char",
+      "required": false,
+      "description": "부칙표시 ON일 경우 부칙 목록만 출력 생략할 경우 법령 + 부칙 표시"
+    },
+    {
+      "name": "PN",
+      "type_info": "int",
+      "required": false,
+      "description": "부칙번호 해당 부칙번호에 해당하는 부칙 보기"
+    },
+    {
+      "name": "BD",
+      "type_info": "char",
+      "required": false,
+      "description": "별표표시 생략(기본값) : 법령+별표 ON : 모든 별표 표시"
+    },
+    {
+      "name": "BT",
+      "type_info": "int",
+      "required": false,
+      "description": "별표구분 별표표시가 on일 경우 값을 읽어들임 (별표=1/서식=2/별지=3/별도=4/부록=5)"
+    },
+    {
+      "name": "BN",
+      "type_info": "int",
+      "required": false,
+      "description": "별표번호 별표표시가 on일 경우 값을 읽어들임"
+    },
+    {
+      "name": "BG",
+      "type_info": "int",
+      "required": false,
+      "description": "별표가지번호 별표표시가 on일 경우 값을 읽어들임"
+    },
+    {
+      "name": "type",
+      "type_info": "char",
+      "required": false,
+      "description": "출력 형태 : HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
+    }
+  ],
+  "response_fields": [],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=law&ID=1747&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=law&MST=91689&type=HTML&mobileYn=Y"
+  ],
+  "sample_responses": [
+    {
+      "lang": "html",
+      "content": "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>모바일 법령 본문 조회</h1>\n    <div data-field=\"기본정보\">예시값</div>\n    <div data-field=\"법령ID\">12345</div>\n    <div data-field=\"법령일련번호\">12345</div>\n    <div data-field=\"법령명\">자동차관리법</div>\n  </body>\n</html>"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobLsInfoGuide",
+      "official_title": "모바일 법령 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsInfoGuide",
+      "target": "law",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=law&ID=1747&type=HTML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=law&MST=91689&type=HTML&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "law"
+  ]
+}

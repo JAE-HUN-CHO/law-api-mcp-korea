@@ -13,24 +13,35 @@
 ## 4. 요청 변수 (Request Parameters) 명세표
 | 변수명 | 타입/필수 여부 | 설명 |
 | --- | --- | --- |
-| OC | string, 필수 | 사용자 이메일 ID |
-| target | string : aiRltLs(필수) | 서비스 대상 |
-| type | char, 필수 | 출력 형태 : XML/JSON |
-| query | string | 검색 질의 또는 대상 식별값 |
-| display | int | 검색된 결과 개수(default=20, max=100) |
-| page | int | 검색 결과 페이지(default=1) |
+| OC | string(필수) | 신청한 API인증값 |
+| target | string(필수) | 서비스 대상 (지능형 법령검색 시스템 연관법령 API : aiRltLs) |
+| type | char(필수) | 출력 형태 : XML/JSON |
+| search | int | 검색범위 법령분류(0:법령조문, 1:행정규칙조문) |
+| query | string | 법령명에서 검색을 원하는 질의 (정확한 검색을 위한 문자열 검색 query="뺑소니") |
 
 ## 5. 출력 결과 (Response Elements) 명세표
 | 필드명 | 타입 | 설명 |
 | --- | --- | --- |
 | target | string | 검색서비스 대상 |
-| 키워드 | string | 검색 질의 |
+| 키워드 | string | 검색 단어 |
 | 검색결과개수 | int | 검색 건수 |
-| page | int | 현재 페이지번호 |
-| id | string/int | 결과 식별자 |
-| 명칭 | string | 용어/조문/법령명 |
-| 설명 | string | 설명 또는 관계 정보 |
-| 상세링크 | string | 관계/상세 정보 링크 |
+| 법령조문ID | int | 법령조문 ID |
+| 법령ID | string | 법령ID |
+| 법령명 | string | 법령명 |
+| 시행일자 | string | 법령 시행일자 |
+| 공포일자 | string | 법령 공포일자 |
+| 공포번호 | string | 법령 공포번호 |
+| 조문번호 | string | 법령 조문번호 |
+| 조문가지번호 | string | 법령 조문가지번호 |
+| 조문제목 | string | 법령 조문제목 |
+| 행정규칙조문 ID | int | 행정규칙조문 ID |
+| 행정규칙ID | string | 행정규칙ID |
+| 행정규칙명 | string | 행정규칙명 |
+| 발령일자 | string | 발령일자 |
+| 발령번호 | string | 발령번호 |
+| 조문번호 | string | 행정규칙 조문번호 |
+| 조문가지번호 | string | 행정규칙 조문가지번호 |
+| 조문제목 | string | 행정규칙 조문제목 |
 
 ## 6. 에러 코드
 - 가이드 페이지에 별도 에러 코드 표는 명시되지 않은 경우가 많습니다. 일반적으로 HTTP 오류, 빈 결과, 또는 XML/JSON 응답의 상태값(제공 시)으로 실패를 판별합니다.
@@ -44,12 +55,13 @@
 #### 요청 예시
 - 예시 1 (XML)
 ```text
-https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=XML&query=자동차&display=20&page=1
+https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=XML&search=0&query=뺑소니
 ```
 - 예시 2 (JSON)
 ```text
-https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs&OC=test&type=JSON&query=자동차&display=20&page=1
+https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiRltLs&type=JSON&search=0&query=뺑소니
 ```
+
 #### 응답 예시
 - XML 구조 예시
 ```xml

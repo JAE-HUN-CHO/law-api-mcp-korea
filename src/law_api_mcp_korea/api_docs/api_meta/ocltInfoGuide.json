@@ -1,0 +1,115 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "서비스 대상 (중앙토지수용위원회 : oclt)"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "결정문 일련번호"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "결정문 일련번호",
+      "type_info": "int",
+      "description": "결정문 일련번호"
+    },
+    {
+      "name": "제목",
+      "type_info": "string",
+      "description": "제목"
+    },
+    {
+      "name": "관련법리",
+      "type_info": "string",
+      "description": "관련 법리"
+    },
+    {
+      "name": "관련규정",
+      "type_info": "string",
+      "description": "관련 규정"
+    },
+    {
+      "name": "판단",
+      "type_info": "string",
+      "description": "판단"
+    },
+    {
+      "name": "근거",
+      "type_info": "string",
+      "description": "근거"
+    },
+    {
+      "name": "주해",
+      "type_info": "string",
+      "description": "주해"
+    },
+    {
+      "name": "각주번호",
+      "type_info": "int",
+      "description": "각주번호"
+    },
+    {
+      "name": "각주내용",
+      "type_info": "string",
+      "description": "각주내용"
+    }
+  ],
+  "notes": [
+    "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4973&type=HTML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4965&type=XML",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4971&type=JSON"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"결정문일련번호\">12345</field>\n    <field name=\"기관명\">예시 기관</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"자료구분\">예시값</field>\n    <field name=\"제목\">예시 사건</field>\n    <field name=\"내용\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"결정문일련번호\": 12345,\n      \"기관명\": \"예시 기관\",\n      \"사건번호\": \"12345\",\n      \"자료구분\": \"예시값\",\n      \"제목\": \"예시 사건\",\n      \"내용\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "ocltInfoGuide",
+      "official_title": "중앙토지수용위원회 결정문 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ocltInfoGuide",
+      "target": "oclt",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4973&type=HTML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4965&type=XML",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=oclt&ID=4971&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "oclt"
+  ]
+}

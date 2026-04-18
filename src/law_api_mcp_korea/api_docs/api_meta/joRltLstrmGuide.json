@@ -1,0 +1,145 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "서비스 대상 (조문-법령용어 연계 : joRltLstrm)"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "법령명에서 검색을 원하는 질의 (query 또는 ID 중 하나는 반드시 입력)"
+    },
+    {
+      "name": "ID",
+      "type_info": "int",
+      "required": false,
+      "description": "법령 ID"
+    },
+    {
+      "name": "JO",
+      "type_info": "int(필수)",
+      "required": true,
+      "description": "조번호 조번호 4자리 + 조가지번호 2자리 (000200 : 2조, 000202 : 제2조의2)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색 단어"
+    },
+    {
+      "name": "검색결과개수",
+      "type_info": "int",
+      "description": "검색 건수"
+    },
+    {
+      "name": "법령조문 id",
+      "type_info": "string",
+      "description": "법령조문 순번"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "조번호",
+      "type_info": "int",
+      "description": "조번호"
+    },
+    {
+      "name": "조가지번호",
+      "type_info": "int",
+      "description": "조가지번호"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "조문내용"
+    },
+    {
+      "name": "연계용어 id",
+      "type_info": "string",
+      "description": "연계용어 순번"
+    },
+    {
+      "name": "법령용어명",
+      "type_info": "string",
+      "description": "법령용어명"
+    },
+    {
+      "name": "비고",
+      "type_info": "string",
+      "description": "동음이의어 내용"
+    },
+    {
+      "name": "용어구분코드",
+      "type_info": "string",
+      "description": "용어구분코드"
+    },
+    {
+      "name": "용어구분",
+      "type_info": "string",
+      "description": "용어구분명"
+    },
+    {
+      "name": "용어간관계 링크",
+      "type_info": "string",
+      "description": "법령용어-일상용어 연계 정보 상세링크"
+    },
+    {
+      "name": "용어연계 조문링크",
+      "type_info": "string",
+      "description": "법령용어-조문 연계 정보 상세링크"
+    }
+  ],
+  "notes": [
+    "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=joRltLstrm&type=XML&query=상법시행법&JO=000400",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=joRltLstrm&type=JSON&query=상법시행법&JO=000400"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "joRltLstrmGuide",
+      "official_title": "법령정보지식베이스 조문-법령용어 연계",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=joRltLstrmGuide",
+      "target": "joRltLstrm",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=joRltLstrm&type=XML&query=상법시행법&JO=000400",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=joRltLstrm&type=JSON&query=상법시행법&JO=000400"
+      ]
+    }
+  ],
+  "target_variants": [
+    "joRltLstrm"
+  ]
+}

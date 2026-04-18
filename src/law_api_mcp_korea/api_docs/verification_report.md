@@ -1,5 +1,23 @@
 # 샘플 추가본 검증 리포트
 
+## 공식 가이드 최종 검증
+- 검증일: **2026-04-04**
+- 기준 페이지: [guideList.do](https://open.law.go.kr/LSO/openApi/guideList.do)
+- `guideList.do` 화면 표시 건수: **191**
+- `guideList.do` 실제 `openApiGuide('...')` 링크 수: **195**
+- 내부 `catalog.json` API 수: **191**
+- source docs vs 공식 sample URL mismatch: **0**
+- runtime URL vs 공식 sample URL semantic mismatch: **0**
+- runtime build error: **0**
+- 문자열-only 차이: **618**
+- 결론: **공식 상세 가이드 기준 정합성 확보 완료**
+
+### 카운트 해석
+- `191`: 공식 사이트 UI에 표시되는 집계값
+- `195`: 공식 페이지 HTML에 존재하는 실제 상세 가이드 링크 수
+- `191 internal APIs`: 저장소가 grouped API를 유지하는 내부 카탈로그 수
+- 문자열-only 차이는 query 순서, percent-encoding, `http/https`, `www` 표기 차이만 포함하며 GAP로 보지 않습니다.
+
 - 기준 마크다운 파일 수: **191**
 - 실제 마크다운 파일 수: **191**
 - 빈 파일 수: **0**

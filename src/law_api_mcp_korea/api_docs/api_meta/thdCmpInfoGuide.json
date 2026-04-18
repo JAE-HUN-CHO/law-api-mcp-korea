@@ -1,0 +1,223 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lsDelegated (필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 XML/JSON"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID (ID 또는 MST 중 하나는 반드시 입력, ID로 검색하면 그 법령의 현행 법령 본문 조회)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호 - 법령테이블의 lsi_seq 값을 의미함"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "법령일련번호",
+      "type_info": "int",
+      "description": "법령일련번호"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "int",
+      "description": "법령ID"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "int",
+      "description": "공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "int",
+      "description": "공포번호"
+    },
+    {
+      "name": "소관부처코드",
+      "type_info": "int",
+      "description": "소관부처코드"
+    },
+    {
+      "name": "전화번호",
+      "type_info": "string",
+      "description": "전화번호"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "int",
+      "description": "시행일자"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "조문번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "조문제목"
+    },
+    {
+      "name": "위임구분",
+      "type_info": "string",
+      "description": "위임된 법령의 종류"
+    },
+    {
+      "name": "위임법령일련번호",
+      "type_info": "string",
+      "description": "위임된 법령의 일련번호"
+    },
+    {
+      "name": "위임법령제목",
+      "type_info": "string",
+      "description": "위임된 법령의 제목"
+    },
+    {
+      "name": "위임법령조문번호",
+      "type_info": "string",
+      "description": "위임된 법령의 조문번호"
+    },
+    {
+      "name": "위임법령조문가지번호",
+      "type_info": "string",
+      "description": "위임된 법령의 조문 가지번호"
+    },
+    {
+      "name": "위임법령조문제목",
+      "type_info": "string",
+      "description": "위임된 법령의 조문 제목"
+    },
+    {
+      "name": "링크텍스트",
+      "type_info": "string",
+      "description": "위임된 법령에 대한 링크를 걸어줘야 하는 텍스트"
+    },
+    {
+      "name": "라인텍스트",
+      "type_info": "string",
+      "description": "링크텍스트가 포함된 텍스트(조문내용)"
+    },
+    {
+      "name": "조항호목",
+      "type_info": "string",
+      "description": "링크텍스트와 라인텍스트가 포함된 조항호목"
+    },
+    {
+      "name": "위임행정규칙일련번호",
+      "type_info": "string",
+      "description": "위임된 행정규칙의 일련번호"
+    },
+    {
+      "name": "위임행정규칙제목",
+      "type_info": "string",
+      "description": "위임된 행정규칙의 제목"
+    },
+    {
+      "name": "링크텍스트",
+      "type_info": "string",
+      "description": "위임된 행정규칙에 대한 링크를 걸어줘야 하는 텍스트"
+    },
+    {
+      "name": "라인텍스트",
+      "type_info": "string",
+      "description": "링크텍스트가 포함된 텍스트(조문내용)"
+    },
+    {
+      "name": "조항호목",
+      "type_info": "string",
+      "description": "링크텍스트와 라인텍스트가 포함된 조항호목"
+    },
+    {
+      "name": "위임자치법규일련번호",
+      "type_info": "string",
+      "description": "위임된 자치법규의 일련번호"
+    },
+    {
+      "name": "위임자치법규제목",
+      "type_info": "string",
+      "description": "위임된 자치법규의 제목"
+    },
+    {
+      "name": "링크텍스트",
+      "type_info": "string",
+      "description": "위임된 자치법규에 대한 링크를 걸어줘야 하는 텍스트"
+    },
+    {
+      "name": "라인텍스트",
+      "type_info": "string",
+      "description": "링크텍스트가 포함된 텍스트(조문내용)"
+    },
+    {
+      "name": "조항호목",
+      "type_info": "string",
+      "description": "링크텍스트와 라인텍스트가 포함된 조항호목"
+    },
+    {
+      "name": "조문가지번호",
+      "type_info": "int",
+      "description": "조문가지번호"
+    }
+  ],
+  "notes": [
+    "가이드 목록에는 별도 항목으로 노출되지만, 실제 요청/응답 구조는 3단 비교 본문 조회의 위임조문(knd=2) 모드와 동일한 것으로 정리했습니다."
+  ],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsDelegated&type=XML&ID=000900",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsDelegated&type=JSON&ID=000900"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"기본정보\">예시값</field>\n    <field name=\"법령ID\">12345</field>\n    <field name=\"법령일련번호\">12345</field>\n    <field name=\"공포일자\">20250501</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"조제목\">자동차관리법</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"기본정보\": \"예시값\",\n      \"법령ID\": 12345,\n      \"법령일련번호\": 12345,\n      \"공포일자\": 20250501,\n      \"법령명\": \"자동차관리법\",\n      \"조제목\": \"자동차관리법\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "lsDelegated",
+      "official_title": "위임 법령 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsDelegated",
+      "target": "lsDelegated",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsDelegated&type=XML&ID=000900",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lsDelegated&type=JSON&ID=000900"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lsDelegated"
+  ]
+}
