@@ -88,6 +88,36 @@ echo LAW_API_OC=your_oc_value > .env
   - `catalog --json` 기본: detail
 - 실제 API 호출 결과(`call_api`, `search_current_law`, `get_current_law`, generated tool 실행)는 MCP/CLI 모두 full payload 기본값을 유지합니다.
 
+## 주요 기능
+
+### 법령 약어 자동 해석
+`search_current_law`, `list_apis`, `search_decisions` 등에서 약어를 자동으로 정식 법령명으로 변환합니다.
+
+예: `화관법` → `화학물질관리법`, `근기법` → `근로기준법`, `공정거래법` → `독점규제 및 공정거래에 관한 법률`
+
+### 판례·결정례 통합 검색
+`search_decisions`로 9개 도메인을 하나의 도구로 검색합니다.
+
+| 코드 | 한국어 약어 | 도메인 |
+| --- | --- | --- |
+| `prec` | 판례, 대법원 | 대법원 판례 |
+| `detc` | 헌재, 헌법재판소 | 헌법재판소 결정례 |
+| `decc` | 행심, 행정심판 | 행정심판례 |
+| `expc` | 법령해석, 유권해석 | 법령해석례 |
+| `tt` | 조심, 조세심판 | 조세심판원 |
+| `kmst` | 해심, 해양심판 | 해양안전심판원 |
+| `nlrc` | 노위, 노동위원회 | 노동위원회 |
+| `acr` | 권익위, 국민권익위 | 국민권익위원회 |
+| `moleg` | 법제처 | 법제처 법령해석 |
+
+### AI 법령 인용 검증
+`verify_citations`로 AI가 생성한 법률 텍스트에서 법령 인용을 추출하고 실제 DB와 대조해 환각 여부를 표시합니다.
+
+- `[VERIFIED]`: 법령 존재 확인
+- `[HALLUCINATION_DETECTED]`: 존재하지 않는 법령
+- `[SKIPPED]`: OC 인증키 없어 검증 생략
+- `[ERROR]`: 검증 중 오류 발생
+
 ## API 제약/예외
 
 - `법령 연혁 본문 조회`
@@ -277,11 +307,14 @@ MCP tools:
 - `get_current_law`
 - `search_moleg_interpretations`
 - `get_moleg_interpretation`
+- `search_decisions` — 대법원 판례·헌재 결정·행정심판·법령해석례 등 9개 도메인 통합 검색
+- `get_decision_text` — 판례·결정례 본문 조회
+- `verify_citations` — AI 생성 법률 텍스트의 법령 인용 검증 (`[VERIFIED]` / `[HALLUCINATION_DETECTED]`)
 
 MCP 문서/리소스 기본 view:
 
-- `list_apis`: `summary` 기본
-- `get_api_doc`: `summary` 기본, markdown은 opt-in
+- `list_apis`: `summary` 기본 (유효값: `summary` | `detail`)
+- `get_api_doc`: `summary` 기본, markdown은 opt-in (유효값: `summary` | `detail`)
 - `lawdoc://catalog`: summary 기본
 - `lawdoc://api/{api_name}`: summary 기본
 - raw/detail가 필요하면 별도 resource/view를 사용합니다.
