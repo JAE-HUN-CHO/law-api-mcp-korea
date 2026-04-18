@@ -1,0 +1,1912 @@
+[
+  {
+    "title": "현행법령(시행일) 목록 조회",
+    "family": "law",
+    "filename": "현행법령_시행일_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_시행일_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=eflaw",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "현행법령(시행일) 본문 조회",
+    "family": "law",
+    "filename": "현행법령_시행일_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_시행일_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=eflaw",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "현행법령(공포일) 목록 조회",
+    "family": "law",
+    "filename": "현행법령_공포일_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_공포일_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=law",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "현행법령(공포일) 본문 조회",
+    "family": "law",
+    "filename": "현행법령_공포일_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_공포일_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=law",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 연혁 목록 조회",
+    "family": "law",
+    "filename": "법령_연혁_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_연혁_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lsHst",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 연혁 본문 조회",
+    "family": "law",
+    "filename": "법령_연혁_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_연혁_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsHstInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsHistory",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "현행법령(시행일) 본문 조항호목 조회",
+    "family": "law",
+    "filename": "현행법령_시행일_본문_조항호목_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_시행일_본문_조항호목_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdJoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=eflawjosub",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "현행법령(공포일) 본문 조항호목 조회",
+    "family": "law",
+    "filename": "현행법령_공포일_본문_조항호목_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/현행법령_공포일_본문_조항호목_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsNwJoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lawjosub",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "영문 법령 목록 조회",
+    "family": "law",
+    "filename": "영문_법령_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/영문_법령_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEngListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=elaw",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "영문 법령 본문 조회",
+    "family": "law",
+    "filename": "영문_법령_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/영문_법령_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEngInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=elaw",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 변경이력 목록 조회",
+    "family": "law",
+    "filename": "법령_변경이력_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_변경이력_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsChgListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lsHstInf",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "일자별 조문 개정 이력 목록 조회",
+    "family": "law",
+    "filename": "일자별_조문_개정_이력_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/일자별_조문_개정_이력_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsDayJoRvsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lsJoHstInf",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "조문별 변경 이력 목록 조회",
+    "family": "law",
+    "filename": "조문별_변경_이력_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조문별_변경_이력_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsJoChgListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsJoHstInf",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 기준 자치법규 연계 관련 목록 조회",
+    "family": "law",
+    "filename": "법령_기준_자치법규_연계_관련_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_기준_자치법규_연계_관련_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsOrdinConListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lnkLs | http://www.law.go.kr/DRF/lawSearch.do?target=lnkLsOrdJo | http://www.law.go.kr/DRF/lawSearch.do?target=lnkDep",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령-자치법규 연계현황 조회",
+    "family": "law",
+    "filename": "법령-자치법규_연계현황_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령-자치법규_연계현황_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsOrdinConGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=drlaw",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "위임법령 조회",
+    "family": "law",
+    "filename": "위임법령_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/위임법령_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=thdCmpInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=thdCmp",
+    "evidence": "inferred",
+    "notes": "가이드 목록에는 별도 항목으로 노출되지만, 실제 요청/응답 구조는 3단 비교 본문 조회의 위임조문(knd=2) 모드와 동일한 것으로 정리했습니다."
+  },
+  {
+    "title": "법령 체계도 목록 조회",
+    "family": "law",
+    "filename": "법령_체계도_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_체계도_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsStmdListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lsStmd",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 체계도 본문 조회",
+    "family": "law",
+    "filename": "법령_체계도_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_체계도_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsStmdInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lsStmd",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "신구법 목록 조회",
+    "family": "law",
+    "filename": "신구법_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/신구법_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=oldAndNewListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=oldAndNew",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "신구법 본문 조회",
+    "family": "law",
+    "filename": "신구법_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/신구법_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=oldAndNewInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=oldAndNew",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "3단 비교 목록 조회",
+    "family": "law",
+    "filename": "3단_비교_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/3단_비교_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=thdCmpListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=thdCmp",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "3단 비교 본문 조회",
+    "family": "law",
+    "filename": "3단_비교_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/3단_비교_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=thdCmpInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=thdCmp",
+    "evidence": "direct",
+    "notes": "knd=1은 인용조문 3단 비교, knd=2는 위임조문 3단 비교를 의미합니다."
+  },
+  {
+    "title": "법령명 약칭 조회",
+    "family": "law",
+    "filename": "법령명_약칭_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령명_약칭_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsAbrvListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lsAbrv",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "삭제 데이터 목록 조회",
+    "family": "law",
+    "filename": "삭제_데이터_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/삭제_데이터_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=datDelHstGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=delHst",
+    "evidence": "direct",
+    "notes": "가이드 본문에서 요청 URL 표기와 target 설명(delHst / datDel)이 혼재되어 있습니다."
+  },
+  {
+    "title": "한눈보기 목록 조회",
+    "family": "law",
+    "filename": "한눈보기_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/한눈보기_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=oneViewListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=oneview",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "한눈보기 본문 조회",
+    "family": "law",
+    "filename": "한눈보기_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/한눈보기_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=oneViewInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=oneview",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정규칙 목록 조회",
+    "family": "general",
+    "filename": "행정규칙_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정규칙_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=admrul",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정규칙 본문 조회",
+    "family": "general",
+    "filename": "행정규칙_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정규칙_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=admrul",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정규칙 신구법 비교 목록 조회",
+    "family": "general",
+    "filename": "행정규칙_신구법_비교_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정규칙_신구법_비교_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulOldAndNewListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=admrulOldAndNew",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정규칙 신구법 비교 본문 조회",
+    "family": "general",
+    "filename": "행정규칙_신구법_비교_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정규칙_신구법_비교_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulOldAndNewInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=admrulOldAndNew",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "자치법규 목록 조회",
+    "family": "general",
+    "filename": "자치법규_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/자치법규_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ordinListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ordin",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "자치법규 본문 조회",
+    "family": "general",
+    "filename": "자치법규_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/자치법규_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ordinInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=ordin",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "자치법규 기준 법령 연계 관련 목록 조회",
+    "family": "general",
+    "filename": "자치법규_기준_법령_연계_관련_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/자치법규_기준_법령_연계_관련_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ordinLsConListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lnkOrd | http://www.law.go.kr/DRF/lawSearch.do?target=lnkLsOrd | http://www.law.go.kr/DRF/lawSearch.do?target=lnkOrg",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "판례 목록 조회",
+    "family": "general",
+    "filename": "판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=precListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=prec",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "판례 본문 조회",
+    "family": "general",
+    "filename": "판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=precInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=prec",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "헌재결정례 목록 조회",
+    "family": "general",
+    "filename": "헌재결정례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/헌재결정례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=detcListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=detc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "헌재결정례 본문 조회",
+    "family": "general",
+    "filename": "헌재결정례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/헌재결정례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=detcInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=detc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령해석례 목록 조회",
+    "family": "general",
+    "filename": "법령해석례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령해석례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=expcListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=expc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령해석례 본문 조회",
+    "family": "general",
+    "filename": "법령해석례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령해석례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=expcInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=expc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정심판례 목록 조회",
+    "family": "general",
+    "filename": "행정심판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정심판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=deccListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=decc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정심판례 본문 조회",
+    "family": "general",
+    "filename": "행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=deccInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=decc",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "위원회 결정문 목록 조회 (공정거래위원회·국민권익위원회·개인정보보호위원회)",
+    "family": "committee_group_list",
+    "filename": "위원회_결정문_목록_조회_공정거래위원회ㆍ국민권익위원회ㆍ개인정보보호위원회.md",
+    "filepath": "/mnt/data/law_open_guides_md/위원회_결정문_목록_조회_공정거래위원회ㆍ국민권익위원회ㆍ개인정보보호위원회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cmtListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=ftc | https://www.law.go.kr/DRF/lawSearch.do?target=acr | https://www.law.go.kr/DRF/lawSearch.do?target=ppc",
+    "evidence": "direct",
+    "notes": "공정거래위원회·국민권익위원회·개인정보보호위원회 3개 target을 하나의 가이드에서 함께 안내합니다."
+  },
+  {
+    "title": "위원회 결정문 본문 조회 (공정거래위원회·국민권익위원회·개인정보보호위원회)",
+    "family": "committee_group_info",
+    "filename": "위원회_결정문_본문_조회_공정거래위원회ㆍ국민권익위원회ㆍ개인정보보호위원회.md",
+    "filepath": "/mnt/data/law_open_guides_md/위원회_결정문_본문_조회_공정거래위원회ㆍ국민권익위원회ㆍ개인정보보호위원회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cmtInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=ftc | https://www.law.go.kr/DRF/lawService.do?target=acr | https://www.law.go.kr/DRF/lawService.do?target=ppc",
+    "evidence": "direct",
+    "notes": "공정거래위원회에는 시정권고서 영역이 함께 안내됩니다."
+  },
+  {
+    "title": "고용보험심사위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "고용보험심사위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/고용보험심사위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=eiacListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=eiac",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "고용보험심사위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "고용보험심사위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/고용보험심사위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=eiacInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=eiac",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "금융위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "금융위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/금융위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=fscListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=fsc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "금융위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "금융위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/금융위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=fscInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=fsc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "노동위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "노동위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/노동위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=nlrcListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=nlrc",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "노동위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "노동위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/노동위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=nlrcInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=nlrc",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "방송미디어통신위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "방송미디어통신위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/방송미디어통신위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=kccListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=kcc",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "방송미디어통신위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "방송미디어통신위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/방송미디어통신위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=kccInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=kcc",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "산업재해보상보험재심사위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "산업재해보상보험재심사위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산업재해보상보험재심사위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=iaciacListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=iaciac",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "산업재해보상보험재심사위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "산업재해보상보험재심사위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산업재해보상보험재심사위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=iaciacInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=iaciac",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "중앙토지수용위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "중앙토지수용위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중앙토지수용위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ocltListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=oclt",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "중앙토지수용위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "중앙토지수용위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중앙토지수용위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ocltInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=oclt",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "중앙환경분쟁조정위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "중앙환경분쟁조정위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중앙환경분쟁조정위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=eccListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=ecc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "중앙환경분쟁조정위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "중앙환경분쟁조정위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중앙환경분쟁조정위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=eccInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=ecc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "증권선물위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "증권선물위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/증권선물위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=sfcListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=sfc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "증권선물위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "증권선물위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/증권선물위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=sfcInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=sfc",
+    "evidence": "pattern",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "국가인권위원회 결정문 목록 조회",
+    "family": "committee_single",
+    "filename": "국가인권위원회_결정문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가인권위원회_결정문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=nhrckListGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=nhrck",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "국가인권위원회 결정문 본문 조회",
+    "family": "committee_single",
+    "filename": "국가인권위원회_결정문_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가인권위원회_결정문_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=nhrckInfoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawService.do?target=nhrck",
+    "evidence": "direct",
+    "notes": "노동위원회(nlrc) 대표 가이드 구조를 기준으로 동일 계열 위원회 API를 정규화했습니다."
+  },
+  {
+    "title": "조약 목록 조회",
+    "family": "general2",
+    "filename": "조약_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조약_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=trtyListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=trty",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "조약 본문 조회",
+    "family": "general2",
+    "filename": "조약_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조약_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=trtyInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=trty",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 별표ㆍ서식 목록 조회",
+    "family": "general2",
+    "filename": "법령_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=licbyl",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "행정규칙 별표ㆍ서식 목록 조회",
+    "family": "general2",
+    "filename": "행정규칙_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정규칙_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=admrulBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=admbyl",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "자치법규 별표ㆍ서식 목록 조회",
+    "family": "general2",
+    "filename": "자치법규_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/자치법규_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=ordinBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ordinbyl",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "학칙ㆍ공단ㆍ공공기관 목록 조회",
+    "family": "general2",
+    "filename": "학칙ㆍ공단ㆍ공공기관_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/학칙ㆍ공단ㆍ공공기관_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=schlPubRulListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=school | http://www.law.go.kr/DRF/lawSearch.do?target=public | http://www.law.go.kr/DRF/lawSearch.do?target=pi",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "학칙ㆍ공단ㆍ공공기관 본문 조회",
+    "family": "general2",
+    "filename": "학칙ㆍ공단ㆍ공공기관_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/학칙ㆍ공단ㆍ공공기관_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=schlPubRulInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=school | http://www.law.go.kr/DRF/lawService.do?target=public | http://www.law.go.kr/DRF/lawService.do?target=pi",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 용어 목록 조회",
+    "family": "general2",
+    "filename": "법령_용어_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_용어_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsTrmListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lstrm",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령 용어 본문 조회",
+    "family": "general2",
+    "filename": "법령_용어_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령_용어_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsTrmInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=lstrm",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_법령_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=law&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_법령_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=law&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 행정규칙 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_행정규칙_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_행정규칙_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobAdmrulListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=admrul&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 행정규칙 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_행정규칙_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_행정규칙_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobAdmrulInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=admrul&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 자치법규 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_자치법규_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_자치법규_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobOrdinListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ordin&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 자치법규 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_자치법규_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_자치법규_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobOrdinInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=ordin&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 판례 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobPrecListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=prec&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 판례 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobPrecInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=prec&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 헌재결정례 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_헌재결정례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_헌재결정례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobDetcListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=detc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 헌재결정례 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_헌재결정례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_헌재결정례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobDetcInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=detc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령해석례 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_법령해석례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령해석례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobExpcListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=expc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령해석례 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_법령해석례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령해석례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobExpcInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=expc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 행정심판례 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_행정심판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_행정심판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobDeccListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=decc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 행정심판례 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobDeccInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=decc&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 조약 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_조약_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_조약_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobTrtyListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=trty&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 조약 본문 조회",
+    "family": "mobile",
+    "filename": "모바일_조약_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_조약_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobTrtyInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=trty&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령 별표ㆍ서식 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_법령_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=licbyl&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 행정규칙 별표ㆍ서식 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_행정규칙_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_행정규칙_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobAdmrulBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=admbyl&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 자치법규 별표ㆍ서식 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_자치법규_별표ㆍ서식_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_자치법규_별표ㆍ서식_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobOrdinBylListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ordinbyl&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "모바일 법령 용어 목록 조회",
+    "family": "mobile",
+    "filename": "모바일_법령_용어_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/모바일_법령_용어_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobLsTrmListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=lstrm&mobileYn=Y",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "맞춤형 법령 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_법령_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_법령_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custLsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseLs",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "맞춤형 법령 조문 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_법령_조문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_법령_조문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custLsJoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseLs&lj=jo",
+    "evidence": "direct",
+    "notes": "lj=jo 옵션을 추가하여 조문 목록까지 확장 조회합니다."
+  },
+  {
+    "title": "맞춤형 행정규칙 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_행정규칙_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_행정규칙_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custAdmrulListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseAdmrul",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "맞춤형 행정규칙 조문 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_행정규칙_조문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_행정규칙_조문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custAdmrulJoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseAdmrul&lj=jo",
+    "evidence": "pattern",
+    "notes": "lj=jo 옵션을 추가하여 조문 목록까지 확장 조회합니다."
+  },
+  {
+    "title": "맞춤형 자치법규 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_자치법규_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_자치법규_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custOrdinListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseOrdin",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "맞춤형 자치법규 조문 목록 조회",
+    "family": "custom",
+    "filename": "맞춤형_자치법규_조문_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/맞춤형_자치법규_조문_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=custOrdinJoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=couseOrdin&lj=jo",
+    "evidence": "direct",
+    "notes": "lj=jo 옵션을 추가하여 조문 목록까지 확장 조회합니다."
+  },
+  {
+    "title": "법령용어 조회",
+    "family": "kb",
+    "filename": "법령용어_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령용어_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lstrmAIGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=lstrmAI",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "일상용어 조회",
+    "family": "kb",
+    "filename": "일상용어_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/일상용어_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=dlytrmGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=dlytrm",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "법령용어-일상용어 연계 조회",
+    "family": "kb",
+    "filename": "법령용어-일상용어_연계_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령용어-일상용어_연계_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lstrmRltGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=lstrmRlt",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "일상용어-법령용어 연계 조회",
+    "family": "kb",
+    "filename": "일상용어-법령용어_연계_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/일상용어-법령용어_연계_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=dlytrmRltGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=dlytrmRlt",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "법령용어-조문 연계 조회",
+    "family": "kb",
+    "filename": "법령용어-조문_연계_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법령용어-조문_연계_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lstrmRltJoGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=lstrmRltJo",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "조문-법령용어 연계 조회",
+    "family": "kb",
+    "filename": "조문-법령용어_연계_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조문-법령용어_연계_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=joRltLstrmGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=joRltLstrm",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "관련법령 조회",
+    "family": "kb",
+    "filename": "관련법령_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/관련법령_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsRltGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=lsRlt",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "지능형 법령검색 시스템 검색 API 조회",
+    "family": "kb",
+    "filename": "지능형_법령검색_시스템_검색_API_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/지능형_법령검색_시스템_검색_API_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=aiSearchGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=aiSearch",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "지능형 법령검색 시스템 연관법령 API 조회",
+    "family": "kb",
+    "filename": "지능형_법령검색_시스템_연관법령_API_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/지능형_법령검색_시스템_연관법령_API_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=aiRltLsGuide",
+    "endpoint": "https://www.law.go.kr/DRF/lawSearch.do?target=aiRltLs",
+    "evidence": "pattern",
+    "notes": "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  },
+  {
+    "title": "고용노동부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "고용노동부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/고용노동부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoelListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=moelCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "고용노동부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "고용노동부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/고용노동부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoelInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=moelCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국토교통부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국토교통부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국토교통부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMolitListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=molitCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국토교통부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "국토교통부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국토교통부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMolitInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=molitCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "재정경제부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "재정경제부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/재정경제부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoefListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=moefCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "해양수산부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "해양수산부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양수산부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMofListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mofCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "해양수산부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "해양수산부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양수산부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMofInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mofCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "행정안전부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "행정안전부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정안전부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoisListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=moisCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "행정안전부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "행정안전부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정안전부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoisInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=moisCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "기후에너지환경부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "기후에너지환경부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/기후에너지환경부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMeListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=meCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "기후에너지환경부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "기후에너지환경부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/기후에너지환경부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMeInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=meCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "관세청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "관세청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/관세청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKcsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kcsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "관세청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "관세청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/관세청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKcsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kcsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국세청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국세청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국세청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNtsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ntsCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "교육부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "교육부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/교육부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoeListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=moeCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "교육부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "교육부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/교육부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMoeInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=moeCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "과학기술정보통신부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "과학기술정보통신부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/과학기술정보통신부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMsitListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=msitCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "과학기술정보통신부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "과학기술정보통신부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/과학기술정보통신부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMsitInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=msitCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가보훈부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국가보훈부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가보훈부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMpvaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mpvaCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가보훈부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "국가보훈부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가보훈부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMpvaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mpvaCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국방부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국방부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국방부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMndListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mndCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국방부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "국방부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국방부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMndInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mndCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "농림축산식품부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "농림축산식품부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/농림축산식품부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMafraListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mafraCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "농림축산식품부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "농림축산식품부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/농림축산식품부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMafraInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mafraCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "문화체육관광부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "문화체육관광부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/문화체육관광부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMcstListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mcstCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "문화체육관광부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "문화체육관광부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/문화체육관광부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMcstInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mcstCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "법무부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "법무부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법무부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMojListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mojCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "법무부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "법무부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법무부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMojInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mojCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "보건복지부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "보건복지부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/보건복지부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMohwListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mohwCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "보건복지부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "보건복지부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/보건복지부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMohwInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mohwCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "산업통상부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "산업통상부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산업통상부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMotieListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=motieCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "산업통상부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "산업통상부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산업통상부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMotieInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=motieCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "성평등가족부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "성평등가족부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/성평등가족부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMogefListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mogefCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "성평등가족부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "성평등가족부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/성평등가족부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMogefInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mogefCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "외교부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "외교부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/외교부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMofaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mofaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "외교부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "외교부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/외교부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMofaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mofaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "중소벤처기업부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "중소벤처기업부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중소벤처기업부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMssListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mssCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "중소벤처기업부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "중소벤처기업부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/중소벤처기업부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMssInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mssCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "통일부 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "통일부_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/통일부_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMouListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mouCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "통일부 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "통일부_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/통일부_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMouInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mouCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "법제처 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "법제처_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법제처_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMolegListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=molegCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "법제처 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "법제처_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/법제처_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMolegInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=molegCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "식품의약품안전처 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "식품의약품안전처_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/식품의약품안전처_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMfdsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mfdsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "식품의약품안전처 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "식품의약품안전처_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/식품의약품안전처_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMfdsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mfdsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "인사혁신처 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "인사혁신처_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/인사혁신처_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMpmListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mpmCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "인사혁신처 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "인사혁신처_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/인사혁신처_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMpmInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mpmCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "기상청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "기상청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/기상청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKmaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kmaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "기상청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "기상청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/기상청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKmaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kmaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가유산청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국가유산청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가유산청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKhsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=khsCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가유산청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "국가유산청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가유산청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKhsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=khsCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "농촌진흥청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "농촌진흥청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/농촌진흥청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcRdaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=rdaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "농촌진흥청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "농촌진흥청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/농촌진흥청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcRdaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=rdaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "경찰청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "경찰청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/경찰청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNpaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=npaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "경찰청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "경찰청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/경찰청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNpaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=npaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "방위사업청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "방위사업청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/방위사업청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcDapaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=dapaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "방위사업청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "방위사업청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/방위사업청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcDapaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=dapaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "병무청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "병무청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/병무청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMmaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=mmaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "병무청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "병무청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/병무청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcMmaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=mmaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "산림청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "산림청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산림청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKfsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kfsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "산림청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "산림청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/산림청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKfsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kfsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "소방청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "소방청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/소방청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNfaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=nfaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "소방청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "소방청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/소방청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNfaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=nfaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "재외동포청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "재외동포청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/재외동포청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcOkaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=okaCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "재외동포청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "재외동포청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/재외동포청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcOkaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=okaCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "조달청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "조달청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조달청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcPpsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ppsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "조달청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "조달청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조달청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcPpsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=ppsCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "질병관리청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "질병관리청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/질병관리청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKdcaListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kdcaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "질병관리청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "질병관리청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/질병관리청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKdcaInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kdcaCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가데이터처 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "국가데이터처_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가데이터처_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKostatListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kostatCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "국가데이터처 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "국가데이터처_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국가데이터처_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKostatInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kostatCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "지식재산처 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "지식재산처_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/지식재산처_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKipoListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kipoCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "지식재산처 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "지식재산처_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/지식재산처_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKipoInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kipoCgmExpc",
+    "evidence": "direct",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "해양경찰청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "해양경찰청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양경찰청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKcgListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kcgCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "해양경찰청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "해양경찰청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양경찰청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcKcgInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kcgCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "행정중심복합도시건설청 법령해석 목록 조회",
+    "family": "ministry_list",
+    "filename": "행정중심복합도시건설청_법령해석_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정중심복합도시건설청_법령해석_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNaaccListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=naaccCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "행정중심복합도시건설청 법령해석 본문 조회",
+    "family": "ministry_info",
+    "filename": "행정중심복합도시건설청_법령해석_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/행정중심복합도시건설청_법령해석_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=cgmExpcNaaccInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=naaccCgmExpc",
+    "evidence": "pattern",
+    "notes": "가이드 구조는 중앙부처 1차 해석 API군에서 공통입니다."
+  },
+  {
+    "title": "조세심판원 특별행정심판례 목록 조회",
+    "family": "special",
+    "filename": "조세심판원_특별행정심판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조세심판원_특별행정심판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccTtListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=ttSpecialDecc",
+    "evidence": "direct",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "조세심판원 특별행정심판례 본문 조회",
+    "family": "special",
+    "filename": "조세심판원_특별행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/조세심판원_특별행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccTtInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=ttSpecialDecc",
+    "evidence": "direct",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "해양안전심판원 특별행정심판례 목록 조회",
+    "family": "special",
+    "filename": "해양안전심판원_특별행정심판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양안전심판원_특별행정심판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccKmstListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=kmstSpecialDecc",
+    "evidence": "pattern",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "해양안전심판원 특별행정심판례 본문 조회",
+    "family": "special",
+    "filename": "해양안전심판원_특별행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/해양안전심판원_특별행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccKmstInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=kmstSpecialDecc",
+    "evidence": "pattern",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "국민권익위원회 특별행정심판례 목록 조회",
+    "family": "special",
+    "filename": "국민권익위원회_특별행정심판례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국민권익위원회_특별행정심판례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAcrListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=acrSpecialDecc",
+    "evidence": "pattern",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "국민권익위원회 특별행정심판례 본문 조회",
+    "family": "special",
+    "filename": "국민권익위원회_특별행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/국민권익위원회_특별행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAcrInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=acrSpecialDecc",
+    "evidence": "pattern",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "인사혁신처 소청심사위원회 특별행정심판재결례 목록 조회",
+    "family": "special",
+    "filename": "인사혁신처_소청심사위원회_특별행정심판재결례_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/인사혁신처_소청심사위원회_특별행정심판재결례_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAdapListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=adapSpecialDecc",
+    "evidence": "direct",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "인사혁신처 소청심사위원회 특별행정심판례 본문 조회",
+    "family": "special",
+    "filename": "인사혁신처_소청심사위원회_특별행정심판례_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/인사혁신처_소청심사위원회_특별행정심판례_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=specialDeccAdapInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=adapSpecialDecc",
+    "evidence": "direct",
+    "notes": "조세심판원 대표 가이드 구조를 기준으로 특별행정심판 계열 API를 정규화했습니다."
+  },
+  {
+    "title": "감사원 사전컨설팅 의견서 목록 조회",
+    "family": "special",
+    "filename": "감사원_사전컨설팅_의견서_목록_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/감사원_사전컨설팅_의견서_목록_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=baiPvcsListGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawSearch.do?target=baiPvcs",
+    "evidence": "direct",
+    "notes": ""
+  },
+  {
+    "title": "감사원 사전컨설팅 의견서 본문 조회",
+    "family": "special",
+    "filename": "감사원_사전컨설팅_의견서_본문_조회.md",
+    "filepath": "/mnt/data/law_open_guides_md/감사원_사전컨설팅_의견서_본문_조회.md",
+    "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=baiPvcsInfoGuide",
+    "endpoint": "http://www.law.go.kr/DRF/lawService.do?target=baiPvcs",
+    "evidence": "direct",
+    "notes": ""
+  }
+]

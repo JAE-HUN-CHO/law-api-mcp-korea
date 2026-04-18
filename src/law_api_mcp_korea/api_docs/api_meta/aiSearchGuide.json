@@ -1,0 +1,321 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "서비스 대상 (지능형 법령검색 시스템 검색 API : aiSearch)"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "search",
+      "type_info": "int",
+      "required": false,
+      "description": "검색범위 법령분류 (0:법령조문, 1:법령 별표·서식, 2:행정규칙 조문, 3:행정규칙 별표·서식)"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "법령명에서 검색을 원하는 질의 (정확한 검색을 위한 문자열 검색 query=\"뺑소니\")"
+    },
+    {
+      "name": "display",
+      "type_info": "int",
+      "required": false,
+      "description": "검색된 결과 개수 (default=20)"
+    },
+    {
+      "name": "page",
+      "type_info": "int",
+      "required": false,
+      "description": "검색 결과 페이지 (default=1)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색 단어"
+    },
+    {
+      "name": "검색결과개수",
+      "type_info": "int",
+      "description": "검색 건수"
+    },
+    {
+      "name": "법령조문ID",
+      "type_info": "int",
+      "description": "법령조문 ID"
+    },
+    {
+      "name": "법령ID",
+      "type_info": "string",
+      "description": "법령ID"
+    },
+    {
+      "name": "법령일련번호",
+      "type_info": "string",
+      "description": "법령일련번호"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "string",
+      "description": "법령 시행일자"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "string",
+      "description": "법령 공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "string",
+      "description": "법령 공포번호"
+    },
+    {
+      "name": "소관부처코드",
+      "type_info": "string",
+      "description": "소관부처코드"
+    },
+    {
+      "name": "소관부처명",
+      "type_info": "string",
+      "description": "소관부처명"
+    },
+    {
+      "name": "법령종류명",
+      "type_info": "string",
+      "description": "법령종류명"
+    },
+    {
+      "name": "제개정구분명",
+      "type_info": "string",
+      "description": "법령 제개정구분명"
+    },
+    {
+      "name": "법령편장절관코드",
+      "type_info": "string",
+      "description": "법령편장절관코드"
+    },
+    {
+      "name": "조문일련번호",
+      "type_info": "string",
+      "description": "법령 조문일련번호"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "법령 조문번호"
+    },
+    {
+      "name": "조문가지번호",
+      "type_info": "string",
+      "description": "법령 조문가지번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "법령 조문제목"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "법령 조문내용"
+    },
+    {
+      "name": "법령별표서식 ID",
+      "type_info": "int",
+      "description": "법령별표서식 ID"
+    },
+    {
+      "name": "별표서식 일련번호",
+      "type_info": "string",
+      "description": "법령 별표서식일련번호"
+    },
+    {
+      "name": "별표서식번호",
+      "type_info": "string",
+      "description": "법령 별표서식번호"
+    },
+    {
+      "name": "별표서식 가지번호",
+      "type_info": "string",
+      "description": "법령 별표서식가지번호"
+    },
+    {
+      "name": "별표서식제목",
+      "type_info": "string",
+      "description": "법령 별표서식제목"
+    },
+    {
+      "name": "별표서식 구분코드",
+      "type_info": "string",
+      "description": "법령 별표서식구분코드"
+    },
+    {
+      "name": "별표서식 구분명",
+      "type_info": "string",
+      "description": "법령 별표서식구분명"
+    },
+    {
+      "name": "행정규칙조문 ID",
+      "type_info": "int",
+      "description": "행정규칙조문 ID"
+    },
+    {
+      "name": "행정규칙 일련번호",
+      "type_info": "string",
+      "description": "행정규칙일련번호"
+    },
+    {
+      "name": "행정규칙ID",
+      "type_info": "string",
+      "description": "행정규칙ID"
+    },
+    {
+      "name": "행정규칙명",
+      "type_info": "string",
+      "description": "행정규칙명"
+    },
+    {
+      "name": "발령일자",
+      "type_info": "string",
+      "description": "발령일자"
+    },
+    {
+      "name": "발령번호",
+      "type_info": "string",
+      "description": "발령번호"
+    },
+    {
+      "name": "시행일자",
+      "type_info": "string",
+      "description": "시행일자"
+    },
+    {
+      "name": "발령기관명",
+      "type_info": "string",
+      "description": "발령기관명"
+    },
+    {
+      "name": "행정규칙 종류명",
+      "type_info": "string",
+      "description": "행정규칙종류명"
+    },
+    {
+      "name": "제개정구분명",
+      "type_info": "string",
+      "description": "행정규칙 제개정구분명"
+    },
+    {
+      "name": "조문일련번호",
+      "type_info": "string",
+      "description": "행정규칙 조문일련번호"
+    },
+    {
+      "name": "조문번호",
+      "type_info": "string",
+      "description": "행정규칙 조문번호"
+    },
+    {
+      "name": "조문가지번호",
+      "type_info": "string",
+      "description": "행정규칙 조문가지번호"
+    },
+    {
+      "name": "조문제목",
+      "type_info": "string",
+      "description": "행정규칙 조문제목"
+    },
+    {
+      "name": "조문내용",
+      "type_info": "string",
+      "description": "행정규칙 조문내용"
+    },
+    {
+      "name": "행정규칙 별표서식ID",
+      "type_info": "int",
+      "description": "행정규칙별표서식 ID"
+    },
+    {
+      "name": "별표서식 일련번호",
+      "type_info": "string",
+      "description": "행정규칙 별표서식일련번호"
+    },
+    {
+      "name": "별표서식번호",
+      "type_info": "string",
+      "description": "행정규칙 별표서식번호"
+    },
+    {
+      "name": "별표서식 가지번호",
+      "type_info": "string",
+      "description": "행정규칙 별표서식가지번호"
+    },
+    {
+      "name": "별표서식제목",
+      "type_info": "string",
+      "description": "행정규칙 별표서식제목"
+    },
+    {
+      "name": "별표서식 구분코드",
+      "type_info": "string",
+      "description": "행정규칙 별표서식구분코드"
+    },
+    {
+      "name": "별표서식 구분명",
+      "type_info": "string",
+      "description": "행정규칙 별표서식구분명"
+    }
+  ],
+  "notes": [
+    "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiSearch&type=XML&search=0&query=뺑소니",
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiSearch&type=JSON&search=0&query=뺑소니"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "aiSearchGuide",
+      "official_title": "법령정보지식베이스 지능형 법령검색 시스템 검색",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=aiSearchGuide",
+      "target": "aiSearch",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiSearch&type=XML&search=0&query=뺑소니",
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=aiSearch&type=JSON&search=0&query=뺑소니"
+      ]
+    }
+  ],
+  "target_variants": [
+    "aiSearch"
+  ]
+}

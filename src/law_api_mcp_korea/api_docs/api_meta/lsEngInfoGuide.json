@@ -1,0 +1,165 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : elaw(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 ID (ID 또는 MST 중 하나는 반드시 입력)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호 법령테이블의 lsi_seq 값을 의미함"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령의 법령명(법령명 입력시 해당 법령 링크)"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포번호"
+    },
+    {
+      "name": "type",
+      "type_info": "char",
+      "required": false,
+      "description": "출력 형태 : HTML/XML/JSON"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "BylSection",
+      "type_info": "string",
+      "description": "BylSection"
+    },
+    {
+      "name": "No",
+      "type_info": "string",
+      "description": "No"
+    },
+    {
+      "name": "ancNo",
+      "type_info": "string",
+      "description": "ancNo"
+    },
+    {
+      "name": "ancYd",
+      "type_info": "string",
+      "description": "ancYd"
+    },
+    {
+      "name": "arAncNo",
+      "type_info": "string",
+      "description": "arAncNo"
+    },
+    {
+      "name": "arAncYd",
+      "type_info": "string",
+      "description": "arAncYd"
+    },
+    {
+      "name": "arCts",
+      "type_info": "string",
+      "description": "arCts"
+    },
+    {
+      "name": "chapNo",
+      "type_info": "string",
+      "description": "chapNo"
+    },
+    {
+      "name": "joBrNo",
+      "type_info": "string",
+      "description": "joBrNo"
+    },
+    {
+      "name": "joCts",
+      "type_info": "string",
+      "description": "joCts"
+    },
+    {
+      "name": "joNo",
+      "type_info": "string",
+      "description": "joNo"
+    },
+    {
+      "name": "joTtl",
+      "type_info": "string",
+      "description": "joTtl"
+    },
+    {
+      "name": "joYn",
+      "type_info": "string",
+      "description": "joYn"
+    },
+    {
+      "name": "lsHwpFl",
+      "type_info": "string",
+      "description": "lsHwpFl"
+    },
+    {
+      "name": "lsId",
+      "type_info": "string",
+      "description": "lsId"
+    },
+    {
+      "name": "lsNmEng",
+      "type_info": "string",
+      "description": "lsNmEng"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&ID=000744&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&MST=127280&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&MST=127280&type=JSON",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&type=XML&MST=127280"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lsEngInfoGuide",
+      "official_title": "영문법령 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEngInfoGuide",
+      "target": "elaw",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&ID=000744&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&MST=127280&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&MST=127280&type=JSON",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=elaw&type=XML&MST=127280"
+      ]
+    }
+  ],
+  "target_variants": [
+    "elaw"
+  ]
+}

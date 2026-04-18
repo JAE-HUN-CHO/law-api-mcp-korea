@@ -1,0 +1,75 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : detc(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "헌재결정례 일련번호"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "헌재결정례명"
+    },
+    {
+      "name": "type",
+      "type_info": "string",
+      "required": false,
+      "description": "출력 형태 : HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
+    }
+  ],
+  "response_fields": [],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=detc&ID=58386&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=detc&ID=127830&&LM=자동차관리법제26조등위헌확인등&type=HTML&mobileYn=Y"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"헌재결정례일련번호\">12345</field>\n    <field name=\"사건명\">예시 사건</field>\n    <field name=\"사건번호\">12345</field>\n    <field name=\"선고일자\">20250501</field>\n    <field name=\"본문\">예시 본문</field>\n    <field name=\"이유\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"헌재결정례일련번호\": 12345,\n      \"사건명\": \"예시 사건\",\n      \"사건번호\": \"12345\",\n      \"선고일자\": \"20250501\",\n      \"본문\": \"예시 본문\",\n      \"이유\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobDetcInfoGuide",
+      "official_title": "모바일 헌재결정례 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobDetcInfoGuide",
+      "target": "detc",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=detc&ID=58386&type=HTML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=detc&ID=127830&&LM=자동차관리법제26조등위헌확인등&type=HTML&mobileYn=Y"
+      ]
+    }
+  ],
+  "target_variants": [
+    "detc"
+  ]
+}

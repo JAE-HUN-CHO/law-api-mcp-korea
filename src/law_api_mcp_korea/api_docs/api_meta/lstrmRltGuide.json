@@ -1,0 +1,130 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "서비스 대상 (법령용어-일상용어 연계 : lstrmRlt)"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "법령용어명에서 검색을 원하는 질의 (query 또는 MST 중 하나는 반드시 입력)"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령용어명 일련번호"
+    },
+    {
+      "name": "trmRltCd",
+      "type_info": "int",
+      "required": false,
+      "description": "용어관계 동의어 : 140301 반의어 : 140302 상위어 : 140303 하위어 : 140304 연관어 : 140305"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색 단어"
+    },
+    {
+      "name": "검색결과개수",
+      "type_info": "int",
+      "description": "검색 건수"
+    },
+    {
+      "name": "법령용어 id",
+      "type_info": "string",
+      "description": "법령용어 순번"
+    },
+    {
+      "name": "법령용어명",
+      "type_info": "string",
+      "description": "법령용어명"
+    },
+    {
+      "name": "비고",
+      "type_info": "string",
+      "description": "동음이의어 내용"
+    },
+    {
+      "name": "연계용어 id",
+      "type_info": "string",
+      "description": "연계용어 순번"
+    },
+    {
+      "name": "일상용어명",
+      "type_info": "string",
+      "description": "일상용어명"
+    },
+    {
+      "name": "용어관계코드",
+      "type_info": "string",
+      "description": "용어관계코드"
+    },
+    {
+      "name": "용어관계",
+      "type_info": "string",
+      "description": "용어관계명"
+    },
+    {
+      "name": "일상용어 조회링크",
+      "type_info": "string",
+      "description": "일상용어 정보 조회 링크"
+    },
+    {
+      "name": "용어간관계 링크",
+      "type_info": "string",
+      "description": "일상용어-법령용어 연계 정보 상세링크"
+    }
+  ],
+  "notes": [
+    "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrmRlt&type=XML&query=청원",
+    "https://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrmRlt&type=JSON&query=청원"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lstrmRltGuide",
+      "official_title": "법령정보지식베이스 법령용어-일상용어 연계",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lstrmRltGuide",
+      "target": "lstrmRlt",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrmRlt&type=XML&query=청원",
+        "https://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrmRlt&type=JSON&query=청원"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lstrmRlt"
+  ]
+}

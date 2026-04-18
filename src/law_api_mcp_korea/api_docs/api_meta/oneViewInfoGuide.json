@@ -1,0 +1,152 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : oneview(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "MST",
+      "type_info": "char",
+      "required": false,
+      "description": "법령 마스터 번호 - 법령테이블의 lsi_seq 값을 의미함"
+    },
+    {
+      "name": "LM",
+      "type_info": "string",
+      "required": false,
+      "description": "법령의 법령명"
+    },
+    {
+      "name": "LD",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포일자"
+    },
+    {
+      "name": "LN",
+      "type_info": "int",
+      "required": false,
+      "description": "법령의 공포번호"
+    },
+    {
+      "name": "JO",
+      "type_info": "int",
+      "required": false,
+      "description": "조번호 생략(기본값) : 모든 조를 표시함 6자리숫자 : 조번호(4자리)+조가지번호(2자리) (000200 : 2조, 001002 : 10조의 2)"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "패턴일련번호",
+      "type_info": "int",
+      "description": "패턴일련번호"
+    },
+    {
+      "name": "법령일련번호",
+      "type_info": "int",
+      "description": "법령일련번호"
+    },
+    {
+      "name": "법령명",
+      "type_info": "string",
+      "description": "법령명"
+    },
+    {
+      "name": "공포일자",
+      "type_info": "int",
+      "description": "공포일자"
+    },
+    {
+      "name": "공포번호",
+      "type_info": "int",
+      "description": "공포번호"
+    },
+    {
+      "name": "조문시행일자",
+      "type_info": "int",
+      "description": "조문시행일자"
+    },
+    {
+      "name": "최초제공일자",
+      "type_info": "int",
+      "description": "최초제공일자"
+    },
+    {
+      "name": "조번호",
+      "type_info": "int",
+      "description": "조번호"
+    },
+    {
+      "name": "조제목",
+      "type_info": "string",
+      "description": "조제목"
+    },
+    {
+      "name": "콘텐츠제목",
+      "type_info": "string",
+      "description": "콘텐츠제목"
+    },
+    {
+      "name": "링크텍스트",
+      "type_info": "string",
+      "description": "링크텍스트"
+    },
+    {
+      "name": "링크URL",
+      "type_info": "string",
+      "description": "링크URL"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=JSON"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"oneview일련번호\">12345</field>\n    <field name=\"법령명\">자동차관리법</field>\n    <field name=\"요약정보\">예시값</field>\n    <field name=\"표/도식\">예시값</field>\n    <field name=\"본문\">예시 본문</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"oneview일련번호\": 12345,\n      \"법령명\": \"자동차관리법\",\n      \"요약정보\": \"예시값\",\n      \"표/도식\": \"예시값\",\n      \"본문\": \"예시 본문\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "oneViewInfoGuide",
+      "official_title": "한눈보기 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=oneViewInfoGuide",
+      "target": "oneview",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=oneview&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "oneview"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : lstrm(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : HTML/XML/JSON"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "상세조회하고자 하는 법령용어 명"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "법령용어 일련번호",
+      "type_info": "int",
+      "description": "법령용어 일련번호"
+    },
+    {
+      "name": "법령용어명_한글",
+      "type_info": "string",
+      "description": "법령용어명 한글"
+    },
+    {
+      "name": "법령용어명_한자",
+      "type_info": "string",
+      "description": "법령용어명한자"
+    },
+    {
+      "name": "법령용어코드",
+      "type_info": "int",
+      "description": "법령용어코드"
+    },
+    {
+      "name": "법령용어코드명",
+      "type_info": "string",
+      "description": "법령용어코드명"
+    },
+    {
+      "name": "출처",
+      "type_info": "string",
+      "description": "출처"
+    },
+    {
+      "name": "법령용어정의",
+      "type_info": "string",
+      "description": "법령용어정의"
+    }
+  ],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=HTML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=XML",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=JSON"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"법령용어일련번호\">12345</field>\n    <field name=\"법령용어명\">예시값</field>\n    <field name=\"정의\">예시값</field>\n    <field name=\"비고\">예시 본문</field>\n    <field name=\"관련법령\">예시값</field>\n    <field name=\"관련조문\">예시값</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"법령용어일련번호\": 12345,\n      \"법령용어명\": \"예시값\",\n      \"정의\": \"예시값\",\n      \"비고\": \"예시 본문\",\n      \"관련법령\": \"예시값\",\n      \"관련조문\": \"예시값\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "lsTrmInfoGuide",
+      "official_title": "법령용어 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsTrmInfoGuide",
+      "target": "lstrm",
+      "mobileYn": null,
+      "response_types": [
+        "HTML",
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=HTML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=XML",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=lstrm&query=선박&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lstrm"
+  ]
+}

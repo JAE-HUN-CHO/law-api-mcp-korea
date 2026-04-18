@@ -1,0 +1,75 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : ordin(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "ID",
+      "type_info": "char",
+      "required": false,
+      "description": "자치법규 ID"
+    },
+    {
+      "name": "MST",
+      "type_info": "string",
+      "required": false,
+      "description": "자치법규 마스터 번호"
+    },
+    {
+      "name": "type",
+      "type_info": "char",
+      "required": false,
+      "description": "출력 형태 : HTML"
+    },
+    {
+      "name": "mobileYn",
+      "type_info": "char : Y (필수)",
+      "required": true,
+      "description": "모바일여부"
+    }
+  ],
+  "response_fields": [],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2047729&type=HTML&mobileYn=Y",
+    "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&type=HTML&mobileYn=Y&MST=1062134"
+  ],
+  "sample_responses": [
+    {
+      "lang": "xml",
+      "content": "<response>\n  <item>\n    <field name=\"자치법규일련번호\">12345</field>\n    <field name=\"자치법규명\">서울특별시 주차장 조례</field>\n    <field name=\"자치단체명\">예시값</field>\n    <field name=\"공포일자\">20250501</field>\n    <field name=\"조문내용\">예시 본문</field>\n    <field name=\"공포번호\">12345</field>\n  </item>\n</response>"
+    },
+    {
+      "lang": "json",
+      "content": "{\n  \"data\": [\n    {\n      \"자치법규일련번호\": 12345,\n      \"자치법규명\": \"서울특별시 주차장 조례\",\n      \"자치단체명\": \"예시값\",\n      \"공포일자\": 20250501,\n      \"조문내용\": \"예시 본문\",\n      \"공포번호\": \"12345\"\n    }\n  ]\n}"
+    }
+  ],
+  "sample_variants": [
+    {
+      "official_html_name": "mobOrdinInfoGuide",
+      "official_title": "모바일 자치법규 본문 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=mobOrdinInfoGuide",
+      "target": "ordin",
+      "mobileYn": "Y",
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&ID=2047729&type=HTML&mobileYn=Y",
+        "http://www.law.go.kr/DRF/lawService.do?OC=test&target=ordin&type=HTML&mobileYn=Y&MST=1062134"
+      ]
+    }
+  ],
+  "target_variants": [
+    "ordin"
+  ]
+}

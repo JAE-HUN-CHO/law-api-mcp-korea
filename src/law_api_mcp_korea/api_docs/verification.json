@@ -1,0 +1,81 @@
+{
+  "expected_markdown_files": 191,
+  "actual_markdown_files": 191,
+  "empty_files": [],
+  "missing_sample_section": [],
+  "bad_request_table_format": [],
+  "bad_response_table_format": [],
+  "sample_format_counts": {
+    "xml": 189,
+    "json": 187,
+    "html": 2
+  },
+  "sample_files_checked": [
+    "법령_체계도_목록_조회.md",
+    "농림축산식품부_법령해석_목록_조회.md",
+    "노동위원회_결정문_목록_조회.md"
+  ],
+  "sample_checks": [
+    {
+      "file": "법령_체계도_목록_조회.md",
+      "has_request_table": true,
+      "has_response_table": true,
+      "has_sample_section": true,
+      "sample_request_blocks": 1,
+      "sample_response_blocks": 1
+    },
+    {
+      "file": "농림축산식품부_법령해석_목록_조회.md",
+      "has_request_table": true,
+      "has_response_table": true,
+      "has_sample_section": true,
+      "sample_request_blocks": 1,
+      "sample_response_blocks": 1
+    },
+    {
+      "file": "노동위원회_결정문_목록_조회.md",
+      "has_request_table": true,
+      "has_response_table": true,
+      "has_sample_section": true,
+      "sample_request_blocks": 1,
+      "sample_response_blocks": 1
+    }
+  ],
+  "evidence_counts": {
+    "direct": 112,
+    "pattern": 78,
+    "inferred": 1
+  },
+  "family_counts": {
+    "ministry_list": 39,
+    "ministry_info": 37,
+    "law": 26,
+    "mobile": 20,
+    "committee_single": 18,
+    "general": 15,
+    "special": 10,
+    "general2": 9,
+    "kb": 9,
+    "custom": 6,
+    "committee_group_info": 1,
+    "committee_group_list": 1
+  },
+  "official_validation": {
+    "validated_at": "2026-04-04",
+    "guide_list_url": "https://open.law.go.kr/LSO/openApi/guideList.do",
+    "guide_list_displayed_count": 191,
+    "official_link_item_count": 195,
+    "official_guide_count": 195,
+    "catalog_count": 191,
+    "source_mismatches": 0,
+    "semantic_mismatches": 0,
+    "string_only_differences": 618,
+    "runtime_build_errors": 0,
+    "conclusion": "공식 상세 가이드 기준 정합성 확보 완료",
+    "interpretation": {
+      "guide_list_displayed_count": "공식 사이트 화면에 표시되는 건수",
+      "official_link_item_count": "guideList HTML의 실제 openApiGuide 링크 수",
+      "catalog_count": "grouped API를 유지하는 내부 런타임 카탈로그 수"
+    }
+  }
+}

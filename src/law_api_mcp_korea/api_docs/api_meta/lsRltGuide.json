@@ -1,0 +1,145 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "서비스 대상 (관련법령 : lsRlt)"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 : XML/JSON"
+    },
+    {
+      "name": "query",
+      "type_info": "string",
+      "required": false,
+      "description": "기준법령명에서 검색을 원하는 정확한 법령명"
+    },
+    {
+      "name": "ID",
+      "type_info": "int",
+      "required": false,
+      "description": "법령 ID"
+    },
+    {
+      "name": "rltClsCd",
+      "type_info": "int",
+      "required": false,
+      "description": "법령 간 관계 코드"
+    }
+  ],
+  "response_fields": [
+    {
+      "name": "target",
+      "type_info": "string",
+      "description": "검색서비스 대상"
+    },
+    {
+      "name": "키워드",
+      "type_info": "string",
+      "description": "검색 단어"
+    },
+    {
+      "name": "검색결과개수",
+      "type_info": "int",
+      "description": "검색 건수"
+    },
+    {
+      "name": "기준법령ID",
+      "type_info": "int",
+      "description": "기준법령 ID"
+    },
+    {
+      "name": "기준법령명",
+      "type_info": "string",
+      "description": "기준법령명"
+    },
+    {
+      "name": "기준법령 상세링크",
+      "type_info": "string",
+      "description": "기준법령 본문 조회링크"
+    },
+    {
+      "name": "관련법령 id",
+      "type_info": "string",
+      "description": "관련법령 순번"
+    },
+    {
+      "name": "관련법령ID",
+      "type_info": "int",
+      "description": "관련법령 ID"
+    },
+    {
+      "name": "관련법령명",
+      "type_info": "string",
+      "description": "관련법령명"
+    },
+    {
+      "name": "법령간관계 코드",
+      "type_info": "string",
+      "description": "법령간관계코드"
+    },
+    {
+      "name": "법령간관계",
+      "type_info": "string",
+      "description": "법령간관계"
+    },
+    {
+      "name": "관련법령 상세링크",
+      "type_info": "string",
+      "description": "관련법령 본문 조회링크"
+    },
+    {
+      "name": "관련법령 조회링크",
+      "type_info": "string",
+      "description": "해당 관련법령을 기준법령으로 한 관련법령 정보 조회링크"
+    },
+    {
+      "name": "관련법령본문조회",
+      "type_info": "string",
+      "description": "관련법령본문조회"
+    },
+    {
+      "name": "기준법령본문조회",
+      "type_info": "string",
+      "description": "기준법령본문조회"
+    }
+  ],
+  "notes": [
+    "법령정보지식베이스 API군은 target별 관계 유형만 달라지고 기본 요청/응답 구조는 유사합니다."
+  ],
+  "sample_requests": [
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=lsRlt&ID=001823&type=XML",
+    "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=lsRlt&ID=001766&type=JSON"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lsRltGuide",
+      "official_title": "법령정보지식베이스 관련법령",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsRltGuide",
+      "target": "lsRlt",
+      "mobileYn": null,
+      "response_types": [
+        "XML",
+        "JSON"
+      ],
+      "urls": [
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=lsRlt&ID=001823&type=XML",
+        "https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=lsRlt&ID=001766&type=JSON"
+      ]
+    }
+  ],
+  "target_variants": [
+    "lsRlt"
+  ]
+}

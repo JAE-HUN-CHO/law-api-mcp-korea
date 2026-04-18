@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "law-api-mcp-korea"
+version = "0.1.0"
+description = "Reference-compatible CLI and MCP server for Korea MOLEG Law OpenAPI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+  "mcp>=1.26.0",
+]
+authors = [
+  { name = "ggh5454", email = "ggh5454@naver.com" },
+]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["mcp", "cli", "law", "openapi", "moleg"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.urls]
+Homepage = "https://github.com/JAE-HUN-CHO/law-api-mcp-korea"
+Repository = "https://github.com/JAE-HUN-CHO/law-api-mcp-korea"
+Issues = "https://github.com/JAE-HUN-CHO/law-api-mcp-korea/issues"
+
+[project.scripts]
+law-openapi-cli = "law_api_mcp_korea.cli:main"
+law-openapi-mcp = "law_api_mcp_korea.mcp_server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"law_api_mcp_korea" = ["py.typed"]
+"law_api_mcp_korea.api_docs" = ["*.md", "*.json", "*.csv"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]

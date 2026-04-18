@@ -1,0 +1,46 @@
+{
+  "request_params": [
+    {
+      "name": "OC",
+      "type_info": "string(필수)",
+      "required": true,
+      "description": "신청한 API인증값"
+    },
+    {
+      "name": "target",
+      "type_info": "string : drlaw(필수)",
+      "required": true,
+      "description": "서비스 대상"
+    },
+    {
+      "name": "type",
+      "type_info": "char(필수)",
+      "required": true,
+      "description": "출력 형태 HTML"
+    }
+  ],
+  "response_fields": [],
+  "notes": [],
+  "sample_requests": [
+    "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=drlaw&type=HTML"
+  ],
+  "sample_responses": [],
+  "sample_variants": [
+    {
+      "official_html_name": "lsOrdinConGuide",
+      "official_title": "법령-자치법규 연계현황 조회",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsOrdinConGuide",
+      "target": "drlaw",
+      "mobileYn": null,
+      "response_types": [
+        "HTML"
+      ],
+      "urls": [
+        "http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=drlaw&type=HTML"
+      ]
+    }
+  ],
+  "target_variants": [
+    "drlaw"
+  ]
+}
